@@ -21,7 +21,7 @@ class HomeController extends Controller
         }
 
     }
-    public function addseller(Request $request){
+   /* public function addseller(Request $request){
         $data = new user;  //table name
         $data->name=$request->name;
         $data->email=$request->email;
@@ -30,5 +30,6 @@ class HomeController extends Controller
         $data->save();
         return redirect()->back();
 
-    }
+    }*/
+    
 }
