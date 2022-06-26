@@ -1,0 +1,126 @@
+body{
+	font-family: 'Roboto', sans-serif;
+}
+header .topbar{
+    background: #555;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 10px 0;
+}
+header .topbar h4{
+font-size: 18px;
+margin: 0;
+}
+.topbar ul.social-custom li{
+  margin: 0;
+  padding: 0;
+}
+.topbar ul.social-custom a {
+    text-decoration: none !important;
+    font-size: 0.7rem;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background: #7AAC37;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0;
+    display: inline-block;
+}
+ .navbar-nav > li.active > a {
+background: #95D343 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-color: #7AAC37 !important;
+}
+ .navbar-nav > li > a{
+margin: 0;
+    padding: 1.4rem 1rem 1.6rem;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-top: 0.3rem solid transparent;
+
+}
+.navbar-nav > li > a:hover {
+    background: rgba(147, 207, 66, 0.5);
+    border-color: rgba(122, 172, 55, 0.8);
+}
+#heading-breadcrumbs {
+    padding: 2rem 0;
+    border-top: none !important;
+    border-bottom: none !important;
+    background: url(../../assets/images/texture-bw.png) center center repeat;
+}
+#heading-breadcrumbs h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+}
+#heading-breadcrumbs .breadcrumb {
+    margin-bottom: 0;
+    background: none;
+    font-size: 0.9rem;
+}
+#heading-breadcrumbs li {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+#heading-breadcrumbs li a{
+  color: black;
+  }
+.main-section{
+padding: 50px 0 ;
+  }
+  .main-section h2{
+text-decoration: underline;
+ text-decoration-color: #95D343;
+  }
+  .main-section .card{
+    -webkit-box-shadow: 0 5px 25px -5px rgb(0 0 0 / 50%);
+    -moz-box-shadow: 0 5px 25px -5px rgba(0,0,0,.5);
+    box-shadow: 0 5px 25px -5px rgb(0 0 0 / 50%);
+  padding: 30px 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+    .main-section .card .inner-card{
+      border: 2px solid #95D343;
+      padding: 10px 20px;
+      border-radius: 7px;
+          height: 100%;
+  }
+.form-control:focus{
+  border-color: #95D343;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(133 255 0 / 25%);
+}
+
+
+footer{
+    padding: 40px 0;
+    padding-bottom: 0;
+    background: #5F862B;
+    color: #fff;
+}
+
+.footersivustokartta {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.9rem;
+    color: #aaa !important;
+}
+.footerlink {
+    color: #eee !important;
+}
+.copyrights {
+    padding: 30px 0;
+    background: #333;
+    color: #ccc;
+    margin-top: 50px;
+}

@@ -1,8 +1,0 @@
-composer require laravel/jetstream
-php artisan jetstream:install livewire
-npm install 
-npm run dev
-php artisan make:controller AdminController
-composer require laravel/ui
-php artisan ui bootsrap 
---auth

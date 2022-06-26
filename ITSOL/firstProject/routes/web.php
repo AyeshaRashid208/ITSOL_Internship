@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\democontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
-});
-Route::get('/demo/{name}/{id?}',function($name,$id= null){   //?with optional and withour ? required
+});*/
+//Route::get('index','democontroller@index')->name('index');
+Route::get("/",[democontroller::class,"index"]);
+/*Route::get('/demo/{name}/{id?}',function($name,$id= null){   //?with optional and withour ? required
    // echo $name." "; //filename withour blade.php
    // echo $id;
    $data = compact('name','id');
@@ -29,3 +31,4 @@ Route::any('/test',function(){
 Route::post('/test',function(){
     echo "Testing the route!";
 });
+*/
