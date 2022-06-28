@@ -71,6 +71,14 @@
                   </li> 
                   <li><a href="{{('add_homesection6')}}"><i></i> Home Section 6 <span class="fa fa-chevron-down"></span></a>
                   </li> 
+                  <li><a href="{{('add_about_banner')}}"><i></i> About Banner <span class="fa fa-chevron-down"></span></a>
+                  </li> 
+                  <li><a href="{{('add_aboutsection2')}}"><i></i>About Section 2<span class="fa fa-chevron-down"></span></a>
+                  </li> 
+                  <li><a href="{{('add_aboutsection3')}}"><i></i>About section 3<span class="fa fa-chevron-down"></span></a>
+                  </li> 
+                  <li><a href="{{('add_aboutsection4')}}"><i></i>About section 3<span class="fa fa-chevron-down"></span></a>
+                  </li> 
                  
                 </ul>
               </div>

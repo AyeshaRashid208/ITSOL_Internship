@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('banners', function (Blueprint $table) {
+        Schema::create('homethirdsections', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('description');
-            
+            $table->timestamps();
         });
     }
 
@@ -28,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('banners', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('homethirdsections');
     }
 };

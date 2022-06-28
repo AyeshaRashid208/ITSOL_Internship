@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_homesection3')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('add_aboutsection2')}}" method="post" enctype="multipart/form-data>
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
@@ -25,28 +25,29 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
+                  
                 <div class="form-group">
-                <label for="formGroupExampleInput">Main Heading</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
+               <label for="exampleFormControlFile1">Image</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                 </div>
+                 <div class="form-group">
+                <label for="formGroupExampleInput">Title</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="title">
                 </div>
-                <div class="form-group">
-                <label for="formGroupExampleInput">Main Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="main_title">
-                </div>
-                <div class="form-group">
-                <label for="formGroupExampleInput">Sub Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="sub_title">
-                </div>
-                
                 <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="description"></textarea>
-                </div>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
+               </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>
             </div>
            
+         
+
+           
+                
+
         
                 
         </div>

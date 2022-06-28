@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_homesection3')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('add_aboutsection3')}}" method="post" enctype="multipart/form-data>
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
@@ -30,12 +30,8 @@
                 <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
                 </div>
                 <div class="form-group">
-                <label for="formGroupExampleInput">Main Title</label>
+                <label for="formGroupExampleInput">Title</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="main_title">
-                </div>
-                <div class="form-group">
-                <label for="formGroupExampleInput">Sub Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="sub_title">
                 </div>
                 
                 <div class="form-group">

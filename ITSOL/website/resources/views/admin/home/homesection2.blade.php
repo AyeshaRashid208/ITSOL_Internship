@@ -1,8 +1,9 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_homesection2')}}" method="post" enctype="multipart/form-data>
+<form action="{{url('add_homesection2')}}" method="post" enctype="multipart/form-data">
 @csrf
+<!-- {{ csrf_field() }} -->
     @if($errors->any())
     <div class = "alert alert-danger">
        @foreach($errors->all() as $error)

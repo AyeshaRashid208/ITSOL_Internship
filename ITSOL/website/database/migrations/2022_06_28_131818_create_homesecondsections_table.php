@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('home2ndsections', function (Blueprint $table) {
+        Schema::create('homesecondsections', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->string('title');
             $table->string('description');
+            $table->timestamps();
         });
     }
 
@@ -28,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('home2ndsections', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('homesecondsections');
     }
 };

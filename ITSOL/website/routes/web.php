@@ -55,14 +55,17 @@ Route::post("/admin",[AdminController::class,"makelogin"]);
 //Route::get(['middleware' => 'auth:admin'],function(){
 Route::get("/dashboard",[AdminController::class,"dashboard"]);
 //});
-//Route::get('/page_add',[PageController::class,'AddPage']);
-//Route::post('/page_add',[PageController::class,'AddPage']);
-//Route::post('/page_create',[PageController::class,'CreatePage'])->name('page-create');
 Route::post('/add_banner',[Controller::class,'addbanner']);
 //Route::get('/add_banner',[Controller::class,'addbanner']);
 Route::get('/add_banner',[Controller::class,'displaybanner']);
+
 Route::get('/add_homesection2',[Controller::class,'displayhome2ndsection']);
+Route::post('/add_homesection2',[Controller::class,'addhome2ndsection']);
 Route::get('/add_homesection3',[Controller::class,'displayhome3rdsection']);
 Route::get('/add_homesection4',[Controller::class,'displayhome4rthsection']);
 Route::get('/add_homesection5',[Controller::class,'displayhome5thsection']);
 Route::get('/add_homesection6',[Controller::class,'displayhome6thsection']);
+Route::get('/add_about_banner',[Controller::class,'displayaboutbannersection']);
+Route::get('/add_aboutsection2',[Controller::class,'displayabout2ndsection']);
+Route::get('/add_aboutsection3',[Controller::class,'displayabout3rdsection']);
+Route::get('/add_aboutsection4',[Controller::class,'displayabout4rthsection']);

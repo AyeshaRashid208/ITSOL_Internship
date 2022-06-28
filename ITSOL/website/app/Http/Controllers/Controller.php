@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Banner;
+use App\Models\HomeSecondSection;
 use DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -56,9 +57,29 @@ class Controller extends BaseController
             
             return view('admin.home.banner');
     }
+
     public function displayhome2ndsection(){
             
         return view('admin.home.homesection2');
+    }
+    public function addhome2ndsection(Request $request){
+        //$info = new banner;
+        $info = new HomeSecondSection;
+        $info->title=$request->title;
+        $info->description=$request->description;
+       if($request->hasfile('image')){
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalName();
+        $filename=time().'.'.$extension;
+        $file->move('images/icons',$filename);
+        $info->image = $filename;
+       }
+       $info->save();
+    
+          echo "Record inserted successfully.<br/>";
+       
+        //$info->save(); 
+
     }
     public function displayhome3rdsection(){
             
@@ -76,5 +97,22 @@ class Controller extends BaseController
             
         return view('admin.home.homesection6');
     }
+    public function displayaboutbannersection(){
+            
+        return view('admin.About.about_banner');
+    }
+    public function displayabout2ndsection(){
+            
+        return view('admin.About.aboutsection2');
+    }
+    public function displayabout3rdsection(){
+            
+        return view('admin.About.aboutsection3');
+    }
+    public function displayabout4rthsection(){
+            
+        return view('admin.About.aboutsection4');
+    }
+
 
 }
