@@ -8,13 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Banner extends Model
+class AboutThirdSection extends Model
 {
     use HasFactory;
-    protected $table = 'banners';
+    protected $table = 'aboutthirdsections';
     protected $fillable =[
-        
-        'title',
+        'heading',
+        'main_title',
         'description',
        
     ];
