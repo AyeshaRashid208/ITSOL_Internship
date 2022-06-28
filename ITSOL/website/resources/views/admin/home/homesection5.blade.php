@@ -25,23 +25,22 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
-                  <label class="hws_form_label">Home section 5:</label>
-                  <br>
-                  <label for="title">Title</label> 
-                <br><input type="text" name="title" >
-                <br>
-                <br>
-                <label for="title">Discription</label>  
-                <br>
-                <textarea name="description" id="" cols="500" rows="10"></textarea> 
-                <br>
-                <br>
-                <label for="icon">Image</label> 
-                <input type="file" class="form-control" name="image"><br>
-                <br>
+                
+                <div class="form-group">
+                <label for="formGroupExampleInput">Title</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="title">
+                </div>
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
+               </div>
+                <div class="form-group">
+               <label for="exampleFormControlFile1">Image</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                 </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-                <input type="submit" name="Submit">
+                <button class="btn btn-primary" type="submit" name="submit">Submit</button>
             </div>
             
 

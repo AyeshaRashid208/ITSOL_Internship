@@ -25,32 +25,33 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
-                  <label class="hws_form_label">Home section 6:</label>
-                  <br>
-                  <label for="title"> Main Heading</label> 
-                <br><input type="text" name="heading" >
-                <br>
+                  
+                <div class="form-group">
+                <label for="formGroupExampleInput">Main Heading</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
+                </div>
                 
-                <label for="icon">Image</label> 
-                <br>
-                <input type="file" class="form-control" name="image"><br>
+                <div class="form-group">
+               <label for="exampleFormControlFile1">Image</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                 </div>
+                 <div class="form-group">
+                <label for="exampleFormControlTextarea1">Reviews</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="reviews"></textarea>
+               </div>
                 
-                <label for="title">Reviews</label>  
-                <br>
-                <textarea name="reviews" id="" cols="500" rows="10"></textarea> 
-                <br>
-                
-                <label for="name">Name</label>  
-                <br><input type="text" name="name" >
-                
-                <br>
-                <label for="designation">Designation</label> 
-                <br><input type="text" name="designation" > 
-                <br>
+               <div class="form-group">
+                <label for="formGroupExampleInput">Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="name">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Desigination</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="designation">
+                </div>
 
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-                <input type="submit" name="Submit">
+                <button class="btn btn-primary" type="submit" name="submit">Submit</button>
             </div>
             
 

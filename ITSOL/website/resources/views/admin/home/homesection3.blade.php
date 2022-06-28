@@ -25,25 +25,26 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
-                  <label class="hws_form_label">Home section 3 :</label>
-                  <br>
-                  <label for="icon">Main Heading</label> 
-                  <br><input type="text" name="heading" >
-                <br>
-                <label for="title"> Main Title</label> 
-                <br><input type="text" name="main_title" >
-                <br>
-                <label for="title">Sub Title</label> 
-                <br><input type="text" name="sub_title" >
-                <br>
-                <br>
-                <label for="title">Discription</label>  
-                <br>
-                <textarea name="description" id="" cols="500" rows="10"></textarea> 
-                <br>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Main Heading</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Main Title</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="main_title">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Sub Title</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="sub_title">
+                </div>
+                
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="description"></textarea>
+                </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-                <input type="submit" name="Submit">
+                <button class="btn btn-primary" type="submit" name="submit">Submit</button>
             </div>
            
         

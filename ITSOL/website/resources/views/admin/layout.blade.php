@@ -58,7 +58,7 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="{{('home\add_banner')}}"><i></i> Banner <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{('add_banner')}}"><i></i> Banner <span class="fa fa-chevron-down"></span></a>
                   </li>
                   <li><a  href="{{('add_homesection2')}}" ><i></i> Home section 2 <span class="fa fa-chevron-down"></span></a>
                   

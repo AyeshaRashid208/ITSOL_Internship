@@ -54,27 +54,27 @@ class Controller extends BaseController
         }
     public function displaybanner(){
             
-            return view('admin.banner');
+            return view('admin.home.banner');
     }
     public function displayhome2ndsection(){
             
-        return view('admin.homesection2');
+        return view('admin.home.homesection2');
     }
     public function displayhome3rdsection(){
             
-        return view('admin.homesection3');
+        return view('admin.home.homesection3');
     }
     public function displayhome4rthsection(){
             
-        return view('admin.homesection4');
+        return view('admin.home.homesection4');
     }
     public function displayhome5thsection(){
             
-        return view('admin.homesection5');
+        return view('admin.home.homesection5');
     }
     public function displayhome6thsection(){
             
-        return view('admin.homesection6');
+        return view('admin.home.homesection6');
     }
 
 }
