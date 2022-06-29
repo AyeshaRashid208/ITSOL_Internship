@@ -260,6 +260,18 @@ class Controller extends BaseController
           echo "Record inserted successfully.<br/>"; 
 
     }
+    public function displayteamaboutsection(){
+            
+        return view('admin.Team.teambanner');
+    }
+    public function displayteamsecondsection(){
+            
+        return view('admin.Team.teamsection2');
+    }
+    public function displayteamthirdsection(){
+            
+        return view('admin.Team.teamsection3');
+    }
 
 
 

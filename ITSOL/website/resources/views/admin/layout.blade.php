@@ -79,6 +79,12 @@
                   </li> 
                   <li><a href="{{('add_aboutsection4')}}"><i></i>About section 4<span class="fa fa-chevron-down"></span></a>
                   </li> 
+                  <li><a href="{{('add_team_banner')}}"><i></i>Our Team banner section<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_teamsection2')}}"><i></i>Our Team section 2<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_teamsection3')}}"><i></i>Our Team section 3<span class="fa fa-chevron-down"></span></a>
+                  </li>
                  
                 </ul>
               </div>

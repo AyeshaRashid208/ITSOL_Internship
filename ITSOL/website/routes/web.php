@@ -67,3 +67,6 @@ Route::get('/add_aboutsection3',[Controller::class,'displayabout3rdsection']);
 Route::post('/add_aboutsection3',[Controller::class,'addabout3rdsection']);
 Route::get('/add_aboutsection4',[Controller::class,'displayabout4rthsection']);
 Route::post('/add_aboutsection4',[Controller::class,'addabout4rthsection']);
+Route::get('/add_team_banner',[Controller::class,'displayteamaboutsection']);
+Route::get('/add_teamsection2',[Controller::class,'displayteamsecondsection']);
+Route::get('/add_teamsection3',[Controller::class,'displayteamthirdsection']);
