@@ -59,11 +59,36 @@ class HomeController extends Controller
     public function addhome3rdsection(Request $request){
         //$info = new banner;
         $info = new HomeThirdSection;
-        $info->message=$request->message;
-        $info->heading=$request->heading;
+        $info->message  =$request->message;
         $info->main_title=$request->main_title;
-        $info->sub_title=$request->sub_title;
-        $info->description=$request->description;
+        $info->tab_one_name=$request->tab_one_name;
+        $info->tab_two_name=$request->tab_two_name;
+        $info->tab_three_name=$request->tab_three_name;
+        $info->tab_one_heading=$request->tab_one_heading;
+        $info->tab_one_desc=$request->tab_one_desc;
+        $info->tab_one_sub_heading_one=$request->tab_one_sub_heading_one;
+        $info->tab_one_sub_heading_one_desc=$request->tab_one_sub_heading_one_desc;
+        $info->tab_one_sub_heading_two=$request->tab_one_sub_heading_two;
+        $info->tab_one_sub_heading_two_desc=$request->tab_one_sub_heading_two_desc;
+        $info->tab_one_sub_heading_three=$request->tab_one_sub_heading_three;
+        $info->tab_one_sub_heading_three_desc=$request->tab_one_sub_heading_three_desc;
+        $info->tab_two_heading=$request->tab_two_heading;
+        $info->tab_two_desc=$request->tab_two_desc;
+        $info->tab_two_sub_heading_one=$request->tab_two_sub_heading_one;
+        $info->tab_two_sub_heading_one_desc=$request->tab_two_sub_heading_one_desc;
+        $info->tab_two_sub_heading_two=$request->tab_two_sub_heading_two;
+        $info->tab_two_sub_heading_two_desc=$request->tab_two_sub_heading_two_desc;
+        $info->tab_two_sub_heading_three=$request->tab_two_sub_heading_three;
+        $info->tab_two_sub_heading_three_desc=$request->tab_two_sub_heading_three_desc;
+        $info->tab_thr_heading=$request->tab_thr_heading;
+        $info->tab_thr_desc=$request->tab_thr_desc;
+        $info->tab_thr_sub_heading_one=$request->tab_thr_sub_heading_one;
+        $info->tab_thr_sub_heading_one_desc=$request->tab_thr_sub_heading_one_desc;
+        $info->tab_thr_sub_heading_two=$request->tab_thr_sub_heading_two;
+        $info->tab_thr_sub_heading_two_desc=$request->tab_thr_sub_heading_two_desc;
+        $info->tab_thr_sub_heading_three=$request->tab_thr_sub_heading_three;
+        $info->tab_thr_sub_heading_three_desc=$request->tab_thr_sub_heading_three_desc;
+        
     
        $info->save();
     
@@ -146,6 +171,6 @@ class HomeController extends Controller
         $users = Banner::orderBy('id', 'DESC')->first();
         $second = HomeSecondSection::orderBy('id', 'DESC')->first();
         $third = HomeThirdSection::orderBy('id', 'DESC')->first();
-        return view('index',['users'=>$users],['second'=>$second]); 
+        return view('index',['users'=>$users],['second'=>$second],['third'=>$third]); 
         }
 }

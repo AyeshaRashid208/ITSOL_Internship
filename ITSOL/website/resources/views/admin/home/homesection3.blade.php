@@ -29,24 +29,119 @@
                 <label for="formGroupExampleInput">Message</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="message">
                 </div>
-                <div class="form-group">
-                <label for="formGroupExampleInput">Main Heading</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
-                </div>
+                
                 <div class="form-group">
                 <label for="formGroupExampleInput">Main Title</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="main_title">
                 </div>
                 <div class="form-group">
-                <label for="formGroupExampleInput">Sub Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="sub_title">
+                <label for="formGroupExampleInput">Tab 1 Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_name">
                 </div>
-                
+                <label for="formGroupExampleInput">Tab 2 Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_name">
+                </div>
                 <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="description"></textarea>
+                <label for="formGroupExampleInput">Tab 3 Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_three_name">
                 </div>
-                <br>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Main Heading</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_heading">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Main description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Sub Heading 1</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_sub_heading_one">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Sub Heading 1 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_sub_heading_one_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Sub Heading 2</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_sub_heading_two">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Sub Heading 2 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_sub_heading_two_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Sub Heading 3</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_sub_heading_three">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 1 Sub Heading 3 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_sub_heading_three_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Main Heading</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_heading">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Main description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Sub Heading 1</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_sub_heading_one">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Sub Heading 1 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_sub_heading_one_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Sub Heading 2</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_sub_heading_two">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Sub Heading 2 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_sub_heading_two_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Sub Heading 3</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_sub_heading_three">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 2 Sub Heading 3 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_sub_heading_three_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Main Heading</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_heading">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Main description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Sub Heading 1</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_sub_heading_one">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Sub Heading 1 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_sub_heading_one_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Sub Heading 2</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_sub_heading_two">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Sub Heading 2 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_sub_heading_two_desc">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Sub Heading 3</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_sub_heading_three">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Tab 3 Sub Heading 3 Description</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_thr_sub_heading_three_desc">
+                </div>
+
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>
             </div>
