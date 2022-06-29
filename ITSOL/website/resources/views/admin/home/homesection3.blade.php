@@ -26,6 +26,10 @@
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
                 <div class="form-group">
+                <label for="formGroupExampleInput">Message</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="message">
+                </div>
+                <div class="form-group">
                 <label for="formGroupExampleInput">Main Heading</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
                 </div>

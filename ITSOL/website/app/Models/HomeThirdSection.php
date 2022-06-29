@@ -13,6 +13,7 @@ class HomeThirdSection extends Model
     use HasFactory;
     protected $table = 'homethirdsections';
     protected $fillable =[
+        'message',
         'heading',
         'main_title',
         'sub_title',

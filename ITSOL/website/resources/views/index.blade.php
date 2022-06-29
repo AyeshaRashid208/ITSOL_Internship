@@ -155,13 +155,13 @@
 		<div class="image-layer" style="background-image:url(images/background/5.png)"></div>
 		<div class="auto-container">
 			<div class="clearfix">
-			@foreach ($users as $user)
+			
 				<div class="content">
-					<h1> {{ $user->title}}<span></h1>
-					<div class="text">{{ $user->description}}</div>
+					<h1>{{ $users->title}}</h1>
+					<div class="text">{{ $users->description}}</div>
 					<a href="#" class="theme-btn btn-style-three">Hire us today <span class="fa fa-arrow-right"></span></a>
 				</div>
-			@endforeach
+			
 			</div>
 			<div class="image-box">
 				<figure class="image">
@@ -250,8 +250,8 @@
 						<div class="icon-box">
 							<span class="icon flaticon-line-chart-1"></span>
 						</div>
-						<h5><a href="{{url('services')}}">Web <br> Development</a></h5>
-						<div class="text">We’re full service which means...</div>
+						<h5><a href="{{url('services')}}">{{$second->title}}</a></h5>
+						<div class="text">{{$second->description}}</div>
 					</div>
 				</div>
 				

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('homethirdsections', function (Blueprint $table) {
             $table->id();
+            $table->string('message');
             $table->string('heading');
             $table->string('main_title');
             $table->string('sub_title');

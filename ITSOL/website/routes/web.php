@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
-
+use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/home', function () {
-    return view('index');
-});
+
+Route::get("/home",[HomeController::class,"viewhome"]);
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -45,20 +45,18 @@ Route::post("/admin",[AdminController::class,"makelogin"]);
 //Route::get(['middleware' => 'auth:admin'],function(){
 Route::get("/dashboard",[AdminController::class,"dashboard"]);
 //});
-Route::post('/add_banner',[Controller::class,'addbanner']);
-//Route::get('/add_banner',[Controller::class,'addbanner']);
-Route::get('/add_banner',[Controller::class,'displaybanner']);
-
-Route::get('/add_homesection2',[Controller::class,'displayhome2ndsection']);
-Route::post('/add_homesection2',[Controller::class,'addhome2ndsection']);
-Route::get('/add_homesection3',[Controller::class,'displayhome3rdsection']);
-Route::post('/add_homesection3',[Controller::class,'addhome3rdsection']);
-Route::get('/add_homesection4',[Controller::class,'displayhome4rthsection']);
-Route::post('/add_homesection4',[Controller::class,'addhome4rthsection']);
-Route::get('/add_homesection5',[Controller::class,'displayhome5thsection']);
-Route::post('/add_homesection5',[Controller::class,'addhome5thsection']);
-Route::get('/add_homesection6',[Controller::class,'displayhome6thsection']);
-Route::post('/add_homesection6',[Controller::class,'addhome6thsection']);
+Route::post('/add_banner',[HomeController::class,'addbanner']);
+Route::get('/add_banner',[HomeController::class,'displaybanner']);
+Route::get('/add_homesection2',[HomeController::class,'displayhome2ndsection']);
+Route::post('/add_homesection2',[HomeController::class,'addhome2ndsection']);
+Route::get('/add_homesection3',[HomeController::class,'displayhome3rdsection']);
+Route::post('/add_homesection3',[HomeController::class,'addhome3rdsection']);
+Route::get('/add_homesection4',[HomeController::class,'displayhome4rthsection']);
+Route::post('/add_homesection4',[HomeController::class,'addhome4rthsection']);
+Route::get('/add_homesection5',[HomeController::class,'displayhome5thsection']);
+Route::post('/add_homesection5',[HomeController::class,'addhome5thsection']);
+Route::get('/add_homesection6',[HomeController::class,'displayhome6thsection']);
+Route::post('/add_homesection6',[HomeController::class,'addhome6thsection']);
 Route::get('/add_about_banner',[Controller::class,'displayaboutbannersection']);
 Route::post('/add_about_banner',[Controller::class,'addaboutbannersection']);
 Route::get('/add_aboutsection2',[Controller::class,'displayabout2ndsection']);
