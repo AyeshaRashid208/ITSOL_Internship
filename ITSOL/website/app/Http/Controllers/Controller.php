@@ -272,6 +272,71 @@ class Controller extends BaseController
             
         return view('admin.Team.teamsection3');
     }
+    public function displaytestimonialbannersection(){
+            
+        return view('admin.Testimonial.testimonial_banner');
+    }
+    public function displaytestsecondsection(){
+            
+        return view('admin.Testimonial.testimonialsection2');
+    }
+    public function displayservicesbannersection(){
+            
+        return view('admin.Services.services_banner');
+    }
+    public function displayservice2ndsection(){
+            
+        return view('admin.Services.servicesection2');
+    }
+    
+    public function displayservice3rdsection(){
+            
+        return view('admin.Services.servicesection3');
+    }
+    public function displayportfolio3bannersection(){
+            
+        return view('admin.PortfolioThree.portfolio_banner');
+    }
+    public function displayportfolio3secondsection(){
+            
+        return view('admin.PortfolioThree.portfolio3section2');
+    }
+    public function displayportfolio3thirdsection(){
+            
+        return view('admin.PortfolioThree.portfolio3section3');
+    }
+    public function displayportfoliobannersection(){
+            
+        return view('admin.PortfolioSingle.portfolioBanner');
+    }
+    public function displayportfoliosecondsection(){
+            
+        return view('admin.PortfolioSingle.portfoliosection2');
+    }
+    public function displayportfoliothirdsection(){
+            
+        return view('admin.PortfolioSingle.portfoliosection3');
+    }
+    public function displayportfoliofourthsection(){
+            
+        return view('admin.PortfolioSingle.portfoliosection4');
+    }
+    public function displayblogbannersection(){
+            
+        return view('admin.BlogList.blog_banner');
+    }
+    public function displaybloglistsection2(){
+            
+        return view('admin.BlogList.bloglistsection2');
+    }
+    public function displaycontactbanner(){
+            
+        return view('admin.Contact.contact_banner');
+    }
+    public function displaycontactsection2(){
+            
+        return view('admin.Contact.contactsection2');
+    }
 
 
 

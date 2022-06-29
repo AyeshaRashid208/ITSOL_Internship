@@ -75,15 +75,47 @@
                   </li> 
                   <li><a href="{{('add_aboutsection2')}}"><i></i>About Section 2<span class="fa fa-chevron-down"></span></a>
                   </li> 
-                  <li><a href="{{('add_aboutsection3')}}"><i></i>About section 3<span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{('add_aboutsection3')}}"><i></i>About Section 3<span class="fa fa-chevron-down"></span></a>
                   </li> 
-                  <li><a href="{{('add_aboutsection4')}}"><i></i>About section 4<span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{('add_aboutsection4')}}"><i></i>About Section 4<span class="fa fa-chevron-down"></span></a>
                   </li> 
                   <li><a href="{{('add_team_banner')}}"><i></i>Our Team banner section<span class="fa fa-chevron-down"></span></a>
                   </li>
-                  <li><a href="{{('add_teamsection2')}}"><i></i>Our Team section 2<span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{('add_teamsection2')}}"><i></i>Our Team Section 2<span class="fa fa-chevron-down"></span></a>
                   </li>
-                  <li><a href="{{('add_teamsection3')}}"><i></i>Our Team section 3<span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{('add_teamsection3')}}"><i></i>Our Team Section 3<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_testimonial_banner')}}"><i></i>Testimonial Banner<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_testimonialsection2')}}"><i></i>Testimonial Section 2<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_services_banner')}}"><i></i>Services Banner<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_servicesection2')}}"><i></i>Services Section 2<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_servicesection3')}}"><i></i>Services Section 3<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_portfolio3_banner')}}"><i></i>Portfolio 3 Col Banner<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_portfolio3_section2')}}"><i></i>Portfolio 3 Col Section 2<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_portfolio3_section3')}}"><i></i>Portfolio 3 Col Section 3<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_portfoliosingle_banner')}}"><i></i>Portfolio Single Banner<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_portfolio_section2')}}"><i></i>Portfolio Single Section 2<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_portfolio_section3')}}"><i></i>Portfolio Single Section 3<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_portfolio_section4')}}"><i></i>Portfolio Single Section 4<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_bloglistbanner')}}"><i></i>Blog List Banner<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_bloglist_section2')}}"><i></i>Blog List Section 2<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_contactbanner')}}"><i></i>Contact Us Banner<span class="fa fa-chevron-down"></span></a>
+                  </li>
+                  <li><a href="{{('add_contactsection2')}}"><i></i>Contact Section 2<span class="fa fa-chevron-down"></span></a>
                   </li>
                  
                 </ul>
