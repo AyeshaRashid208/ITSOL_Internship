@@ -350,11 +350,11 @@
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Machine learning shows potential to leverage?</div>
+													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_one_sub_heading_two}}</div>
 													<div class="acc-content current">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_one_sub_heading_two_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -362,11 +362,11 @@
 												
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>So some forward-looking CIOs are putting?</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_one_sub_heading_three}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_one_sub_heading_three_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -399,19 +399,19 @@
 									<!-- Content Column -->
 									<div class="content-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
-											<h5>We have digital experiences. With more than ten years of knowledge and expertise we design.</h5>
-											<div class="text">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed.We do live art, illustration, web design, App design.</div>
+											<h5>{{$third->tab_two_heading}}</h5>
+											<div class="text">{{$third->tab_two_desc}}</div>
 											
 											<!--Accordian Box-->
 											<ul class="accordion-box style-two">
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Solutions is the latest software Sigma?</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_two_sub_heading_one}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_two_sub_heading_one_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -419,11 +419,11 @@
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Machine learning shows potential to leverage?</div>
+													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_two_sub_heading_two}}</div>
 													<div class="acc-content current">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_two_sub_heading_two_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -431,11 +431,11 @@
 												
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>So some forward-looking CIOs are putting?</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_two_sub_heading_three}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_two_sub_heading_three_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -460,6 +460,8 @@
 								</div>
 							</div>
 						</div>
+					
+									
 						
 						<!--Tab-->
 						<div class="tab" id="prod-design">
@@ -469,19 +471,19 @@
 									<!-- Content Column -->
 									<div class="content-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
-											<h5>We have digital experiences. With more than ten years of knowledge and expertise we design.</h5>
-											<div class="text">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed.We do live art, illustration, web design, App design.</div>
+											<h5>{{$third->tab_thr_heading}}</h5>
+											<div class="text">{{$third->tab_thr_desc}}</div>
 											
 											<!--Accordian Box-->
 											<ul class="accordion-box style-two">
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Solutions is the latest software Sigma?</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_thr_sub_heading_one}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_thr_sub_heading_one_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -489,11 +491,11 @@
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Machine learning shows potential to leverage?</div>
+													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_thr_sub_heading_two}}</div>
 													<div class="acc-content current">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_thr_sub_heading_two_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -501,11 +503,11 @@
 												
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>So some forward-looking CIOs are putting?</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_thr_sub_heading_three}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_thr_sub_heading_three_desc}}</p>
 															</div>
 														</div>
 													</div>
@@ -548,8 +550,8 @@
 			<!-- Sec Title -->
 			<div class="sec-title centered">
 				<div class="big-title">process</div>
-				<div class="title">Steps for done</div>
-				<h2>Easy steps to do <br> consult with <span>us</span></h2>
+				<div class="title">{{$fourth->message}}</div>
+				<h2>{{$fourth->heading}}</h2>
 			</div>
 			
 			<!-- Outer Container -->
@@ -566,8 +568,8 @@
 								</div>
 							</div>
 							<div class="lower-box">
-								<h5><a href="{{url('contact')}}">Contact us first</a></h5>
-								<div class="text">Lorem ipsum dolor sit amet, csectetur adipis icing.</div>
+								<h5><a href="{{url('contact')}}">{{$fourth->title}}</a></h5>
+								<div class="text">{{$fourth->description}}</div>
 								<a class="contact" href="{{url('contact')}}">Contact us <span class="arrow fa fa-angle-right"></span></a>
 							</div>
 						</div>
@@ -638,9 +640,9 @@
 			<!-- Sec Title -->
 			<div class="sec-title">
 				<div class="big-title">wORK</div>
-				<div class="title">our portfolio</div>
-				<h2>We are popular for <br> our recent <span>works</span></h2>
-				<div class="text">Lorem ipsum, or lipsum as it is sometimes known, is dummy <br> text used in laying out. The passage is attributed. </div>
+				<div class="title">{{$fifth->message}}</div>
+				<h2>{{$fifth->title}}</h2>
+				<div class="text">{{$fifth->description}} </div>
 			</div>
 			
 		</div>
@@ -655,7 +657,7 @@
 						<div class="screenshot-carousel owl-carousel owl-theme">
 							
 							<div class="image">
-								<img src="images/resource/screenshot-1.jpg" alt="" />
+								<img src= "{{ asset('images/resource/'.$fifth->image) }}" alt="" />
 							</div>
 							
 							<div class="image">
@@ -706,8 +708,8 @@
 			<!-- Sec Title -->
 			<div class="sec-title text-center">
 				<div class="big-title">Review</div>
-				<div class="title">Tetimonils</div>
-				<h2>Learn something <br> from our <span>clients</span></h2>
+				<div class="title">{{$sixth->message}}</div>
+				<h2>{{$sixth->heading}}</h2>
 			</div>
 			
 			<div class="row clearfix">
@@ -720,12 +722,12 @@
 						<div class="image-outer">
 							<a href="#" class="social-icon dribble fa fa-dribbble"></a>
 							<div class="image">
-								<img src="images/resource/author-7.jpg" alt="" />
+								<img src="{{ asset('images/resource/'.$sixth->image) }}" alt="" />
 							</div>
 						</div>
-						<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more to relevant ads, facilitate.</div>
-						<h5>Frederic Anderson</h5>
-						<div class="designation">President</div>
+						<div class="text">{{$sixth->reviews}}</div>
+						<h5>{{$sixth->name}}</h5>
+						<div class="designation">{{$sixth->designation}}</div>
 					</div>
 				</div>
 				
@@ -798,8 +800,8 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<div class="title">Our expert team</div>
-				<h2>We re dedic <br> our devoted srv <span>fetures</span></h2>
+				<div class="title">{{$seven->message}}</div>
+				<h2>{{$seven->heading}}</h2>
 			</div>
 			
 			<div class="row clearfix">
@@ -808,19 +810,19 @@
 				<div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<a href="{{url('blog-single')}}"><img src="images/resource/news-1.jpg" alt="" /></a>
+							<a href="{{url('blog-single')}}"><img src="{{ asset('images/resource/'.$seven->image) }}" alt="" /></a>
 						</div>
 						<div class="lower-content">
-							<h6><a href="{{url('blog-single')}}">Top aide to possible contender forced to resign over creepy.</a></h6>
+							<h6><a href="{{url('blog-single')}}">{{$seven->title}}</a></h6>
 							<div class="clearfix">
 								<div class="pull-left">
 									<div class="author">
-										<div class="image"><img src="images/resource/author-4.jpg" alt="" /></div>
-										Rio Smith
+										<div class="image"><img src="{{ asset('images/resource/'.$seven->author_image) }}" alt="" /></div>
+										{{$seven->name}}
 									</div>
 								</div>
 								<div class="pull-right">
-									<div class="post-time">10 hours ago</div>
+									<div class="post-time">{{$seven->time}}</div>
 								</div>
 							</div>
 						</div>

@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_homesection6')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('add_homesection7')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
@@ -35,21 +35,24 @@
                 </div>
                 
                 <div class="form-group">
-               <label for="exampleFormControlFile1">Image</label>
+               <label for="exampleFormControlFile1">Main Image</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
                  </div>
                  <div class="form-group">
-                <label for="exampleFormControlTextarea1">Reviews</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="reviews"></textarea>
+                <label for="exampleFormControlTextarea1">Blog Title</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="title"></textarea>
                </div>
-                
+               <div class="form-group">
+               <label for="exampleFormControlFile1">Author Image</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="author_image">
+                 </div>
                <div class="form-group">
                 <label for="formGroupExampleInput">Name</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="name">
                 </div>
                 <div class="form-group">
-                <label for="formGroupExampleInput">Desigination</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="designation">
+                <label for="formGroupExampleInput">Post Time</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="time">
                 </div>
 
                 <br>

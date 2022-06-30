@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('homefourthsections', function (Blueprint $table) {
+        Schema::create('homesevensections', function (Blueprint $table) {
             $table->id();
+            $table->string('message');
             $table->string('heading');
             $table->string('image');
             $table->string('title');
-            $table->string('description');
+            $table->string('author_image');
+            $table->string('name');
+            $table->string('time');
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homefourthsections');
+        Schema::dropIfExists('homesevensections');
     }
 };

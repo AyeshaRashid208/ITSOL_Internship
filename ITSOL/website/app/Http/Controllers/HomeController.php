@@ -9,6 +9,7 @@ use App\Models\HomeThirdSection;
 use App\Models\HomeFourthSection;
 use App\Models\HomeFifthSection;
 use App\Models\HomeSixthSection;
+use App\Models\HomeSevenSection;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -102,6 +103,7 @@ class HomeController extends Controller
     public function addhome4rthsection(Request $request){
         //$info = new banner;
         $info = new HomeFourthSection;
+        $info->message=$request->message;
         $info->heading=$request->heading;
         $info->title=$request->title;
         $info->description=$request->description;
@@ -126,6 +128,7 @@ class HomeController extends Controller
     public function addhome5thsection(Request $request){
         //$info = new banner;
         $info = new HomeFifthSection;
+        $info->message=$request->message;
         $info->title=$request->title;
         $info->description=$request->description;
        if($request->hasfile('image')){
@@ -149,6 +152,7 @@ class HomeController extends Controller
     public function addhome6thsection(Request $request){
         //$info = new banner;
         $info = new HomeSixthSection;
+        $info->message=$request->message;
         $info->heading=$request->heading;
         $info->reviews=$request->reviews;
         $info->name=$request->name;
@@ -167,12 +171,43 @@ class HomeController extends Controller
         //$info->save(); 
 
     }
+    public function displayhome7thsection(){
+            
+        return view('admin.home.homesection7');
+    }
+    public function addhome7thsection(Request $request){
+        //$info = new banner;
+        $info = new HomeSevenSection;
+        $info->message=$request->message;
+        $info->heading=$request->heading;
+        $info->title=$request->title;
+        $info->name=$request->name;
+        $info->time=$request->time;
+       if($request->hasfile('image')){
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalName();
+        $filename=time().'.'.$extension;
+        $file->move('images/resource',$filename);
+        $info->image = $filename;
+       }
+       if($request->hasfile('author_image')){
+        $file = $request->file('author_image');
+        $extension = $file->getClientOriginalName();
+        $filename=time().'.'.$extension;
+        $file->move('images/resource',$filename);
+        $info->author_image = $filename;
+       }
+       $info->save();
+    
+          echo "Record inserted successfully.<br/>";
+       
+        //$info->save(); 
+
+    }
     public function viewhome(){
         //dd('123');
         $users = Banner::orderBy('id', 'DESC')->first();
-        
         $second = HomeSecondSection::orderBy('id', 'DESC')->first();
-        
         $third = HomeThirdSection::orderBy('id', 'DESC')->first();
         //dd($third);
         $fourth = HomeFourthSection::orderBy('id', 'DESC')->first();
@@ -182,7 +217,11 @@ class HomeController extends Controller
         return View('index')
         ->with('users', Banner::orderBy('id', 'DESC')->first())
         ->with('second', HomeSecondSection::orderBy('id', 'DESC')->first())
-        ->with('third', HomeThirdSection::orderBy('id', 'DESC')->first());
+        ->with('third', HomeThirdSection::orderBy('id', 'DESC')->first())
+        ->with('fourth', HomeFourthSection::orderBy('id', 'DESC')->first())
+        ->with('fifth', HomeFifthSection::orderBy('id', 'DESC')->first())
+        ->with('sixth', HomeSixthSection::orderBy('id', 'DESC')->first())
+        ->with('seven', HomeSevenSection::orderBy('id', 'DESC')->first());
         
         }
 }

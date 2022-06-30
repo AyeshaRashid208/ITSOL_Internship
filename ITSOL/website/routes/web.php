@@ -57,6 +57,8 @@ Route::get('/add_homesection5',[HomeController::class,'displayhome5thsection']);
 Route::post('/add_homesection5',[HomeController::class,'addhome5thsection']);
 Route::get('/add_homesection6',[HomeController::class,'displayhome6thsection']);
 Route::post('/add_homesection6',[HomeController::class,'addhome6thsection']);
+Route::get('/add_homesection7',[HomeController::class,'displayhome7thsection']);
+Route::post('/add_homesection7',[HomeController::class,'addhome7thsection']);
 Route::get('/add_about_banner',[Controller::class,'displayaboutbannersection']);
 Route::post('/add_about_banner',[Controller::class,'addaboutbannersection']);
 Route::get('/add_aboutsection2',[Controller::class,'displayabout2ndsection']);
