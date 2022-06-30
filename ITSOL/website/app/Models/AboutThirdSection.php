@@ -13,9 +13,13 @@ class AboutThirdSection extends Model
     use HasFactory;
     protected $table = 'aboutthirdsections';
     protected $fillable =[
+        'message',
         'heading',
         'main_title',
         'description',
+        'skill_one',
+        'skill_two',
+        'skill_three',
        
     ];
 }

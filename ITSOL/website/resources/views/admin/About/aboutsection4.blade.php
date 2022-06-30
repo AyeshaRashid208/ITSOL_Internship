@@ -26,6 +26,10 @@
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
                 <div class="form-group">
+                <label for="formGroupExampleInput">Message</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="message">
+                </div> 
+                <div class="form-group">
                 <label for="formGroupExampleInput">Title</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="title">
                 </div> 
@@ -48,6 +52,14 @@
                 <div class="form-group">
                 <label for="exampleFormControlTextarea1">Heading 2 Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="second_description"></textarea>
+               </div>
+               <div class="form-group">
+                <label for="formGroupExampleInput">Heading 3</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="third_heading">
+                </div>
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1">Heading 3 Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="third_description"></textarea>
                </div>
 
                <label for="exampleFormControlFile1">Image</label>

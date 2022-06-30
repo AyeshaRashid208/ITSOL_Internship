@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 Route::get('/', function () {
@@ -10,10 +11,8 @@ Route::get('/', function () {
 });
 
 Route::get("/home",[HomeController::class,"viewhome"]);
+Route::get("/about",[AboutController::class,"viewhome"]);
 
-Route::get('/about', function () {
-    return view('about');
-});
 Route::get('/team', function () {
     return view('team');
 });
@@ -59,14 +58,14 @@ Route::get('/add_homesection6',[HomeController::class,'displayhome6thsection']);
 Route::post('/add_homesection6',[HomeController::class,'addhome6thsection']);
 Route::get('/add_homesection7',[HomeController::class,'displayhome7thsection']);
 Route::post('/add_homesection7',[HomeController::class,'addhome7thsection']);
-Route::get('/add_about_banner',[Controller::class,'displayaboutbannersection']);
-Route::post('/add_about_banner',[Controller::class,'addaboutbannersection']);
-Route::get('/add_aboutsection2',[Controller::class,'displayabout2ndsection']);
-Route::post('/add_aboutsection2',[Controller::class,'addabout2ndsection']);
-Route::get('/add_aboutsection3',[Controller::class,'displayabout3rdsection']);
-Route::post('/add_aboutsection3',[Controller::class,'addabout3rdsection']);
-Route::get('/add_aboutsection4',[Controller::class,'displayabout4rthsection']);
-Route::post('/add_aboutsection4',[Controller::class,'addabout4rthsection']);
+Route::get('/add_about_banner',[AboutController::class,'displayaboutbannersection']);
+Route::post('/add_about_banner',[AboutController::class,'addaboutbannersection']);
+Route::get('/add_aboutsection2',[AboutController::class,'displayabout2ndsection']);
+Route::post('/add_aboutsection2',[AboutController::class,'addabout2ndsection']);
+Route::get('/add_aboutsection3',[AboutController::class,'displayabout3rdsection']);
+Route::post('/add_aboutsection3',[AboutController::class,'addabout3rdsection']);
+Route::get('/add_aboutsection4',[AboutController::class,'displayabout4rthsection']);
+Route::post('/add_aboutsection4',[AboutController::class,'addabout4rthsection']);
 Route::get('/add_team_banner',[Controller::class,'displayteamaboutsection']);
 Route::get('/add_teamsection2',[Controller::class,'displayteamsecondsection']);
 Route::get('/add_teamsection3',[Controller::class,'displayteamthirdsection']);

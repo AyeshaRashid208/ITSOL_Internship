@@ -13,12 +13,15 @@ class AboutFourthSection extends Model
     use HasFactory;
     protected $table = 'aboutfourthsections';
     protected $fillable =[
+        'message',
         'title',
         'description',
         'first_heading',
         'first_description',
         'second_heading',
         'second_description',
+        'third_heading',
+        'third_description',
         'image',
        
     ];

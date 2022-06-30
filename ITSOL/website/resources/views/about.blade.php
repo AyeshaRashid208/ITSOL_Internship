@@ -153,7 +153,7 @@
     <section class="page-title" style="background-image:url(images/background/7.png)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>About <span>Us</span></h1>
+				<h1>{{$banner->title}}</h1>
 				<ul class="page-breadcrumb">
 					<li><a href="index.html">Home</a></li>
 					<li>About us</li>
@@ -174,8 +174,8 @@
 						<div class="icon-box">
 							<span class="icon flaticon-chess"></span>
 						</div>
-						<h6><a href="services.html">Business Growth</a></h6>
-						<div class="text">The argument in favor of using filler text goes some labore et dolore magna aliqua consectetur.</div>
+						<h6><a href="services.html">{{$second->title}}</a></h6>
+						<div class="text">{{$second->description}}</div>
 					</div>
 				</div>
 				
@@ -223,18 +223,18 @@
 				<div class="content-column col-lg-6 col-md-12 col-sm-12">
 					<div class="inner-column">
 						<div class="sec-title">
-							<div class="title">we are pixer </div>
-							<h2>we are happy to assist <br> you all time <span>moment</span></h2>
+							<div class="title">{{$third->message}} </div>
+							<h2>{{$third->heading}}</h2>
 						</div>
-						<div class="bold-text">The purpose of lorem ipsum is to create</div>
-						<div class="text">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed.</div>
+						<div class="bold-text">{{$third->main_title}}</div>
+						<div class="text">{{$third->description}}</div>
 						<!--Skills-->
 						<div class="skills">
 							
 							<!--Skill Item-->
 							<div class="skill-item">
 								<div class="skill-header clearfix">
-									<div class="skill-title">HTML</div>
+									<div class="skill-title">{{$third->skill_one}}</div>
 									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="50">0</span>%</div></div>
 								</div>
 								<div class="skill-bar">
@@ -245,7 +245,7 @@
 							<!--Skill Item-->
 							<div class="skill-item">
 								<div class="skill-header clearfix">
-									<div class="skill-title">php</div>
+									<div class="skill-title">{{$third->skill_two}}</div>
 									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="80">0</span>%</div></div>
 								</div>
 								<div class="skill-bar">
@@ -256,7 +256,7 @@
 							<!--Skill Item-->
 							<div class="skill-item">
 								<div class="skill-header clearfix">
-									<div class="skill-title">Css</div>
+									<div class="skill-title">{{$third->skill_three}}</div>
 									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="70">0</span>%</div></div>
 								</div>
 								<div class="skill-bar">
@@ -354,11 +354,11 @@
 			<div class="sec-title">
 				<div class="clearfix">
 					<div class="pull-left">
-						<div class="title">Why choose us</div>
-						<h2>There are many companies <br> but why <span>choose us</span></h2>
+						<div class="title">{{$fourth->message}}</div>
+						<h2>{{$fourth->title}}</h2>
 					</div>
 					<div class="pull-right">
-						<div class="text">Cookies are set through this site to recognise your repeat visits and prefe rences, serve more relevant ads, facilitate social sharing, and to  violanal yse traffic. </div>
+						<div class="text">{{$fourth->message}} </div>
 					</div>
 				</div>
 			</div>
@@ -370,9 +370,9 @@
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <!--Tab Btns-->
                         <ul class="tab-btns tab-buttons clearfix">
-                            <li data-tab="#feature-expert" class="tab-btn">Expert team <span>The argument in favorite of using filler to text goes some thing like this top</span></li>
-                            <li data-tab="#feature-brand" class="tab-btn active-btn">Best Finance Brand <span>The argument in favorite of using filler to text goes some thing like this top</span></li>
-                            <li data-tab="#feature-ideas" class="tab-btn">Best Leadership Ideas<span>The argument in favorite of using filler to text goes some thing like this top</span></li>
+                            <li data-tab="#feature-expert" class="tab-btn">{{$fourth->first_heading}}<span>{{$fourth->first_description}}</span></li>
+                            <li data-tab="#feature-brand" class="tab-btn active-btn">{{$fourth->second_heading}} <span>{{$fourth->second_description}}</span></li>
+                            <li data-tab="#feature-ideas" class="tab-btn">{{$fourth->third_heading}}<span>{{$fourth->third_description}}</span></li>
                         </ul>
                     </div>
                     <!--Column-->
@@ -384,7 +384,7 @@
                             <div class="tab" id="feature-expert">
                             	<div class="content">
 									<div class="image">
-										<img src="images/resource/feature.jpg" alt="">
+										<img src="{{ asset('images/resource/'.$fourth->image) }}" alt="">
 									</div>
 								</div>
 							</div>
