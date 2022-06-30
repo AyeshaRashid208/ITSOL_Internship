@@ -300,8 +300,9 @@
 			<!-- Sec Title -->
 			<div class="sec-title centered">
 				<<!-- div class="big-title">About us</div> -->
-				<div class="title">we help you</div>
-				<h2>Most prominent side is <br> our devoted services <span>fetures</span></h2>
+				
+				<div class="title">{{$third->message}}</div>
+				<h2>{{$third->main_title}}</h2>
 			</div>
 			
 			<!-- Devoted Info Tabs -->
@@ -312,9 +313,9 @@
 					<!--Tab Btns-->
 					<div class="btns-outer">
 						<ul class="tab-btns tab-buttons clearfix">
-							<li data-tab="#prod-turnaround" class="tab-btn active-btn">Fast Turnaround</li>
-							<li data-tab="#prod-award" class="tab-btn">Award Winning</li>
-							<li data-tab="#prod-design" class="tab-btn">Elegant Design</li>
+							<li data-tab="#prod-turnaround" class="tab-btn active-btn">{{$third->tab_one_name}}</li>
+							<li data-tab="#prod-award" class="tab-btn">{{$third->tab_two_name}}</li>
+							<li data-tab="#prod-design" class="tab-btn">{{$third->tab_three_name}}</li>
 						</ul>
 					</div>
 					
@@ -329,19 +330,19 @@
 									<!-- Content Column -->
 									<div class="content-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
-											<h5>We have digital experiences. With more than ten years of knowledge and expertise we design.</h5>
-											<div class="text">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed.We do live art, illustration, web design, App design.</div>
+											<h5>{{$third->tab_one_heading}}</h5>
+											<div class="text">{{$third->tab_one_desc}}</div>
 											
 											<!--Accordian Box-->
 											<ul class="accordion-box style-two">
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>Solutions is the latest software Sigma?</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_one_sub_heading_one}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>The argument in favor of using to filler text goes something  is that anybody can do it.</p>
+																<p>{{$third->tab_one_sub_heading_one_desc}}</p>
 															</div>
 														</div>
 													</div>

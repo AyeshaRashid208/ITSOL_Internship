@@ -168,9 +168,21 @@ class HomeController extends Controller
 
     }
     public function viewhome(){
+        //dd('123');
         $users = Banner::orderBy('id', 'DESC')->first();
+        
         $second = HomeSecondSection::orderBy('id', 'DESC')->first();
+        
         $third = HomeThirdSection::orderBy('id', 'DESC')->first();
-        return view('index',['users'=>$users],['second'=>$second],['third'=>$third]); 
+        //dd($third);
+        $fourth = HomeFourthSection::orderBy('id', 'DESC')->first();
+        $fifth = HomeFifthSection::orderBy('id', 'DESC')->first();
+        $sixth = HomeSixthSection::orderBy('id', 'DESC')->first();
+        //return view('index',['users'=>$users],['second'=>$second],['third'=>$third]); 
+        return View('index')
+        ->with('users', Banner::orderBy('id', 'DESC')->first())
+        ->with('second', HomeSecondSection::orderBy('id', 'DESC')->first())
+        ->with('third', HomeThirdSection::orderBy('id', 'DESC')->first());
+        
         }
 }
