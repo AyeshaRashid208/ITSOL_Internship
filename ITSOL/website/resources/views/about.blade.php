@@ -358,7 +358,7 @@
 						<h2>{{$fourth->title}}</h2>
 					</div>
 					<div class="pull-right">
-						<div class="text">{{$fourth->message}} </div>
+						<div class="text">{{$fourth->description}} </div>
 					</div>
 				</div>
 			</div>
