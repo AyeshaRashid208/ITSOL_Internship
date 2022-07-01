@@ -153,7 +153,7 @@
     <section class="page-title" style="background-image:url(images/background/7.png)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>Clients <span> testimonial</span></h1>
+				<h1><span>{{$banner->title}}</span></h1>
 				<ul class="page-breadcrumb">
 					<li><a href="index.html">Home</a></li>
 					<li>Testimonials</li>
@@ -168,8 +168,8 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<div class="title">Testimonials</div>
-				<h2>We are very happy for <br> client’s review <span>review</span></h2>
+				<div class="title">{{$second->message}}</div>
+				<h2>{{$second->heading}}</h2>
 			</div>
 			
 			<div class="row clearfix">
@@ -182,12 +182,12 @@
 						<div class="image-outer">
 							<a href="#" class="social-icon fa fa-instagram"></a>
 							<div class="image">
-								<img src="images/resource/author-7.jpg" alt="" />
+								<img src="{{ asset('images/resource/'.$second->image) }}" alt="" />
 							</div>
 						</div>
-						<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more to relevant ads, facilitate.</div>
-						<h5>Frederic Anderson</h5>
-						<div class="designation">President</div>
+						<div class="text">{{$second->reviews}}</div>
+						<h5>{{$second->name}}</h5>
+						<div class="designation">{{$second->designation}}</div>
 					</div>
 				</div>
 				

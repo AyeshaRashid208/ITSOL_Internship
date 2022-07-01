@@ -7,14 +7,12 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 Route::get("/",[HomeController::class,"viewhome"]);
 Route::get("/home",[HomeController::class,"viewhome"]);
 Route::get("/about",[AboutController::class,"viewabout"]);
 Route::get("/team",[TeamController::class,"viewteam"]);
-
-Route::get('/testimonial', function () {
-    return view('testimonial');
-});
+Route::get("/testimonial",[TestimonialController::class,"viewtest"]);
 Route::get('/services', function () {
     return view('services');
 });
@@ -68,8 +66,10 @@ Route::get('/add_teamsection2',[TeamController::class,'displayteamsecondsection'
 Route::post('/add_teamsection2',[TeamController::class,'addteam2ndsection']);
 Route::get('/add_teamsection3',[TeamController::class,'displayteamthirdsection']);
 Route::post('/add_teamsection3',[TeamController::class,'addteam3rdsection']);
-Route::get('/add_testimonial_banner',[Controller::class,'displaytestimonialbannersection']);
-Route::get('/add_testimonialsection2',[Controller::class,'displaytestsecondsection']);
+Route::get('/add_testimonial_banner',[TestimonialController::class,'displaytestimonialbannersection']);
+Route::post('/add_testimonial_banner',[TestimonialController::class,'addbanner']);
+Route::get('/add_testimonialsection2',[TestimonialController::class,'displaytestsecondsection']);
+Route::post('/add_testimonialsection2',[TestimonialController::class,'addtest2ndsection']);
 Route::get('/add_services_banner',[Controller::class,'displayservicesbannersection']);
 Route::get('/add_servicesection2',[Controller::class,'displayservice2ndsection']);
 Route::get('/add_servicesection3',[Controller::class,'displayservice3rdsection']);
