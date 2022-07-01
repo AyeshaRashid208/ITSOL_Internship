@@ -105,7 +105,7 @@ class AboutController extends Controller
           echo "Record inserted successfully.<br/>"; 
 
     }
-    public function viewhome(){
+    public function viewabout(){
        
         return View('about')
         ->with('banner', AboutBanner::orderBy('id', 'DESC')->first())

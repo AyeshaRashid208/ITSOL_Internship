@@ -6,16 +6,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
-Route::get('/', function () {
-    return view('index');
-});
-
+use App\Http\Controllers\TeamController;
+Route::get("/",[HomeController::class,"viewhome"]);
 Route::get("/home",[HomeController::class,"viewhome"]);
-Route::get("/about",[AboutController::class,"viewhome"]);
+Route::get("/about",[AboutController::class,"viewabout"]);
+Route::get("/team",[TeamController::class,"viewteam"]);
 
-Route::get('/team', function () {
-    return view('team');
-});
 Route::get('/testimonial', function () {
     return view('testimonial');
 });
@@ -66,9 +62,12 @@ Route::get('/add_aboutsection3',[AboutController::class,'displayabout3rdsection'
 Route::post('/add_aboutsection3',[AboutController::class,'addabout3rdsection']);
 Route::get('/add_aboutsection4',[AboutController::class,'displayabout4rthsection']);
 Route::post('/add_aboutsection4',[AboutController::class,'addabout4rthsection']);
-Route::get('/add_team_banner',[Controller::class,'displayteamaboutsection']);
-Route::get('/add_teamsection2',[Controller::class,'displayteamsecondsection']);
-Route::get('/add_teamsection3',[Controller::class,'displayteamthirdsection']);
+Route::get('/add_team_banner',[TeamController::class,'displayteamaboutsection']);
+Route::post('/add_team_banner',[TeamController::class,'addteambannersection']);
+Route::get('/add_teamsection2',[TeamController::class,'displayteamsecondsection']);
+Route::post('/add_teamsection2',[TeamController::class,'addteam2ndsection']);
+Route::get('/add_teamsection3',[TeamController::class,'displayteamthirdsection']);
+Route::post('/add_teamsection3',[TeamController::class,'addteam3rdsection']);
 Route::get('/add_testimonial_banner',[Controller::class,'displaytestimonialbannersection']);
 Route::get('/add_testimonialsection2',[Controller::class,'displaytestsecondsection']);
 Route::get('/add_services_banner',[Controller::class,'displayservicesbannersection']);

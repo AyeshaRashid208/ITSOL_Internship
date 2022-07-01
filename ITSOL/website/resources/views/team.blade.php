@@ -154,7 +154,7 @@
     <section class="page-title" style="background-image:url(images/background/7.png)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>Team <span>member</span></h1>
+				<h1><span>{{$banner->title}}</span></h1>
 				<ul class="page-breadcrumb">
 					<li><a href="index.html">Home</a></li>
 					<li>Team</li>
@@ -168,9 +168,10 @@
 	<section class="team-section style-two">
 		<div class="auto-container">
 			<!-- Sec Title -->
+
 			<div class="sec-title centered">
-				<div class="title">Our expert team</div>
-				<h2>We re dedic <br> our devoted services <span>fetures</span></h2>
+				<div class="title">{{$second->message}}</div>
+				<h2>{{$second->heading}}</h2>
 			</div>
 			
 			<div class="row clearfix">
@@ -179,10 +180,10 @@
 				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="images/resource/team-1.jpg" alt="" />
+							<img src="{{ asset('images/resource/'.$second->image) }}" alt="" />
 						</div>
-						<h5>Suresh Bollom</h5>
-						<div class="designation">Former Developer</div>
+						<h5>{{$second->name}}</h5>
+						<div class="designation">{{$second->designation}}</div>
 						<ul class="social-nav">
 							<li><a href="#" class="fa fa-facebook"></a></li>
 							<li><a href="#" class="fa fa-instagram"></a></li>
@@ -337,14 +338,14 @@
 	<section class="call-to-action-section">
 		<div class="auto-container">
 			<div class="sec-title centered">
-				<div class="title">Contact us</div>
-				<h2>You are interested <br> to hire our <span>team ?</span></h2>
+				<div class="title">{{$third->message}}</div>
+				<h2>{{$third->heading}}</h2>
 			</div>
 			<div class="inner-container wow bounce" data-wow-delay="0ms" data-wow-duration="1500ms">
 				<div class="clearfix">
 					
 					<div class="pull-left">
-						<div class="text">Send us your email address, we will contact!</div>
+						<div class="text">{{$third->description}}</div>
 					</div>
 					
 					<div class="pull-right">

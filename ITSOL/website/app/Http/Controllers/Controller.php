@@ -39,19 +39,7 @@ class Controller extends BaseController
         
         
     }
-    
-    public function displayteamaboutsection(){
-            
-        return view('admin.Team.teambanner');
-    }
-    public function displayteamsecondsection(){
-            
-        return view('admin.Team.teamsection2');
-    }
-    public function displayteamthirdsection(){
-            
-        return view('admin.Team.teamsection3');
-    }
+   
     public function displaytestimonialbannersection(){
             
         return view('admin.Testimonial.testimonial_banner');
