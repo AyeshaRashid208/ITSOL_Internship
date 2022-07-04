@@ -40,27 +40,7 @@ class Controller extends BaseController
         
     }
    
-    public function displaytestimonialbannersection(){
-            
-        return view('admin.Testimonial.testimonial_banner');
-    }
-    public function displaytestsecondsection(){
-            
-        return view('admin.Testimonial.testimonialsection2');
-    }
-    public function displayservicesbannersection(){
-            
-        return view('admin.Services.services_banner');
-    }
-    public function displayservice2ndsection(){
-            
-        return view('admin.Services.servicesection2');
-    }
-    
-    public function displayservice3rdsection(){
-            
-        return view('admin.Services.servicesection3');
-    }
+
     public function displayportfolio3bannersection(){
             
         return view('admin.PortfolioThree.portfolio_banner');

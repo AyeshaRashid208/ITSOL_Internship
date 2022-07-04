@@ -8,14 +8,13 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\ServiceController;
 Route::get("/",[HomeController::class,"viewhome"]);
 Route::get("/home",[HomeController::class,"viewhome"]);
 Route::get("/about",[AboutController::class,"viewabout"]);
 Route::get("/team",[TeamController::class,"viewteam"]);
 Route::get("/testimonial",[TestimonialController::class,"viewtest"]);
-Route::get('/services', function () {
-    return view('services');
-});
+Route::get("/services",[ServiceController::class,"viewservice"]);
 Route::get('/portfolio-3-column', function () {
     return view('portfolio-3-column');
 });
@@ -70,9 +69,14 @@ Route::get('/add_testimonial_banner',[TestimonialController::class,'displaytesti
 Route::post('/add_testimonial_banner',[TestimonialController::class,'addbanner']);
 Route::get('/add_testimonialsection2',[TestimonialController::class,'displaytestsecondsection']);
 Route::post('/add_testimonialsection2',[TestimonialController::class,'addtest2ndsection']);
-Route::get('/add_services_banner',[Controller::class,'displayservicesbannersection']);
-Route::get('/add_servicesection2',[Controller::class,'displayservice2ndsection']);
-Route::get('/add_servicesection3',[Controller::class,'displayservice3rdsection']);
+Route::get('/add_services_banner',[ServiceController::class,'displayservicesbannersection']);
+Route::post('/add_services_banner',[ServiceController::class,'addservicebannersection']);
+Route::get('/add_servicesection2',[ServiceController::class,'displayservice2ndsection']);
+Route::post('/add_servicesection2',[ServiceController::class,'addservice2ndsection']);
+Route::get('/add_servicesection3',[ServiceController::class,'displayservice3rdsection']);
+Route::post('/add_servicesection3',[ServiceController::class,'addservice3rdsection']);
+Route::get('/add_servicesection4',[ServiceController::class,'displayservice4rthsection']);
+Route::post('/add_servicesection4',[ServiceController::class,'addservice4rthsection']);
 Route::get('/add_portfolio3_banner',[Controller::class,'displayportfolio3bannersection']);
 Route::get('/add_portfolio3_section2',[Controller::class,'displayportfolio3secondsection']);
 Route::get('/add_portfolio3_section3',[Controller::class,'displayportfolio3thirdsection']);

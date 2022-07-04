@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_servicesection3')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('add_servicesection4')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
@@ -25,17 +25,10 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
+                
                 <div class="form-group">
-                <label for="formGroupExampleInput">Message</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="message">
-                </div>  
-                <div class="form-group">
-                <label for="formGroupExampleInput">Main Heading</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
-                </div>
-                <div class="form-group">
-                <label for="formGroupExampleInput">Tab 1 Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_one_name">
+                <label for="formGroupExampleInput">Tab 2 Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="tab_two_name">
                 </div>
                 
                 <div class="form-group">

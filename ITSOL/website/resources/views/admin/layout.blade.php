@@ -97,6 +97,8 @@
                   </li>
                   <li><a href="{{('add_servicesection3')}}"><i></i>Services Section 3<span class="fa fa-chevron-down"></span></a>
                   </li>
+                  <li><a href="{{('add_servicesection4')}}"><i></i>Services Section 4<span class="fa fa-chevron-down"></span></a>
+                  </li>
                   <li><a href="{{('add_portfolio3_banner')}}"><i></i>Portfolio 3 Col Banner<span class="fa fa-chevron-down"></span></a>
                   </li>
                   <li><a href="{{('add_portfolio3_section2')}}"><i></i>Portfolio 3 Col Section 2<span class="fa fa-chevron-down"></span></a>
