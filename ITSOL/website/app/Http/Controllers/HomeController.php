@@ -20,6 +20,13 @@ class HomeController extends Controller
         $info = new Banner;
         $info->title=$request->title;
         $info->description=$request->description;
+        if($request->hasfile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename=time().'.'.$extension;
+            $file->move('images/resource',$filename);
+            $info->image = $filename;
+           }
         $info->save();
         echo "Record inserted successfully.<br/>";
        

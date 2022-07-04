@@ -165,7 +165,7 @@
 			</div>
 			<div class="image-box">
 				<figure class="image">
-					<img src="images/resource/image-3.png" alt="">
+					<img src="{{ asset('images/resource/'.$users->image) }}" alt="">
 				</figure>
 			</div>
 		</div>
