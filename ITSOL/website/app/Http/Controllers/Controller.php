@@ -41,18 +41,7 @@ class Controller extends BaseController
     }
    
 
-    public function displayportfolio3bannersection(){
-            
-        return view('admin.PortfolioThree.portfolio_banner');
-    }
-    public function displayportfolio3secondsection(){
-            
-        return view('admin.PortfolioThree.portfolio3section2');
-    }
-    public function displayportfolio3thirdsection(){
-            
-        return view('admin.PortfolioThree.portfolio3section3');
-    }
+  
     public function displayportfoliobannersection(){
             
         return view('admin.PortfolioSingle.portfolioBanner');

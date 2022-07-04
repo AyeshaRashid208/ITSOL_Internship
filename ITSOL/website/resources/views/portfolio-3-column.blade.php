@@ -154,7 +154,7 @@
     <section class="page-title" style="background-image:url(images/background/7.png)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>Portfolio <span>3 Col</span></h1>
+				<h1>{{$banner->title}}</h1>
 				<ul class="page-breadcrumb">
 					<li><a href="index.html">Home</a></li>
 					<li>Portfolio</li>

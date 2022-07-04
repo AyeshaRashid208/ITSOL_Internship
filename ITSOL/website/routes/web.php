@@ -9,15 +9,15 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PortfolioThreeController;
 Route::get("/",[HomeController::class,"viewhome"]);
 Route::get("/home",[HomeController::class,"viewhome"]);
 Route::get("/about",[AboutController::class,"viewabout"]);
 Route::get("/team",[TeamController::class,"viewteam"]);
 Route::get("/testimonial",[TestimonialController::class,"viewtest"]);
 Route::get("/services",[ServiceController::class,"viewservice"]);
-Route::get('/portfolio-3-column', function () {
-    return view('portfolio-3-column');
-});
+Route::get("/portfolio-3-column",[PortfolioThreeController::class,"viewport"]);
+
 Route::get('/portfolio-single', function () {
     return view('portfolio-single');
 });
@@ -77,9 +77,11 @@ Route::get('/add_servicesection3',[ServiceController::class,'displayservice3rdse
 Route::post('/add_servicesection3',[ServiceController::class,'addservice3rdsection']);
 Route::get('/add_servicesection4',[ServiceController::class,'displayservice4rthsection']);
 Route::post('/add_servicesection4',[ServiceController::class,'addservice4rthsection']);
-Route::get('/add_portfolio3_banner',[Controller::class,'displayportfolio3bannersection']);
-Route::get('/add_portfolio3_section2',[Controller::class,'displayportfolio3secondsection']);
-Route::get('/add_portfolio3_section3',[Controller::class,'displayportfolio3thirdsection']);
+Route::get('/add_portfolio3_banner',[PortfolioThreeController::class,'displayportfolio3bannersection']);
+Route::post('/add_portfolio3_banner',[PortfolioThreeController::class,'addbannersection']);
+Route::get('/add_portfolio3_section2',[PortfolioThreeController::class,'displayportfolio3secondsection']);
+Route::post('/add_portfolio3_section2',[PortfolioThreeController::class,'addportfoliothrsecondsection']);
+Route::get('/add_portfolio3_section3',[PortfolioThreeController::class,'displayportfolio3thirdsection']);
 Route::get('/add_portfoliosingle_banner',[Controller::class,'displayportfoliobannersection']);
 Route::get('/add_portfolio_section2',[Controller::class,'displayportfoliosecondsection']);
 Route::get('/add_portfolio_section3',[Controller::class,'displayportfoliothirdsection']);
