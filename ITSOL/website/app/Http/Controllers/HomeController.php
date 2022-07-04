@@ -28,14 +28,27 @@ class HomeController extends Controller
             $info->image = $filename;
            }
         $info->save();
-        echo "Record inserted successfully.<br/>";
+        return View('admin.home.banner')
+        ->with('users', Banner::orderBy('id', 'DESC')->first());
        
 
     }
-   
+    public function updatebanner(){
+            
+        return View('admin.home.banner')
+        ->with('users', Banner::orderBy('id', 'DESC')->first());
+    }
+    public function editbanner(){
+         
+       // $info = Banner::find($id); 
+
+       $users = Banner::orderBy('id', 'DESC')->first();
+        return view('admin.home.editbanner',compact('users'));
+    }
+
     public function displaybanner(){
             
-            return view('admin.home.banner');
+            return view('admin.home.bannerview');
     }
 
     public function displayhome2ndsection(){

@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_banner')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('display_banner')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
@@ -24,27 +24,39 @@
     </div>
         
         <div class="x_content">
-                <div class="form-group has-feedback" style="position:relative;">
-                 
-                <div class="form-group">
-                <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="title">
-                </div>
-                <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
-               </div>
-               <div class="form-group">
-               <label for="exampleFormControlFile1">Image</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
-                 </div>
-                <br>
-                <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-                <button class="btn btn-success" type="submit" name="submit">Submit</button>
-                <button type="button" class="btn btn-primary">Update</button>
                
+                 
 
-            </div>
+                <div class="table table-bordered">
+                    <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                           <th scope="col">ID</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Image</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{$users->id}}</td>
+                            <td>{{$users->title}}</td>
+                            <td>{{$users->description}}</td>
+                            <td>
+                                <img src="{{ asset('images/resource/'.$users->image) }}" width="100px" alt="Banner Image">
+                            </td>
+                            <td> <a href="{{url('edit_banner')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    
+                </div>
+                <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
+               
+               
+                
+            
            
          
 
