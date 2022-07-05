@@ -58,10 +58,18 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="{{('add_banner')}}"><i></i> Banner <span class="fa fa-chevron-down"></span></a>
+                <li><a> Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_banner')}}">View Banner</a></li>
+                      <li><a href="{{('create_banner')}}">Create Banner</a></li>
+                    </ul>
                   </li>
-                  <li><a  href="{{('view_homesection2')}}" ><i></i> Home section 2 <span class="fa fa-chevron-down"></span></a>
-                  
+                
+                  <li><a><i></i> Home section 2 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_homesection2')}}">View Section 2</a></li>
+                      <li><a href="{{('create_homesection2')}}">Create Section 2</a></li>
+                    </ul>
                   </li>
                   <li><a href="{{('add_homesection3')}}"><i></i> Home section 3 <span class="fa fa-chevron-down"></span></a>
                   </li>

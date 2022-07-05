@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('update_homesection2',[$users->id])}}" method="post" enctype="multipart/form-data">
+<form action="/edit_homesection2/<?php echo $info[0]->id; ?>" method="post" enctype="multipart/form-data">
 @csrf
 @method('PUT')
     @if($errors->any())
@@ -30,22 +30,22 @@
                 <div class="card-header">
                 <div class="form-group">
                 <label for="formGroupExampleInput">Icon</label>
-                <input type="text" class="form-control " id="formGroupExampleInput" value="{{$users->icon}}" name="icon">
+                <input type="text" class="form-control " id="formGroupExampleInput" value="<?php echo$info[0]->icon; ?>" name="icon">
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control  {{$users}}" id="formGroupExampleInput" value="{{$users->title}}" name="title">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="<?php echo$info[0]->title; ?>" name="title">
                 </div>
                 <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
                
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  name="description">{{$users->description}}</textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"  name="description"><?php echo$info[0]->description; ?></textarea>
                </div>
                
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-success btn-lg" type="submit" name="submit">Update</button>
-                <a href="{{url('display_banner')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
+                <a href="{{url('view_homesection2')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
                
                
 

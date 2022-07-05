@@ -45,8 +45,8 @@
                             <td>
                                 <img src="{{ asset('images/resource/'.$users->image) }}" width="100px" alt="Banner Image">
                             </td>
-                            <td> <a href="{{url('edit_banner',[$users->id])}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                            <a href="{{url('add_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Create</a>
+                            <td> <a href="{{url('edit_banner')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Update</a>
+                            <!-- <a href="{{url('view_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a> -->
                            </td>
 
                         </tr>
@@ -54,24 +54,7 @@
                     </table>
 
 
-                <div class="form-group">
-                <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="title">
-
-                </div>
-                <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
-               </div>
-               <div class="form-group">
-               <label for="exampleFormControlFile1">Image</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
-                 </div>
-                <br>
-                <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-                <button class="btn btn-success" type="submit" name="submit">Submit</button>
-                <button type="button" class="btn btn-primary">Update</button>
-               
+                
 
             </div>
            

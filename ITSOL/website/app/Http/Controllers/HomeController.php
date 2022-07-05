@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Banner;
+use DB;
 use App\Models\HomeSecondSection;
 use App\Models\HomeThirdSection;
 use App\Models\HomeFourthSection;
@@ -35,8 +37,8 @@ class HomeController extends Controller
             $info->image = $filename;
            }
         $info->save();
-        echo "Record inserted successfully.<br/>";
-       
+        return view('admin.home.banner')
+        ->with('users', Banner::orderBy('id', 'DESC')->first());
 
     }
 
@@ -64,25 +66,23 @@ class HomeController extends Controller
         return view('admin.home.banner')
         ->with('users', Banner::orderBy('id', 'DESC')->first());
     }
-    public function editbanner($id){
-         
-          $users = Banner::find($id); 
+    public function editbanner(){
+         //$users = Banner::find($id); 
 
-        return view('admin.home.editbanner',compact('users'));
+        return view('admin.home.editbanner')
+        ->with('users', Banner::orderBy('id', 'DESC')->first());
     }
 
     public function displaybanner(){
             
-        return View('admin.home.banner')
+        return view('admin.home.banner')
         ->with('users', Banner::orderBy('id', 'DESC')->first());
 
     }
-    
 
     public function createbanner(){
             
-        return View('admin.home.bannerview')
-        ->with('users', Banner::orderBy('id', 'DESC')->first());
+        return View('admin.home.bannerview');
     }
 
 
@@ -95,24 +95,9 @@ class HomeController extends Controller
         
         return view('admin.home.homesection2');
     }
-    public function edithome2ndsection($id){
+    public function updatehome2ndsection(Request $request,$id){
          
-        $users = HomeSecondSection::find($id); 
-    
-      return view('admin.home.edithomesection2',compact('users'));
-  }
-    public function addhome2ndsection(Request $request){
-        //$info = new banner;
-        $info = new HomeSecondSection;
-        $info->title=$request->title;
-        $info->description=$request->description;
-       $info->icon=$request->icon;
-       $info->save();
-    
-       return view('admin.home.homesection2view',compact('info'));  
-
-    }
-    public function updatehome2ndsection(Request $request, $id){
+        
         $info = HomeSecondSection::find($id); 
         $request->validate([
             'icon' => 'required',
@@ -124,9 +109,36 @@ class HomeController extends Controller
         $info->description=$request->input('description');
         $info->icon=$request->input('icon');
         $info->update();   
-        return view('admin.home.homesection2view',compact('info'));
+        return view('admin.home.homesection2view',compact('info')); 
+  }
+    public function addhome2ndsection(Request $request){
+        //$info = new banner;
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'icon' => 'required',
+        ]);
+        $info = new HomeSecondSection;
+        $info->title=$request->title;
+        $info->description=$request->description;
+       $info->icon=$request->icon;
+       $info->save();
+    
+       return redirect::back();
+
+    }
+    public function edithome2ndsection(Request $request, $id){
+        // $info = HomeSecondSection::find($id);
+        $info = DB::select('select * from homesecondsections where id = ?',[$id]);
+        return view('admin.home.edithomesection2',['info'=>$info]);
        
     }
+    public function destroy($id) {
+        DB::delete('delete from  homesecondsections where id = ?',[$id]);
+         
+        return redirect::back();
+        
+     }
     
     public function displayhome3rdsection(){
             

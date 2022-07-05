@@ -38,16 +38,19 @@ Route::get("/dashboard",[AdminController::class,"dashboard"]);
 //});
 
 //home banner
-Route::get('/display_banner',[HomeController::class,'displaybanner']);
-Route::get('/edit_banner/{id}',[HomeController::class,'editbanner']);
-Route::get('/add_banner',[HomeController::class,'createbanner']);
+Route::get('/view_banner',[HomeController::class,'displaybanner']);
+Route::get('/create_banner',[HomeController::class,'createbanner']);
+Route::get('/edit_banner',[HomeController::class,'editbanner']);
+Route::put('/add_banner',[HomeController::class,'addbanner']);
 Route::post('/add_banner',[HomeController::class,'addbanner']);
-Route::put('/update_banner/{id}',[HomeController::class,'updatebanner']);
 
+//homesection2
 Route::get('/view_homesection2',[HomeController::class,'displayhome2ndsection']);
-Route::get('/add_homesection2',[HomeController::class,'createhome2ndsection']);
+Route::get('/create_homesection2',[HomeController::class,'createhome2ndsection']);
 Route::get('/edit_homesection2/{id}',[HomeController::class,'edithome2ndsection']);
-Route::put('/update_homesection2/{id}',[HomeController::class,'updatehome2ndsection']);
+Route::put('/edit_homesection2/{id}',[HomeController::class,'displayhome2ndsection']);
+Route::get('del_homesection2/{id}',[HomeController::class,'destroy']);
+Route::post('/add_homesection2',[HomeController::class,'addhome2ndsection']);
 
 Route::post('/add_banner',[HomeController::class,'addbanner']);
 Route::get('/add_banner',[HomeController::class,'displaybanner']);

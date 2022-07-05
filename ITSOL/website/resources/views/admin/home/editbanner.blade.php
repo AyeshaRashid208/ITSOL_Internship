@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('update_banner',[$users->id])}}" method="post" enctype="multipart/form-data">
+<form action="{{url('add_banner')}}" method="post" enctype="multipart/form-data">
 @csrf
 @method('PUT')
     @if($errors->any())
@@ -48,7 +48,7 @@
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-success btn-lg" type="submit" name="submit">Update</button>
-                <a href="{{url('display_banner')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
+                <a href="{{url('view_banner')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
                
                
 
