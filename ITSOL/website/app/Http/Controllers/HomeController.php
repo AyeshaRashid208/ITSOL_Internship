@@ -35,11 +35,11 @@ class HomeController extends Controller
             $info->image = $filename;
            }
         $info->save();
-        return View('admin.home.banner')
-        ->with('users', Banner::orderBy('id', 'DESC')->first());
+        echo "Record inserted successfully.<br/>";
        
 
     }
+
     public function updatebanner(Request $request, $id){
         $users = Banner::find($id); 
         $request->validate([
@@ -75,7 +75,9 @@ class HomeController extends Controller
             
         return View('admin.home.banner')
         ->with('users', Banner::orderBy('id', 'DESC')->first());
+
     }
+    
 
     public function createbanner(){
             
