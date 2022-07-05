@@ -28,8 +28,10 @@
                  
                 <div class="form-group">
                 <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="title">
+                <input type="text" class="form-control "  id="formGroupExampleInput" name="title">
+                 
                 </div>
+
                 <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
@@ -41,7 +43,6 @@
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-success btn-lg" type="submit" name="submit">Submit</button>
-                <a href="{{url('banner_update')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Update</a>
                
 
             </div>

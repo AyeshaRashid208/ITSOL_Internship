@@ -38,6 +38,7 @@ Route::get("/dashboard",[AdminController::class,"dashboard"]);
 //});
 Route::get('/display_banner',[HomeController::class,'updatebanner']);
 Route::get('/edit_banner',[HomeController::class,'editbanner']);
+Route::get('/add_banner',[HomeController::class,'displaybanner']);
 Route::post('/add_banner',[HomeController::class,'addbanner']);
 Route::put('/edit_banner',[HomeController::class,'addbanner']);
 Route::get('/add_homesection2',[HomeController::class,'displayhome2ndsection']);

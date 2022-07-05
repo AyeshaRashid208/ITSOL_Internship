@@ -17,6 +17,12 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 class HomeController extends Controller
 {
     public function addbanner(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+        ]);
+        
         $info = new Banner;
         $info->title=$request->title;
         $info->description=$request->description;

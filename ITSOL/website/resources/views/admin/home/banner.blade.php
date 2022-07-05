@@ -46,10 +46,14 @@
                             <td>
                                 <img src="{{ asset('images/resource/'.$users->image) }}" width="100px" alt="Banner Image">
                             </td>
-                            <td> <a href="{{url('edit_banner')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a></td>
+                            <td> <a href="{{url('edit_banner')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <a href="{{url('add_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Create</a>
+                           </td>
+
                         </tr>
                     </tbody>
                     </table>
+
                     
                 </div>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->

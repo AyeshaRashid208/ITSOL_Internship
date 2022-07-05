@@ -48,6 +48,7 @@
                 <button class="btn btn-success btn-lg" type="submit" name="submit">Update</button>
                 <a href="{{url('display_banner')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
                
+               
 
 
 </div>
