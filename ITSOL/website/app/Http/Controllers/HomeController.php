@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\Banner;
 use App\Models\HomeSecondSection;
 use App\Models\HomeThirdSection;
@@ -39,44 +40,90 @@ class HomeController extends Controller
        
 
     }
-    public function updatebanner(){
-            
-        return View('admin.home.banner')
+    public function updatebanner(Request $request, $id){
+        $users = Banner::find($id); 
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+        ]);
+        $users->title=$request->input('title');
+        $users->description=$request->input('description');
+        if($request->hasfile('image')){
+            $destination = 'images/resource'.$users->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename=time().'.'.$extension;
+            $file->move('images/resource',$filename);
+            $users->image = $filename;
+           }
+           $users->update();   
+        return view('admin.home.banner')
         ->with('users', Banner::orderBy('id', 'DESC')->first());
     }
-    public function editbanner(){
+    public function editbanner($id){
          
-       // $info = Banner::find($id); 
+          $users = Banner::find($id); 
 
-       $users = Banner::orderBy('id', 'DESC')->first();
         return view('admin.home.editbanner',compact('users'));
     }
 
     public function displaybanner(){
             
-            return view('admin.home.bannerview');
+        return View('admin.home.banner')
+        ->with('users', Banner::orderBy('id', 'DESC')->first());
     }
 
-    public function displayhome2ndsection(){
+    public function createbanner(){
             
+        return View('admin.home.bannerview')
+        ->with('users', Banner::orderBy('id', 'DESC')->first());
+    }
+
+
+    //home section 2
+    public function displayhome2ndsection(){
+        $info = HomeSecondSection::all();   
+        return view('admin.home.homesection2view', compact('info'));
+    }
+    public function createhome2ndsection(){
+        
         return view('admin.home.homesection2');
     }
+    public function edithome2ndsection($id){
+         
+        $users = HomeSecondSection::find($id); 
+    
+      return view('admin.home.edithomesection2',compact('users'));
+  }
     public function addhome2ndsection(Request $request){
         //$info = new banner;
         $info = new HomeSecondSection;
         $info->title=$request->title;
         $info->description=$request->description;
-       if($request->hasfile('image')){
-        $file = $request->file('image');
-        $extension = $file->getClientOriginalName();
-        $filename=time().'.'.$extension;
-        $file->move('images/icons',$filename);
-        $info->image = $filename;
-       }
+       $info->icon=$request->icon;
        $info->save();
     
-          echo "Record inserted successfully.<br/>";
+       return view('admin.home.homesection2view',compact('info'));  
 
+    }
+    public function updatehome2ndsection(Request $request, $id){
+        $info = HomeSecondSection::find($id); 
+        $request->validate([
+            'icon' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            
+        ]);
+        $info->title=$request->input('title');
+        $info->description=$request->input('description');
+        $info->icon=$request->input('icon');
+        $info->update();   
+        return view('admin.home.homesection2view',compact('info'));
+       
     }
     
     public function displayhome3rdsection(){

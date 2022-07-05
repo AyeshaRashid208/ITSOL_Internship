@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('edit_banner')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('update_banner',[$users->id])}}" method="post" enctype="multipart/form-data">
 @csrf
 @method('PUT')
     @if($errors->any())
@@ -40,8 +40,10 @@
                </div>
                <div class="form-group">
                <label for="exampleFormControlFile1">Image</label>
-                <img src="{{ asset('images/resource/'.$users->image) }}" alt="Banner Image" name="image" width="100">
+                <!-- <img src="{{ asset('images/resource/'.$users->image) }}" alt="Banner Image" name="image" width="100"> -->
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                <img src="{{ asset('images/resource/'.$users->image) }}" alt="Banner Image" width="100">
+
                  </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->

@@ -11,23 +11,23 @@
     <title>Interact Tech Solution | </title>
 
     <!-- Bootstrap -->
-    <link href="admin_theme/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin_theme/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="admin_theme/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/admin_theme/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="admin_theme/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/admin_theme/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="admin_theme/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="/admin_theme/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
-    <link href="admin_theme/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="/admin_theme/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="admin_theme/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="/admin_theme/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="admin_theme/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="/admin_theme/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="admin_theme/build/css/custom.min.css" rel="stylesheet">
+    <link href="/admin_theme/build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -60,7 +60,7 @@
                 <ul class="nav side-menu">
                   <li><a href="{{('display_banner')}}"><i></i> Banner <span class="fa fa-chevron-down"></span></a>
                   </li>
-                  <li><a  href="{{('add_homesection2')}}" ><i></i> Home section 2 <span class="fa fa-chevron-down"></span></a>
+                  <li><a  href="{{('view_homesection2')}}" ><i></i> Home section 2 <span class="fa fa-chevron-down"></span></a>
                   
                   </li>
                   <li><a href="{{('add_homesection3')}}"><i></i> Home section 3 <span class="fa fa-chevron-down"></span></a>

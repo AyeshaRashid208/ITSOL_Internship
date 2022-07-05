@@ -24,49 +24,41 @@
     </div>
         
         <div class="x_content">
-               
+        <a href="{{ url('add_homesection2') }}" class="btn btn-primary float-end">Add Service</a>
                  
 
-                <div class="table table-bordered">
+                <div class="table-bordered">
                     <table class="table">
                     <thead class="thead-dark">
                         <tr>
                            <th scope="col">ID</th>
+                            <th scope="col">Icon</th>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Image</th>
+                            <
                             <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
+                   
                         <tr>
-                            <td>{{$users->id}}</td>
-                            <td>{{$users->title}}</td>
-                            <td>{{$users->description}}</td>
-                            <td>
-                                <img src="{{ asset('images/resource/'.$users->image) }}" width="100px" alt="Banner Image">
-                            </td>
-                            <td> <a href="{{url('edit_banner',[$users->id])}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                            <a href="{{url('add_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Create</a>
+                            
+                            <td>{{$info->id}}</td>
+                            <td>{{$info->icon}}</td>
+                            <td>{{$info->title}}</td>
+                            <td>{{$info->description}}</td>
+                            <td> <a href="{{url('edit_homesection2',[$info->id])}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <a href="{{url('add_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
                            </td>
 
                         </tr>
+                       
                     </tbody>
                     </table>
 
                     
                 </div>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-               
-               
-                
-            
-           
-         
-
-           
-                
-
         
                 
         </div>

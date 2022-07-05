@@ -57,18 +57,7 @@
                     
                 </div>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-               
-               
-                
-            
-           
-         
-
-           
-                
-
-        
-                
+                         
         </div>
         
         
