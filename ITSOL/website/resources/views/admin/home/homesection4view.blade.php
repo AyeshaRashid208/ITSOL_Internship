@@ -24,7 +24,7 @@
     </div>
         
         <div class="x_content">
-        <a href="{{ url('create_homesection2') }}" class="btn btn-primary float-end">Add Service</a>
+        <a href="{{ url('create_homesection4') }}" class="btn btn-primary float-end">Add New</a>
                  
 
                 <div class="table-bordered">
@@ -47,8 +47,8 @@
                             <td>{{$info->icon}}</td>
                             <td>{{$info->title}}</td>
                             <td>{{$info->description}}</td>
-                            <td> <a href={{"edit_homesection2/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                            <a href="del_homesection2/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
+                            <td> <a href={{"edit_homesection4/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <a href="del_homesection4/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
                            </td>
                            
 

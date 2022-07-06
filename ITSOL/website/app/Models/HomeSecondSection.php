@@ -18,4 +18,5 @@ class HomeSecondSection extends Model
         'description',
        
     ];
+    
 }

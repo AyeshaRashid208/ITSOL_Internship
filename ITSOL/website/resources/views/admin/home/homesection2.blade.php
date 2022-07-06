@@ -11,6 +11,12 @@
        @endforeach
     </div>
     @endif
+    
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+    {{ session()->get('message') }}
+    </div>
+    @endif
 <div class="x_panel">
     <div class="x_title">
       <h2 class="sub_title">Page Content</h2>

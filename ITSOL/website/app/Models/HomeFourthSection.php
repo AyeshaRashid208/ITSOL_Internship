@@ -13,9 +13,7 @@ class HomeFourthSection extends Model
     use HasFactory;
     protected $table = 'homefourthsections';
     protected $fillable =[
-        'message',
-        'heading',
-        'image',
+        'icon',
         'title',
         'description',
        

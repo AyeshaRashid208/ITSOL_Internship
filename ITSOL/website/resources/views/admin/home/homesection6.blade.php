@@ -1,13 +1,18 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_homesection6')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('create_homesection6')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
        @foreach($errors->all() as $error)
        <li>{{$error}}</li>
        @endforeach
+    </div>
+    @endif
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+    {{ session()->get('message') }}
     </div>
     @endif
 <div class="x_panel">
@@ -25,15 +30,7 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
-                <div class="form-group">
-                <label for="formGroupExampleInput">Message</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="message">
-                </div> 
-                <div class="form-group">
-                <label for="formGroupExampleInput">Main Heading</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
-                </div>
-                
+            
                 <div class="form-group">
                <label for="exampleFormControlFile1">Image</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">

@@ -177,116 +177,20 @@
 		<div class="outer-container">
 			<div class="big-title">Services</div>
 			<div class="five-item-carousel owl-carousel owl-theme">
-				
+			@foreach ($second as $second)
 				<!-- Services Block Three -->
 				<div class="services-block-three">
 					<div class="inner-box">
 						<div class="icon-box">
-							<span class="icon flaticon-target-1"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Market <br> Research</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-line-chart-1"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Web <br> Development</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-growth-1"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Strategy & <br> Planning</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-supermarket"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Growth <br> Tracking</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-monitor-1"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Enterprise <br> Consulting</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-target-1"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Market <br> Research</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-line-chart-1"></span>
+							<span class="{{$second->icon}}"></span>
 						</div>
 						<h5><a href="{{url('services')}}">{{$second->title}}</a></h5>
 						<div class="text">{{$second->description}}</div>
 					</div>
 				</div>
 				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-growth-1"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Strategy & <br> Planning</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
+			@endforeach	
 				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-supermarket"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Growth <br> Tracking</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Three -->
-				<div class="services-block-three">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-monitor-1"></span>
-						</div>
-						<h5><a href="{{url('services')}}">Enterprise <br> Consulting</a></h5>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
 				
 			</div>
 		</div>
@@ -550,82 +454,36 @@
 			<!-- Sec Title -->
 			<div class="sec-title centered">
 				<div class="big-title">process</div>
-				<div class="title">{{$fourth->message}}</div>
-				<h2>{{$fourth->heading}}</h2>
+				<div class="title">Steps for done</div>
+				<h2>Easy steps to do <br> consult with <span>us</span></h2>
 			</div>
 			
 			<!-- Outer Container -->
 			<div class="outer-container">
 				<div class="row clearfix">
-					
+				@foreach ($fourth as $fourth)
 					<!-- Step Block -->
 					<div class="step-block col-lg-3 col-md-6 col-sm-12">
+					
 						<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="icon-outer">
+							
 								<div class="service-number">1</div>
 								<div class="icon-box">
-									<span class="icon flaticon-contact"></span>
+									<span class="{{$fourth->icon}}"></span>
 								</div>
 							</div>
 							<div class="lower-box">
 								<h5><a href="{{url('contact')}}">{{$fourth->title}}</a></h5>
 								<div class="text">{{$fourth->description}}</div>
 								<a class="contact" href="{{url('contact')}}">Contact us <span class="arrow fa fa-angle-right"></span></a>
+							
 							</div>
 						</div>
-					</div>
 					
-					<!-- Step Block -->
-					<div class="step-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="icon-outer">
-								<div class="service-number">2</div>
-								<div class="icon-box">
-									<span class="icon flaticon-network-1"></span>
-								</div>
-							</div>
-							<div class="lower-box">
-								<h5><a href="{{url('contact')}}">Consult with us</a></h5>
-								<div class="text">Lorem ipsum dolor sit amet, csectetur adipis icing.</div>
-								<a class="contact" href="{{url('contact')}}">Appoinment <span class="arrow fa fa-angle-right"></span></a>
-							</div>
-						</div>
 					</div>
-					
-					<!-- Step Block -->
-					<div class="step-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-							<div class="icon-outer">
-								<div class="service-number">3</div>
-								<div class="icon-box">
-									<span class="icon flaticon-target"></span>
-								</div>
-							</div>
-							<div class="lower-box">
-								<h5><a href="{{url('contact')}}">Place Order</a></h5>
-								<div class="text">Lorem ipsum dolor sit amet, csectetur adipis icing.</div>
-								<a class="contact" href="{{url('contact')}}">Order now <span class="arrow fa fa-angle-right"></span></a>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Step Block -->
-					<div class="step-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
-							<div class="icon-outer">
-								<div class="service-number">4</div>
-								<div class="icon-box">
-									<span class="icon flaticon-banknote"></span>
-								</div>
-							</div>
-							<div class="lower-box">
-								<h5><a href="#">Make Payment</a></h5>
-								<div class="text">Lorem ipsum dolor sit amet, csectetur adipis icing.</div>
-								<a class="contact" href="#">Payment <span class="arrow fa fa-angle-right"></span></a>
-							</div>
-						</div>
-					</div>
-					
+				@endforeach	
+		
 				</div>
 			</div>
 			
@@ -640,9 +498,9 @@
 			<!-- Sec Title -->
 			<div class="sec-title">
 				<div class="big-title">wORK</div>
-				<div class="title">{{$fifth->message}}</div>
-				<h2>{{$fifth->title}}</h2>
-				<div class="text">{{$fifth->description}} </div>
+				<div class="title">our portfolio</div>
+				<h2>We are popular for <br> our recent <span>works</span></h2>
+				<div class="text">Lorem ipsum, or lipsum as it is sometimes known, is dummy <br> text used in laying out. The passage is attributed. </div>
 			</div>
 			
 		</div>
@@ -655,31 +513,13 @@
 				<div class="carousel-column">
 					<div class="inner-column">
 						<div class="screenshot-carousel owl-carousel owl-theme">
-							
+						@foreach ($fifth as $fifth)
 							<div class="image">
 								<img src= "{{ asset('images/resource/'.$fifth->image) }}" alt="" />
 							</div>
 							
-							<div class="image">
-								<img src="images/resource/screenshot-2.jpg" alt="" />
-							</div>
 							
-							<div class="image">
-								<img src="images/resource/screenshot-3.jpg" alt="" />
-							</div>
-							
-							<div class="image">
-								<img src="images/resource/screenshot-1.jpg" alt="" />
-							</div>
-							
-							<div class="image">
-								<img src="images/resource/screenshot-2.jpg" alt="" />
-							</div>
-							
-							<div class="image">
-								<img src="images/resource/screenshot-3.jpg" alt="" />
-							</div>
-							
+						@endforeach	
 						</div>
 					</div>
 				</div>
@@ -708,12 +548,12 @@
 			<!-- Sec Title -->
 			<div class="sec-title text-center">
 				<div class="big-title">Review</div>
-				<div class="title">{{$sixth->message}}</div>
-				<h2>{{$sixth->heading}}</h2>
+				<div class="title">Testimonils</div>
+				<h2>Learn something <br> from our <span>clients</span></h2>
 			</div>
 			
 			<div class="row clearfix">
-				
+			@foreach ($sixth as $sixth)
 				<!-- Testimonial Block Two -->
 				<div class="testimonial-block-two col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
@@ -731,39 +571,9 @@
 					</div>
 				</div>
 				
-				<!-- Testimonial Block Two -->
-				<div class="testimonial-block-two col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box">
-						<div class="circle-box"></div>
-						<div class="quote-icon flaticon-left-quote"></div>
-						<div class="image-outer">
-							<a href="#" class="social-icon facebook fa fa-facebook"></a>
-							<div class="image">
-								<img src="images/resource/author-8.jpg" alt="" />
-							</div>
-						</div>
-						<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more to relevant ads, facilitate.</div>
-						<h5>Andrea Ramily</h5>
-						<div class="designation">Founder</div>
-					</div>
-				</div>
 				
-				<!-- Testimonial Block Two -->
-				<div class="testimonial-block-two col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box">
-						<div class="circle-box"></div>
-						<div class="quote-icon flaticon-left-quote"></div>
-						<div class="image-outer">
-							<a href="#" class="social-icon twitter fa fa-twitter"></a>
-							<div class="image">
-								<img src="images/resource/author-9.jpg" alt="" />
-							</div>
-						</div>
-						<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more to relevant ads, facilitate.</div>
-						<h5>Albert Chaucer</h5>
-						<div class="designation">Albert Chaucer</div>
-					</div>
-				</div>
+			@endforeach	
+				
 				
 			</div>
 			
@@ -774,23 +584,18 @@
 	<!--Sponsors Section-->
 	<section class="sponsors-section alternate">
 		<div class="auto-container">
-			
+		
 			<div class="carousel-outer">
 				<!--Sponsors Slider-->
+					
 				<ul class="sponsors-carousel owl-carousel owl-theme">
-					<li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
+				@foreach ($eight as $eight)
+					<li><div class="image-box"><a href="#"><img src="{{ asset('images/clients/'.$eight->image) }}" alt=""></a></div></li>
+					@endforeach	
 				</ul>
+				
 			</div>
-			
+		
 		</div>
 	</section>
 	<!--End Sponsors Section-->

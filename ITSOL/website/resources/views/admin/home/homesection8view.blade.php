@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('display_banner')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('add_banner')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
@@ -24,43 +24,38 @@
     </div>
         
         <div class="x_content">
-        <a href="{{ url('create_homesection2') }}" class="btn btn-primary float-end">Add Service</a>
-                 
-
-                <div class="table-bordered">
+                
+                <a href="{{ url('create_homesection8') }}" class="btn btn-primary float-end">Add New</a>
+                <br>
+                <div class="table table-bordered">
                     <table class="table">
                     <thead class="thead-dark">
                         <tr>
                            <th scope="col">ID</th>
-                            <th scope="col">Icon</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <
+                            <th scope="col">Image</th>
                             <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach ($info as $info)
                         <tr>
-                           
-                            <td>{{$info['id']}}</td>
-                            <td>{{$info->icon}}</td>
-                            <td>{{$info->title}}</td>
-                            <td>{{$info->description}}</td>
-                            <td> <a href={{"edit_homesection2/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                            <a href="del_homesection2/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
+                            <td>{{$info->id}}</td>
+                            
+                            <td>
+                                <img src="{{ asset('images/clients/'.$info->image) }}" width="120px" alt="Image">
+                            </td>
+                            <td> <a href={{"edit_homesection8/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <a href="del_homesection8/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
+                           <!-- <a href="{{url('view_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a> -->
                            </td>
-                           
 
                         </tr>
-                        @endforeach
-                       
+                    @endforeach
                     </tbody>
                     </table>
 
-                    
-                </div>
-                <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
+
+
         
                 
         </div>

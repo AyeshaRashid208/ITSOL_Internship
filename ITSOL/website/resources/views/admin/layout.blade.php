@@ -65,22 +65,43 @@
                     </ul>
                   </li>
                 
-                  <li><a><i></i> Home section 2 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i></i> Services <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{('view_homesection2')}}">View Section 2</a></li>
-                      <li><a href="{{('create_homesection2')}}">Create Section 2</a></li>
+                      <li><a href="{{('view_homesection2')}}">View Services</a></li>
+                      <li><a href="{{('create_homesection2')}}">Create Services</a></li>
                     </ul>
                   </li>
+                  
                   <li><a href="{{('add_homesection3')}}"><i></i> Home section 3 <span class="fa fa-chevron-down"></span></a>
                   </li>
-                  <li><a href="{{('add_homesection4')}}"><i></i> Home Section 4 <span class="fa fa-chevron-down"></span></a>
+
+                  <li><a><i></i> Consultation <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_homesection4')}}">View Consultation</a></li>
+                      <li><a href="{{('create_homesection4')}}">Create Consultation</a></li>
+                    </ul>
                   </li>
-                  <li><a href="{{('add_homesection5')}}"><i></i> Home Section 5 <span class="fa fa-chevron-down"></span></a>
-                  </li> 
-                  <li><a href="{{('add_homesection6')}}"><i></i> Home Section 6 <span class="fa fa-chevron-down"></span></a>
-                  </li> 
-                  <li><a href="{{('add_homesection7')}}"><i></i> Home Section 7 <span class="fa fa-chevron-down"></span></a>
-                  </li> 
+
+                  <li><a><i></i> Portfolio <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_homesection5')}}">View Images</a></li>
+                      <li><a href="{{('create_homesection5')}}">Add Image</a></li>
+                    </ul>
+                  </li>
+
+                  <li><a><i></i> Testimonial <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_homesection6')}}">View testimonial</a></li>
+                      <li><a href="{{('create_homesection6')}}">Create testimonial</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i> Sponsers <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_homesection8')}}">View Sponsers</a></li>
+                      <li><a href="{{('create_homesection8')}}">Create Sponsers</a></li>
+                    </ul>
+                  </li>
+                 
                   <li><a href="{{('add_about_banner')}}"><i></i> About Banner <span class="fa fa-chevron-down"></span></a>
                   </li> 
                   <li><a href="{{('add_aboutsection2')}}"><i></i>About Section 2<span class="fa fa-chevron-down"></span></a>
