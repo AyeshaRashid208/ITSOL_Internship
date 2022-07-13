@@ -52,15 +52,21 @@ Route::post('/edit',[HomeController::class,'updatehome2ndsection']);
 Route::get('del_homesection2/{id}',[HomeController::class,'destroy']);
 Route::post('/add_homesection2',[HomeController::class,'addhome2ndsection']);
 
-Route::get('/add_homesection3',[HomeController::class,'displayhome3rdsection']);
-Route::post('/add_homesection3',[HomeController::class,'addhome3rdsection']);
+//homesection3
+Route::get('/create_homesection3',[HomeController::class,'createhome3rdsection']);
+Route::post('/create_homesection3',[HomeController::class,'addhome3rdsection']);
+Route::get('/view_homesection3',[HomeController::class,'displayhome3rdsection']);
+Route::get('/edit_homesection3/{id}',[HomeController::class,'edithome3rdsection']);
+Route::post('/updatehomesection3',[HomeController::class,'updatehome3rdsection']);
+Route::get('del_homesection3/{id}',[HomeController::class,'destroysection3']);
+
 
 //homesection4
 Route::get('/create_homesection4',[HomeController::class,'createhome4rthsection']);
 Route::post('/create_homesection4',[HomeController::class,'addhome4rthsection']);
 Route::get('/view_homesection4',[HomeController::class,'displayhome4rthsection']);
 Route::get('/edit_homesection4/{id}',[HomeController::class,'edithome4rthsection']);
-Route::post('/update',[HomeController::class,'updatehome4rthsection']);
+Route::post('/updatehomesection4',[HomeController::class,'updatehome4rthsection']);
 Route::get('del_homesection4/{id}',[HomeController::class,'destroysection4']);
 
 //homesection5
@@ -68,7 +74,7 @@ Route::get('/create_homesection5',[HomeController::class,'createhome5thsection']
 Route::post('/create_homesection5',[HomeController::class,'addhome5thsection']);
 Route::get('/view_homesection5',[HomeController::class,'displayhome5thsection']);
 Route::get('/edit_homesection5/{id}',[HomeController::class,'edithome5thsection']);
-Route::post('/update',[HomeController::class,'updatehome5thsection']);
+Route::post('/updatehomesection5',[HomeController::class,'updatehome5thsection']);
 Route::get('del_homesection5/{id}',[HomeController::class,'destroysection5']);
 
 //homesection6
@@ -76,7 +82,7 @@ Route::get('/create_homesection6',[HomeController::class,'createhome6thsection']
 Route::post('/create_homesection6',[HomeController::class,'addhome6thsection']);
 Route::get('/view_homesection6',[HomeController::class,'displayhome6thsection']);
 Route::get('/edit_homesection6/{id}',[HomeController::class,'edithome6thsection']);
-Route::post('/update',[HomeController::class,'updatehome6thsection']);
+Route::post('/updatehomesection6',[HomeController::class,'updatehome6thsection']);
 Route::get('del_homesection6/{id}',[HomeController::class,'destroysection6']);
 
 //homesection8
@@ -85,8 +91,17 @@ Route::get('/create_homesection8',[HomeController::class,'createhome8thsection']
 Route::post('/create_homesection8',[HomeController::class,'addhome8thsection']);
 Route::get('/view_homesection8',[HomeController::class,'displayhome8thsection']);
 Route::get('/edit_homesection8/{id}',[HomeController::class,'edithome8thsection']);
-Route::post('/update',[HomeController::class,'updatehome8thsection']);
+Route::post('/updatehomesection8',[HomeController::class,'updatehome8thsection']);
 Route::get('del_homesection8/{id}',[HomeController::class,'destroysection8']);
+
+//homesection9
+
+Route::get('/create_homesection7',[HomeController::class,'createhome7thsection']);
+Route::post('/create_homesection7',[HomeController::class,'addhome7thsection']);
+Route::get('/view_homesection7',[HomeController::class,'displayhome7thsection']);
+Route::get('/edit_homesection7/{id}',[HomeController::class,'edithome7thsection']);
+Route::post('/updatehomesection7',[HomeController::class,'updatehome7thsection']);
+Route::get('del_homesection7/{id}',[HomeController::class,'destroysection7']);
 
 
 

@@ -13,8 +13,7 @@ class HomeSevenSection extends Model
     use HasFactory;
     protected $table = 'homesevensections';
     protected $fillable =[
-        'message',
-        'heading',
+        
         'image',
         'title',
         'author_image',

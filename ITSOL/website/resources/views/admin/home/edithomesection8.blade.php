@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="/update" method="post" enctype="multipart/form-data">
+<form action="/updatehomesection8" method="post" enctype="multipart/form-data">
 <input type="hidden"  value="{{$info['id']}}" name="id">
 @csrf
 

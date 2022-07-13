@@ -71,9 +71,14 @@
                       <li><a href="{{('create_homesection2')}}">Create Services</a></li>
                     </ul>
                   </li>
-                  
-                  <li><a href="{{('add_homesection3')}}"><i></i> Home section 3 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i></i> Features <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_homesection3')}}">View Features</a></li>
+                      <li><a href="{{('create_homesection3')}}">Create Features</a></li>
+                    </ul>
                   </li>
+                  
+                
 
                   <li><a><i></i> Consultation <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -99,6 +104,12 @@
                     <ul class="nav child_menu">
                       <li><a href="{{('view_homesection8')}}">View Sponsers</a></li>
                       <li><a href="{{('create_homesection8')}}">Create Sponsers</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i> Blogs <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_homesection7')}}">View blogs</a></li>
+                      <li><a href="{{('create_homesection7')}}">Create blogs</a></li>
                     </ul>
                   </li>
                  

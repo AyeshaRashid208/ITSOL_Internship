@@ -145,49 +145,89 @@ class HomeController extends Controller
         
      }
     
-    public function displayhome3rdsection(){
-            
+     public function createhome3rdsection(){
+        
         return view('admin.home.homesection3');
+    }
+    public function displayhome3rdsection(){
+        $info = HomeThirdSection::all();   
+        return view('admin.home.homesection3view', compact('info'));
+    }
+    public function edithome3rdsection(Request $request, $id){
+        $info = HomeThirdSection::find($id);
+        // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
+        return view('admin.home.edithomesection3',['info'=>$info]);
+       
     }
     public function addhome3rdsection(Request $request){
         //$info = new banner;
         $info = new HomeThirdSection;
-        $info->message  =$request->message;
-        $info->main_title=$request->main_title;
-        $info->tab_one_name=$request->tab_one_name;
-        $info->tab_two_name=$request->tab_two_name;
-        $info->tab_three_name=$request->tab_three_name;
-        $info->tab_one_heading=$request->tab_one_heading;
-        $info->tab_one_desc=$request->tab_one_desc;
-        $info->tab_one_sub_heading_one=$request->tab_one_sub_heading_one;
-        $info->tab_one_sub_heading_one_desc=$request->tab_one_sub_heading_one_desc;
-        $info->tab_one_sub_heading_two=$request->tab_one_sub_heading_two;
-        $info->tab_one_sub_heading_two_desc=$request->tab_one_sub_heading_two_desc;
-        $info->tab_one_sub_heading_three=$request->tab_one_sub_heading_three;
-        $info->tab_one_sub_heading_three_desc=$request->tab_one_sub_heading_three_desc;
-        $info->tab_two_heading=$request->tab_two_heading;
-        $info->tab_two_desc=$request->tab_two_desc;
-        $info->tab_two_sub_heading_one=$request->tab_two_sub_heading_one;
-        $info->tab_two_sub_heading_one_desc=$request->tab_two_sub_heading_one_desc;
-        $info->tab_two_sub_heading_two=$request->tab_two_sub_heading_two;
-        $info->tab_two_sub_heading_two_desc=$request->tab_two_sub_heading_two_desc;
-        $info->tab_two_sub_heading_three=$request->tab_two_sub_heading_three;
-        $info->tab_two_sub_heading_three_desc=$request->tab_two_sub_heading_three_desc;
-        $info->tab_thr_heading=$request->tab_thr_heading;
-        $info->tab_thr_desc=$request->tab_thr_desc;
-        $info->tab_thr_sub_heading_one=$request->tab_thr_sub_heading_one;
-        $info->tab_thr_sub_heading_one_desc=$request->tab_thr_sub_heading_one_desc;
-        $info->tab_thr_sub_heading_two=$request->tab_thr_sub_heading_two;
-        $info->tab_thr_sub_heading_two_desc=$request->tab_thr_sub_heading_two_desc;
-        $info->tab_thr_sub_heading_three=$request->tab_thr_sub_heading_three;
-        $info->tab_thr_sub_heading_three_desc=$request->tab_thr_sub_heading_three_desc;
+        $request->validate([
+            'name'    => 'required',
+            'description'=> 'required',
+            'detail'=>'required',
+            'title_one'=>'required',
+            'desc_one'=>'required',
+            'title_two'=>'required',
+            'desc_two'=>'required',
+            'title_thr'=>'required',
+            'desc_thr'=>'required',
+        ]);
+        $info->name=$request->name;
+        $info->description=$request->description;
+        $info->detail=$request->detail;
+        $info->title_one=$request->title_one;
+        $info->desc_one=$request->desc_one;
+        $info->title_two=$request->title_two;
+        $info->desc_two=$request->desc_two;
+        $info->title_thr=$request->title_thr;
+        $info->desc_thr=$request->desc_thr;
         
     
        $info->save();
     
-          echo "Record inserted successfully.<br/>"; 
+       return redirect::back()->with('message', 'Record Added successfully' ); 
 
     }
+    public function updatehome3rdsection(Request $request){
+        //$info = HomeSecondSection::find($request);
+       // return $request->input();
+        $users = HomeThirdSection::find($request->id); 
+        $request->validate([
+            'name'    => 'required',
+            'description'=> 'required',
+            'detail'=>'required',
+            'title_one'=>'required',
+            'desc_one'=>'required',
+            'title_two'=>'required',
+            'desc_two'=>'required',
+            'title_thr'=>'required',
+            'desc_thr'=>'required',
+        ]);
+        $users->name=$request->name;
+        $users->description=$request->description;
+        $users->detail=$request->detail;
+        $users->title_one=$request->title_one;
+        $users->desc_one=$request->desc_one;
+        $users->title_two=$request->title_two;
+        $users->desc_two=$request->desc_two;
+        $users->title_thr=$request->title_thr;
+        $users->desc_thr=$request->desc_thr;
+        
+        $users->save();   
+        $info = HomeThirdSection::all();   
+        return view('admin.home.homesection3view', compact('info'));
+        // return view('admin.home.homesection2view',compact('info')); 
+  }
+  public function destroysection3($id) {
+    // DB::statement("ALTER TABLE homesecondsections AUTO_INCREMENT = $id;"); 
+    $max = DB::table('homethirdsections')->max('id'); 
+    DB::delete('delete from  homethirdsections where id = ?',[$id]);
+    DB::statement("ALTER TABLE homethirdsections AUTO_INCREMENT =  $max");
+    return redirect::back();
+    
+ }
+
 
     //4rth section
 
@@ -472,16 +512,31 @@ class HomeController extends Controller
     return redirect::back();
     
    }
+//homesection9
+    public function createhome7thsection(){
+            
+    return view('admin.home.homesection7');
+    }
+
 
     public function displayhome7thsection(){
             
-        return view('admin.home.homesection7');
+        $info = HomeSevenSection::all();   
+        return view('admin.home.homesection7view', compact('info'));
     }
     public function addhome7thsection(Request $request){
         //$info = new banner;
         $info = new HomeSevenSection;
-        $info->message=$request->message;
-        $info->heading=$request->heading;
+        $request->validate([
+            'image' => 'required',
+            'name' => 'required',
+            'author_image' => 'required',
+            'time' => 'required',
+            'title' => 'required',
+            
+        ]);
+        
+       
         $info->title=$request->title;
         $info->name=$request->name;
         $info->time=$request->time;
@@ -501,26 +556,81 @@ class HomeController extends Controller
        }
        $info->save();
     
-          echo "Record inserted successfully.<br/>";
-       
-        //$info->save(); 
+       return redirect::back()->with('message', 'Record Added successfully' );     
 
     }
+    public function edithome7thsection(Request $request, $id){
+        $info = HomeSevenSection::find($id);
+        // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
+        return view('admin.home.edithomesection7',['info'=>$info]);
+       
+    }
+    public function updatehome7thsection(Request $request){
+        //$info = HomeSecondSection::find($request);
+       // return $request->input();
+        $info = HomeSevenSection::find($request->id); 
+         
+        $request->validate([
+            'image' => 'required',
+            'name' => 'required',
+            'author_image' => 'required',
+            'time' => 'required',
+            'title' => 'required',
+            
+        ]);
+        $info->title=$request->title;
+        $info->name=$request->name;
+        $info->time=$request->time;
+        if($request->hasfile('image')){
+            $destination = 'images/clients'.$info->image;
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename=time().'.'.$extension;
+            $file->move('images/clients',$filename);
+            $info->image = $filename;
+           }
+        if($request->hasfile('author_image')){
+            $file = $request->file('author_image');
+            $extension = $file->getClientOriginalName();
+            $filename=time().'.'.$extension;
+            $file->move('images/resource',$filename);
+            $info->author_image = $filename;
+           }
+        $info->save();   
+        $info = HomeSevenSection::all();   
+        return view('admin.home.homesection7view', compact('info'));
+        // return view('admin.home.homesection2view',compact('info')); 
+  }
+  public function destroysection7($id) {
+    // DB::statement("ALTER TABLE homesecondsections AUTO_INCREMENT = $id;"); 
+    $max = DB::table('homesevensections')->max('id'); 
+    DB::delete('delete from  homesevensections where id = ?',[$id]);
+    DB::statement("ALTER TABLE homesevensections AUTO_INCREMENT =  $max");
+    return redirect::back();
+    
+   }
+
     public function viewhome(){
-        $second = HomeSecondSection::all();   
+        $second = HomeSecondSection::all();  
+        $third = HomeThirdSection::all();  
+        $trial = HomeThirdSection::select('name')->get()->toArray();
+        // $trial= DB::table('homethirdsections')->pluck('name');
         $fourth = HomeFourthSection::all(); 
         $fifth = HomeFifthSection::all();   
         $sixth = HomeSixthSection::all(); 
+        $seven = HomeSevenSection::all();   
         $eight = HomeEightSection::all();   
         return View('index')
         ->with('users', Banner::orderBy('id', 'DESC')->first())
         ->with(compact('second'))
-        ->with('third', HomeThirdSection::orderBy('id', 'DESC')->first())
+        ->with(compact('third'))
+        ->with(compact('trial'))
         ->with(compact('fourth'))
         ->with(compact('fifth'))
         ->with(compact('sixth'))
-        ->with(compact('eight'))
-        ->with('seven', HomeSevenSection::orderBy('id', 'DESC')->first());
+        ->with(compact('seven'))
+        ->with(compact('eight'));
+        
         
         }
 }

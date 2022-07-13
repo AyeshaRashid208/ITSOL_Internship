@@ -1,8 +1,10 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('create_homesection3')}}" method="post" enctype="multipart/form-data">
+<form action="/updatehomesection3" method="post" enctype="multipart/form-data">
 @csrf
+<input type="hidden"  value="{{$info['id']}}" name="id">
+
     @if($errors->any())
     <div class = "alert alert-danger">
        @foreach($errors->all() as $error)
@@ -10,7 +12,7 @@
        @endforeach
     </div>
     @endif
-    
+   
     @if(session()->has('message'))
     <div class="alert alert-success">
     {{ session()->get('message') }}
@@ -31,49 +33,57 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
-                
-        
+                <div class="card">
+                <div class="card-header">
                 <div class="form-group">
                 <label for="formGroupExampleInput">Tab Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="name">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{$info['name']}}" name="name">
                 </div>
                 <label for="formGroupExampleInput">Description</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="description">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{$info['description']}}" name="description">
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Detail</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="detail"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="detail">{{$info['detail']}}</textarea>
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Feature 1 Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="title_one">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{$info['title_one']}}" name="title_one">
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Feature 1 description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_one"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_one">{{$info['desc_one']}}</textarea>
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Feature 2 Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="title_two">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{$info['title_two']}}" name="title_two">
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Feature 2 description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_two"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_two">{{$info['desc_two']}}</textarea>
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Feature 3 Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="title_thr">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{$info['title_thr']}}" name="title_thr">
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Feature 3 description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_thr"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_thr">value="{{$info['desc_thr']}}"</textarea>
                 </div>
+               
+                <br>
+                <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
+                <button class="btn btn-success btn-lg" type="submit" name="submit">Update</button>
+                <a href="{{url('view_homesection3')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
+               
+               
+
+
+</div>
+</div>
+            </div>
                 
 
-                <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
-                <button class="btn btn-primary" type="submit" name="submit">Submit</button>
-            </div>
-           
         
                 
         </div>

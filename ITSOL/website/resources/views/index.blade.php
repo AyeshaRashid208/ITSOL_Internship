@@ -205,27 +205,28 @@
 			<div class="sec-title centered">
 				<<!-- div class="big-title">About us</div> -->
 				
-				<div class="title">{{$third->message}}</div>
-				<h2>{{$third->main_title}}</h2>
+				<div class="title">We Help You</div>
+				<h2>Most prominent side is <br> our devoted services <span>features</span></h2>
 			</div>
 			
-			<!-- Devoted Info Tabs -->
+			@foreach($third as $third)
 			<div class="devoted-info-tabs">
 				<!-- Devoted Tabs -->
 				<div class="devoted-tabs tabs-box">
-
+				    
 					<!--Tab Btns-->
 					<div class="btns-outer">
 						<ul class="tab-btns tab-buttons clearfix">
-							<li data-tab="#prod-turnaround" class="tab-btn active-btn">{{$third->tab_one_name}}</li>
-							<li data-tab="#prod-award" class="tab-btn">{{$third->tab_two_name}}</li>
-							<li data-tab="#prod-design" class="tab-btn">{{$third->tab_three_name}}</li>
+						
+						
+							<li data-tab="#prod-turnaround" class="tab-btn active-btn">{{$third->name}}</li>
+						
 						</ul>
 					</div>
 					
 					<!--Tabs Container-->
 					<div class="tabs-content">
-						
+					
 						<!--Tab / Active Tab-->
 						<div class="tab active-tab" id="prod-turnaround">
 							<div class="content">
@@ -234,19 +235,19 @@
 									<!-- Content Column -->
 									<div class="content-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
-											<h5>{{$third->tab_one_heading}}</h5>
-											<div class="text">{{$third->tab_one_desc}}</div>
+											<h5>{{$third->description}}</h5>
+											<div class="text">{{$third->detail}}</div>
 											
 											<!--Accordian Box-->
 											<ul class="accordion-box style-two">
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_one_sub_heading_one}}</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->title_one}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>{{$third->tab_one_sub_heading_one_desc}}</p>
+																<p>{{$third->desc_one}}</p>
 															</div>
 														</div>
 													</div>
@@ -254,11 +255,11 @@
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_one_sub_heading_two}}</div>
+													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->title_two}}</div>
 													<div class="acc-content current">
 														<div class="content">
 															<div class="text">
-																<p>{{$third->tab_one_sub_heading_two_desc}}</p>
+																<p>{{$third->desc_two}}</p>
 															</div>
 														</div>
 													</div>
@@ -266,11 +267,11 @@
 												
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_one_sub_heading_three}}</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->title_thr}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>{{$third->tab_one_sub_heading_three_desc}}</p>
+																<p>{{$third->desc_thr}}</p>
 															</div>
 														</div>
 													</div>
@@ -296,153 +297,15 @@
 						</div>
 						
 						<!--Tab-->
-						<div class="tab" id="prod-award">
-							<div class="content">
-								<div class="row clearfix">
-
-									<!-- Content Column -->
-									<div class="content-column col-lg-6 col-md-12 col-sm-12">
-										<div class="inner-column">
-											<h5>{{$third->tab_two_heading}}</h5>
-											<div class="text">{{$third->tab_two_desc}}</div>
-											
-											<!--Accordian Box-->
-											<ul class="accordion-box style-two">
-
-												<!--Block-->
-												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_two_sub_heading_one}}</div>
-													<div class="acc-content">
-														<div class="content">
-															<div class="text">
-																<p>{{$third->tab_two_sub_heading_one_desc}}</p>
-															</div>
-														</div>
-													</div>
-												</li>
-
-												<!--Block-->
-												<li class="accordion block">
-													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_two_sub_heading_two}}</div>
-													<div class="acc-content current">
-														<div class="content">
-															<div class="text">
-																<p>{{$third->tab_two_sub_heading_two_desc}}</p>
-															</div>
-														</div>
-													</div>
-												</li>
-												
-												<!--Block-->
-												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_two_sub_heading_three}}</div>
-													<div class="acc-content">
-														<div class="content">
-															<div class="text">
-																<p>{{$third->tab_two_sub_heading_three_desc}}</p>
-															</div>
-														</div>
-													</div>
-												</li>
-
-											</ul>
-											
-											<a href="{{url('about')}}" class="theme-btn btn-style-four">about us</a>
-											
-										</div>
-									</div>
-									
-									<!-- Image Column -->
-									<div class="image-column col-lg-6 col-md-12 col-sm-12">
-										<div class="inner-column">
-											<div class="image">
-												<img src="images/03.png" alt="" />
-											</div>
-										</div>
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					
-									
 						
-						<!--Tab-->
-						<div class="tab" id="prod-design">
-							<div class="content">
-								<div class="row clearfix">
-
-									<!-- Content Column -->
-									<div class="content-column col-lg-6 col-md-12 col-sm-12">
-										<div class="inner-column">
-											<h5>{{$third->tab_thr_heading}}</h5>
-											<div class="text">{{$third->tab_thr_desc}}</div>
-											
-											<!--Accordian Box-->
-											<ul class="accordion-box style-two">
-
-												<!--Block-->
-												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_thr_sub_heading_one}}</div>
-													<div class="acc-content">
-														<div class="content">
-															<div class="text">
-																<p>{{$third->tab_thr_sub_heading_one_desc}}</p>
-															</div>
-														</div>
-													</div>
-												</li>
-
-												<!--Block-->
-												<li class="accordion block">
-													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_thr_sub_heading_two}}</div>
-													<div class="acc-content current">
-														<div class="content">
-															<div class="text">
-																<p>{{$third->tab_thr_sub_heading_two_desc}}</p>
-															</div>
-														</div>
-													</div>
-												</li>
-												
-												<!--Block-->
-												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->tab_thr_sub_heading_three}}</div>
-													<div class="acc-content">
-														<div class="content">
-															<div class="text">
-																<p>{{$third->tab_thr_sub_heading_three_desc}}</p>
-															</div>
-														</div>
-													</div>
-												</li>
-
-											</ul>
-											
-											<a href="{{url('about')}}" class="theme-btn btn-style-four">about us</a>
-											
-										</div>
-									</div>
-									
-									<!-- Image Column -->
-									<div class="image-column col-lg-6 col-md-12 col-sm-12">
-										<div class="inner-column">
-											<div class="image">
-												<img src="images//04.png" alt="" />
-											</div>
-										</div>
-									</div>
-									
-								</div>
-							</div>
-						</div>
 						
 					</div>
-
+                
 				</div>
+				
 			</div>
 			<!-- End Devoted Info Tabs -->
-			
+			@endforeach
 		</div>
 	</section>
 	<!-- End Devoted Section -->
@@ -605,12 +468,12 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<div class="title">{{$seven->message}}</div>
-				<h2>{{$seven->heading}}</h2>
+				<div class="title">Our expert team</div>
+				<h2>We are dedicated <br> our devoted service <span>features</span></h2>
 			</div>
 			
 			<div class="row clearfix">
-				
+			@foreach ($seven as $seven)
 				<!-- News Block -->
 				<div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
@@ -633,52 +496,9 @@
 						</div>
 					</div>
 				</div>
-				
+				@endforeach
 				<!-- News Block -->
-				<div class="news-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="{{url('blog-single')}}"><img src="images/resource/news-2.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h6><a href="{{url('blog-single')}}">Thirty-two surrogate mothers charged with human trafficking.</a></h6>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="author">
-										<div class="image"><img src="images/resource/author-5.jpg" alt="" /></div>
-										Jhonny Rip
-									</div>
-								</div>
-								<div class="pull-right">
-									<div class="post-time">5 hours ago</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 				
-				<!-- News Block -->
-				<div class="news-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="{{url('blog-single')}}"><img src="images/resource/news-3.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h6><a href="{{url('blog-single')}}">Chinese clients have been released after agreeing to keep.</a></h6>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="author">
-										<div class="image"><img src="images/resource/author-6.jpg" alt="" /></div>
-										Mong Wanzhou
-									</div>
-								</div>
-								<div class="pull-right">
-									<div class="post-time">12 hours ago</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 				
 			</div>
 		</div>

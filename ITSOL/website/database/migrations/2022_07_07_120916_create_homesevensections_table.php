@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::create('homesevensections', function (Blueprint $table) {
             $table->id();
-            $table->string('message');
-            $table->string('heading');
             $table->string('image');
             $table->string('title');
             $table->string('author_image');
