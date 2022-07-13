@@ -13,8 +13,7 @@ class TeamSecondSection extends Model
     use HasFactory;
     protected $table = 'teamsecondsections';
     protected $fillable =[
-        'message',
-        'heading',
+        
         'image',
         'name',
         'designation',

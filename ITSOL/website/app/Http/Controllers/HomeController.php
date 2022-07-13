@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Redirect;
 use App\Models\Banner;
 use DB;
 use App\Models\HomeSecondSection;
+use App\Models\ServiceBanner;
+use App\Models\ServiceThirdSection;
+use App\Models\ServiceFourthSection;
+use App\Models\ServiceSecondSection;
 use App\Models\HomeThirdSection;
 use App\Models\HomeFourthSection;
 use App\Models\HomeFifthSection;
@@ -172,6 +176,7 @@ class HomeController extends Controller
             'desc_two'=>'required',
             'title_thr'=>'required',
             'desc_thr'=>'required',
+            'image'=>'required',
         ]);
         $info->name=$request->name;
         $info->description=$request->description;
@@ -182,7 +187,19 @@ class HomeController extends Controller
         $info->desc_two=$request->desc_two;
         $info->title_thr=$request->title_thr;
         $info->desc_thr=$request->desc_thr;
-        
+        if($request->hasfile('image')){
+            $destination = 'images/resource'.$info->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename=time().'.'.$extension;
+            $file->move('images/resource',$filename);
+            $info->image = $filename;
+           }else{
+            unset($info->image );
+        }
     
        $info->save();
     
@@ -203,6 +220,7 @@ class HomeController extends Controller
             'desc_two'=>'required',
             'title_thr'=>'required',
             'desc_thr'=>'required',
+            'image'=>'required',
         ]);
         $users->name=$request->name;
         $users->description=$request->description;
@@ -213,6 +231,19 @@ class HomeController extends Controller
         $users->desc_two=$request->desc_two;
         $users->title_thr=$request->title_thr;
         $users->desc_thr=$request->desc_thr;
+        if($request->hasfile('image')){
+            $destination = 'images/resource'.$users->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename=time().'.'.$extension;
+            $file->move('images/resource',$filename);
+            $users->image = $filename;
+           }else{
+            unset($users->image );
+        }
         
         $users->save();   
         $info = HomeThirdSection::all();   
@@ -512,6 +543,8 @@ class HomeController extends Controller
     return redirect::back();
     
    }
+
+   
 //homesection9
     public function createhome7thsection(){
             
@@ -609,12 +642,25 @@ class HomeController extends Controller
     return redirect::back();
     
    }
+  
 
     public function viewhome(){
         $second = HomeSecondSection::all();  
         $third = HomeThirdSection::all();  
-        $trial = HomeThirdSection::select('name')->get()->toArray();
+        // $trial = HomeThirdSection::select(array('name'))->get()->toArray();
+        // $trial = HomeThirdSection::where()->get();
+        $trial = HomeThirdSection::where('id', 1)->value('name');
+        $tri = HomeThirdSection::where('id', 2)->value('name');
+        $tria = HomeThirdSection::where('id', 3)->value('name');
+        $value = HomeThirdSection::where('id', 1)->value('hidden_id');
+        $val = HomeThirdSection::where('id', 2)->value('hidden_id');
+        $valu = HomeThirdSection::where('id', 3)->value('hidden_id');
+
+        //dd($value);
         // $trial= DB::table('homethirdsections')->pluck('name');
+        // $trial = HomeThir::where(array(
+        //     'someid' => $somevar
+        // ))->get()->toArray();
         $fourth = HomeFourthSection::all(); 
         $fifth = HomeFifthSection::all();   
         $sixth = HomeSixthSection::all(); 
@@ -625,6 +671,11 @@ class HomeController extends Controller
         ->with(compact('second'))
         ->with(compact('third'))
         ->with(compact('trial'))
+        ->with(compact('tria'))
+        ->with(compact('value'))
+        ->with(compact('val'))
+        ->with(compact('valu'))
+        ->with(compact('tri'))
         ->with(compact('fourth'))
         ->with(compact('fifth'))
         ->with(compact('sixth'))
@@ -633,4 +684,21 @@ class HomeController extends Controller
         
         
         }
+      
+
+    public function viewservices(){
+
+        $second = HomeSecondSection::all(); 
+        $eight = HomeEightSection::all(); 
+        // dd($second);
+        return View('services')
+        ->with('banner', ServiceBanner::orderBy('id', 'DESC')->first())
+        ->with('third', ServiceThirdSection::orderBy('id', 'DESC')->first())
+        ->with('fourth', ServiceFourthSection::orderBy('id', 'DESC')->first())
+        ->with(compact('second'))
+        ->with(compact('eight'));
+    }
+
+
+
 }

@@ -174,12 +174,12 @@
 			</div>
 			
 			<div class="row clearfix">
-			
+			    @foreach($second as $second)
 				<!-- Image Column -->
 				<div class="image-column col-lg-7 col-md-12 col-sm-12">
 					<div class="inner-column">
 						<div class="image">
-							<img src="images/gallery/24.jpg" alt="" />
+							<img src="{{ asset('images/gallery/'.$second->image) }}" alt="" />
 						</div>
 					</div>
 				</div>
@@ -187,20 +187,17 @@
 				<!-- Content Column -->
 				<div class="content-column col-lg-5 col-md-12 col-sm-12">
 					<div class="inner-column">
-						<h3>Market Analysis</h3>
-						<div class="text">
-							<p>Dut perspiciatis unde omnis iste natus error sit voluptatems accusantium doloremqu laudantiums ut, totams se aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae duis autems vell eums iriure dolors in hendrerit saep.</p>
-							<p>Eveniet in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at seds eros sed et accumsan et iusto odio dignissim. Temporibus autem quibusdam et aut officiis.</p>
-						</div>
+						<h3>{{$second->title}}</h3>
+						<div class="text">{{$second->description}}</div>
 						<ul class="project-list">
-							<li><span class="icon fa fa-tag"></span> <strong>Category: </strong>Strategy</li>
-							<li><span class="icon fa fa-user"></span> <strong>Client: </strong>Real Madrid C.F</li>
-							<li><span class="icon fa fa-calendar"></span> <strong>Date: </strong>24/11/2017</li>
-							<li><span class="icon fa fa-external-link"></span> <strong>Website: </strong>www.madridista.esp</li>
+							<li><span class="icon fa fa-tag"></span> <strong>Category: </strong>{{$second->catagory}}</li>
+							<li><span class="icon fa fa-user"></span> <strong>Client: </strong>{{$second->client}}</li>
+							<li><span class="icon fa fa-calendar"></span> <strong>Date: </strong>{{$second->date}}</li>
+							<li><span class="icon fa fa-external-link"></span> <strong>Website: </strong>{{$second->website}}</li>
 						</ul>
 					</div>
 				</div>
-				
+				@endforeach
 			</div>
 			
 			<!-- Lower Section -->

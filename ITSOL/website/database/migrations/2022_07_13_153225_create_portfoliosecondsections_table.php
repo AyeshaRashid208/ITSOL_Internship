@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teamsecondsections', function (Blueprint $table) {
+        Schema::create('portfoliosecondsections', function (Blueprint $table) {
             $table->id();
-            $table->string('message');
-            $table->string('heading');
             $table->string('image');
-            $table->string('name');
-            $table->string('designation');
+            $table->string('title');
+            $table->longText('description');
+            $table->string('catagory');
+            $table->string('client');
+            $table->string('date');
+            $table->string('website');
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teamsecondsections');
+        Schema::dropIfExists('portfoliosecondsections');
     }
 };

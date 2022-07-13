@@ -167,39 +167,18 @@
     <section class="services-section-two">
 		<div class="auto-container">
 			<div class="row clearfix">
-				
+				@foreach($second as $second)
 				<!-- Services Block -->
 				<div class="services-block-four col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box">
 						<div class="icon-box">
-							<span class="icon flaticon-chess"></span>
+							<span class="{{$second->image}}"></span>
 						</div>
-						<h6><a href="services.html">{{$second->title}}</a></h6>
+						<h6><a href="#">{{$second->title}}</a></h6>
 						<div class="text">{{$second->description}}</div>
 					</div>
 				</div>
-				
-				<!-- Services Block -->
-				<div class="services-block-four col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-document-2"></span>
-						</div>
-						<h6><a href="services.html">Strategy Process</a></h6>
-						<div class="text">The argument in favor of using filler text goes some labore et dolore magna aliqua consectetur.</div>
-					</div>
-				</div>
-				
-				<!-- Services Block -->
-				<div class="services-block-four col-lg-4 col-md-12 col-sm-12">
-					<div class="inner-box">
-						<div class="icon-box">
-							<span class="icon flaticon-banking"></span>
-						</div>
-						<h6><a href="services.html">Finance Manage</a></h6>
-						<div class="text">The argument in favor of using filler text goes some labore et dolore magna aliqua consectetur.</div>
-					</div>
-				</div>
+				@endforeach
 				
 			</div>
 		</div>

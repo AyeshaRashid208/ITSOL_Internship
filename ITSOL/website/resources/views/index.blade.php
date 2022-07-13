@@ -209,17 +209,18 @@
 				<h2>Most prominent side is <br> our devoted services <span>features</span></h2>
 			</div>
 			
-			@foreach($third as $third)
+			
 			<div class="devoted-info-tabs">
 				<!-- Devoted Tabs -->
 				<div class="devoted-tabs tabs-box">
-				    
+				@foreach($third as $third)
 					<!--Tab Btns-->
 					<div class="btns-outer">
 						<ul class="tab-btns tab-buttons clearfix">
 						
 						
-							<li data-tab="#prod-turnaround" class="tab-btn active-btn">{{$third->name}}</li>
+							<li data-tab="#{{$third->hidden_id}}" class="tab-btn active-btn">{{$third->name}}</li>
+						
 						
 						</ul>
 					</div>
@@ -228,10 +229,12 @@
 					<div class="tabs-content">
 					
 						<!--Tab / Active Tab-->
-						<div class="tab active-tab" id="prod-turnaround">
+						<div class="tab active-tab" id="{{$third->hidden_id}}">
+                       
 							<div class="content">
+							
 								<div class="row clearfix">
-
+								
 									<!-- Content Column -->
 									<div class="content-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
@@ -288,24 +291,28 @@
 									<div class="image-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
 											<div class="image">
-												<img src="images/resource/devoted-1.png" alt="" />
+												<img src="{{ asset('images/resource/'.$third->image) }}" alt="" />
 											</div>
 										</div>
 									</div>
+									
 								</div>
+								
 							</div>
+							
 						</div>
 						
 						<!--Tab-->
 						
 						
 					</div>
-                
+					
+					@endforeach
 				</div>
 				
 			</div>
 			<!-- End Devoted Info Tabs -->
-			@endforeach
+			
 		</div>
 	</section>
 	<!-- End Devoted Section -->

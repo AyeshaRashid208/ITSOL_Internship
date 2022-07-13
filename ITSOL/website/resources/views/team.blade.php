@@ -170,12 +170,12 @@
 			<!-- Sec Title -->
 
 			<div class="sec-title centered">
-				<div class="title">{{$second->message}}</div>
-				<h2>{{$second->heading}}</h2>
+				<div class="title">Our expert team</div>
+				<h2>We are dedicated <br> our devoted services <span>features</span></h2>
 			</div>
 			
 			<div class="row clearfix">
-				
+			@foreach($second as $second)	
 				<!-- Team Block -->
 				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
@@ -192,118 +192,7 @@
 					</div>
 				</div>
 				
-				<!-- Team Block -->
-				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/team-2.jpg" alt="" />
-						</div>
-						<h5>Alina Jia</h5>
-						<div class="designation">Former Developer</div>
-						<ul class="social-nav">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-behance"></a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!-- Team Block -->
-				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/team-3.jpg" alt="" />
-						</div>
-						<h5>Domina Li</h5>
-						<div class="designation">Designer</div>
-						<ul class="social-nav">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-behance"></a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!-- Team Block -->
-				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/team-4.jpg" alt="" />
-						</div>
-						<h5>Michael Scott</h5>
-						<div class="designation">Former Developer</div>
-						<ul class="social-nav">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-behance"></a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!-- Team Block -->
-				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/team-1.jpg" alt="" />
-						</div>
-						<h5>Suresh Bollom</h5>
-						<div class="designation">Former Developer</div>
-						<ul class="social-nav">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-behance"></a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!-- Team Block -->
-				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/team-2.jpg" alt="" />
-						</div>
-						<h5>Alina Jia</h5>
-						<div class="designation">Former Developer</div>
-						<ul class="social-nav">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-behance"></a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!-- Team Block -->
-				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/team-3.jpg" alt="" />
-						</div>
-						<h5>Domina Li</h5>
-						<div class="designation">Designer</div>
-						<ul class="social-nav">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-behance"></a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!-- Team Block -->
-				<div class="team-block style-two col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="900ms" data-wow-duration="1500ms">
-						<div class="image">
-							<img src="images/resource/team-4.jpg" alt="" />
-						</div>
-						<h5>Michael Scott</h5>
-						<div class="designation">Former Developer</div>
-						<ul class="social-nav">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
-							<li><a href="#" class="fa fa-behance"></a></li>
-						</ul>
-					</div>
-				</div>
-				
+			@endforeach	
 			</div>
 			
 		</div>
@@ -317,16 +206,9 @@
 			<div class="carousel-outer">
                 <!--Sponsors Slider-->
                 <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
+				@foreach($third as $third)
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('images/clients/'.$third->image) }}" alt=""></a></div></li>
+                @endforeach  
                 </ul>
             </div>
 			
@@ -338,14 +220,14 @@
 	<section class="call-to-action-section">
 		<div class="auto-container">
 			<div class="sec-title centered">
-				<div class="title">{{$third->message}}</div>
-				<h2>{{$third->heading}}</h2>
+				<div class="title">Contact us</div>
+				<h2>You are interested <br> to hire our <span>team ?</span></h2>
 			</div>
 			<div class="inner-container wow bounce" data-wow-delay="0ms" data-wow-duration="1500ms">
 				<div class="clearfix">
 					
 					<div class="pull-left">
-						<div class="text">{{$third->description}}</div>
+						<div class="text">Send us your email address, we will contact!</div>
 					</div>
 					
 					<div class="pull-right">

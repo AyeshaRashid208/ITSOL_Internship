@@ -22,6 +22,8 @@ class HomeThirdSection extends Model
         'desc_two',
         'title_thr',
         'desc_thr',
+        'hidden_id',
+        'image',
        
     ];
 }

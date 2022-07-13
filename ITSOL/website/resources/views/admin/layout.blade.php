@@ -115,8 +115,32 @@
                  
                   <li><a href="{{('add_about_banner')}}"><i></i> About Banner <span class="fa fa-chevron-down"></span></a>
                   </li> 
-                  <li><a href="{{('add_aboutsection2')}}"><i></i>About Section 2<span class="fa fa-chevron-down"></span></a>
-                  </li> 
+                  <li><a><i></i> About services Section <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_aboutsection2')}}">View Services</a></li>
+                      <li><a href="{{('create_aboutsection2')}}">Create Services</a></li>
+                    </ul>
+                  </li>
+               
+                  <li><a><i></i> Team Members <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_teamsection2')}}">View Team</a></li>
+                      <li><a href="{{('create_teamsection2')}}">Create Team Member</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i> Clients Reviews <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_testsection2')}}">View Reviews</a></li>
+                      <li><a href="{{('create_testimonialsection2')}}">Add Reviews</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i> Single Portfolio <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_portsection2')}}">View Portfolio</a></li>
+                      <li><a href="{{('create_portsection2')}}">Add Portfolio</a></li>
+                    </ul>
+                  </li>
+                  
                   <li><a href="{{('add_aboutsection3')}}"><i></i>About Section 3<span class="fa fa-chevron-down"></span></a>
                   </li> 
                   <li><a href="{{('add_aboutsection4')}}"><i></i>About Section 4<span class="fa fa-chevron-down"></span></a>

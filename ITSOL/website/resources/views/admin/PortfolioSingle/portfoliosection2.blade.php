@@ -1,13 +1,18 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_portfolio_section2')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('create_portsection2')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
        @foreach($errors->all() as $error)
        <li>{{$error}}</li>
        @endforeach
+    </div>
+    @endif
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+    {{ session()->get('message') }}
     </div>
     @endif
 <div class="x_panel">
@@ -27,10 +32,7 @@
                 <div class="form-group has-feedback" style="position:relative;">
                   
                   
-                <div class="form-group">
-                <label for="formGroupExampleInput">Main Heading</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
-                </div>
+                
                 <div class="form-group">
                <label for="exampleFormControlFile1">Image</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
@@ -41,8 +43,24 @@
                 </div>
                 <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="description"></textarea>
                </div>
+               <div class="form-group">
+                <label for="formGroupExampleInput">Catagory</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="catagory">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Client</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="client">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Date</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="date">
+                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Website</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="website">
+                </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>

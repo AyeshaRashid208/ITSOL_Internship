@@ -41,6 +41,7 @@
                             <th scope="col">Feature 2 Description</th>
                             <th scope="col">Feature 3 Title</th>
                             <th scope="col">Feature 3 Description</th>
+                            <th scope="col">Image</th> 
                             <th>Edit</th>
                         </tr>
                     </thead>
@@ -58,6 +59,10 @@
                             <td>{{$info->desc_two}}</td>
                             <td>{{$info->title_thr}}</td>
                             <td>{{$info->desc_thr}}</td>
+                            <td>
+                            <img src="{{ asset('images/resource/'.$info->image) }}" width="100px" width="50px" alt="Image">
+                            
+                            </td>
                             <td> <a href={{"edit_homesection3/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
                             <a href="del_homesection3/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
                            </td>

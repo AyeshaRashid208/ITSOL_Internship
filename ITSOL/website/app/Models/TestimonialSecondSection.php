@@ -13,8 +13,7 @@ class TestimonialSecondSection extends Model
     use HasFactory;
     protected $table = 'testimonialsecondsections';
     protected $fillable =[
-        'message',
-        'heading',
+        
         'image',
         'reviews',
         'name',

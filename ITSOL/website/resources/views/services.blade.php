@@ -168,98 +168,22 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<div class="title">{{$second->message}}</div>
-				<h2><span>{{$second->heading}}</span></h2>
+				<div class="title">we help you</div>
+				<h2>Most prominent side is <br> our devoted services <span>features</span></h2>
 			</div>
 			<div class="row clearfix">
-				
+				@foreach($second as $second)
 				<!-- Services Block Five -->
 				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="icon-box">
-							<span class="icon flaticon-line-chart-1"></span>
+							<span class="{{$second->icon}}"></span>
 						</div>
 						<h4><a href="#">{{$second->title}}</a></h4>
 						<div class="text">{{$second->description}}</div>
 					</div>
 				</div>
-				
-				<!-- Services Block Five -->
-				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-						<div class="icon-box">
-							<span class="icon flaticon-growth-1"></span>
-						</div>
-						<h4><a href="#">Strategy & <br> Planning</a></h4>
-						<div class="text">Use our links to visit retailers</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Five -->
-				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-						<div class="icon-box">
-							<span class="icon flaticon-supermarket"></span>
-						</div>
-						<h4><a href="#">Growth <br> Tracking</a></h4>
-						<div class="text">We’ve amazing offers from over</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Five -->
-				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-						<div class="icon-box">
-							<span class="icon flaticon-monitor-1"></span>
-						</div>
-						<h4><a href="#">Enterprise <br> Consulting</a></h4>
-						<div class="text">Use our links to visit retailers</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Five -->
-				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="icon-box">
-							<span class="icon flaticon-line-chart-1"></span>
-						</div>
-						<h4><a href="#">Web <br> Development</a></h4>
-						<div class="text">We’re full service which means...</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Five -->
-				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-						<div class="icon-box">
-							<span class="icon flaticon-growth-1"></span>
-						</div>
-						<h4><a href="#">Strategy & <br> Planning</a></h4>
-						<div class="text">Use our links to visit retailers</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Five -->
-				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-						<div class="icon-box">
-							<span class="icon flaticon-supermarket"></span>
-						</div>
-						<h4><a href="#">Growth <br> Tracking</a></h4>
-						<div class="text">We’ve amazing offers from over</div>
-					</div>
-				</div>
-				
-				<!-- Services Block Five -->
-				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-						<div class="icon-box">
-							<span class="icon flaticon-monitor-1"></span>
-						</div>
-						<h4><a href="#">Enterprise <br> Consulting</a></h4>
-						<div class="text">Use our links to visit retailers</div>
-					</div>
-				</div>
+				@endforeach
 				
 			</div>
 		</div>
@@ -451,17 +375,12 @@
 			
 			<div class="carousel-outer">
                 <!--Sponsors Slider-->
+				
+
                 <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
+				@foreach($eight as $eight)
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('images/clients/'.$eight->image) }}" alt=""></a></div></li>
+                @endforeach
                 </ul>
             </div>
 			

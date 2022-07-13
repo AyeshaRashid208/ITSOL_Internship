@@ -70,7 +70,13 @@
                 <label for="formGroupExampleInput">Feature 3 description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_thr">value="{{$info['desc_thr']}}"</textarea>
                 </div>
-               
+                <div class="form-group">
+               <label for="exampleFormControlFile1">Image</label>
+                
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                <img src="{{ asset('images/resource/'.$info->image) }}" alt="Image" width="100">
+
+                 </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-success btn-lg" type="submit" name="submit">Update</button>
