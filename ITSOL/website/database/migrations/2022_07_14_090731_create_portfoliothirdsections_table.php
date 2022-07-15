@@ -13,18 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('aboutfourthsections', function (Blueprint $table) {
+        Schema::create('portfoliothirdsections', function (Blueprint $table) {
             $table->id();
-            $table->string('message');
+            $table->string('image');
             $table->string('title');
             $table->string('description');
-            $table->string('first_heading');
-            $table->string('first_description');
-            $table->string('second_heading');
-            $table->string('second_description');
-            $table->string('third_heading');
-            $table->string('third_description');
-            $table->string('image');
             $table->timestamps();
         });
     }
@@ -36,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aboutfourthsections');
+        Schema::dropIfExists('portfoliothirdsections');
     }
 };

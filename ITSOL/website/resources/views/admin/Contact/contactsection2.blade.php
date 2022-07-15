@@ -28,13 +28,26 @@
                   
                   
                 
-                 <div class="form-group">
-                <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="title">
-                </div>
                 <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
+                <label for="formGroupExampleInput">Message</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="message">
+                </div>
+                <label for="exampleFormControlTextarea1">Address</label>
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1">Street</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="street">
+               </div>
+               <div class="form-group">
+                <label for="exampleFormControlTextarea1">Country</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="country">
+               </div>
+               <div class="form-group">
+                <label for="exampleFormControlTextarea1">Phone</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="phone">
+               </div>
+               <div class="form-group">
+                <label for="exampleFormControlTextarea1">Email</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="email">
                </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->

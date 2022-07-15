@@ -67,6 +67,7 @@
                             <a href="del_homesection3/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
                            </td>
                            
+                           
 
                         </tr>
                         @endforeach

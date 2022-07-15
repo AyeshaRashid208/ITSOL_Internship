@@ -1,13 +1,18 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_portfolio_section3')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('create_portsection3')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
        @foreach($errors->all() as $error)
        <li>{{$error}}</li>
        @endforeach
+    </div>
+    @endif
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+    {{ session()->get('message') }}
     </div>
     @endif
 <div class="x_panel">

@@ -642,11 +642,82 @@ class HomeController extends Controller
     return redirect::back();
     
    }
+
+
+
+   public function createservice4rthsection(){
+            
+    return view('admin.Services.servicesection4');
+}
+public function addservice4rthsection(Request $request){
+    //$info = new banner;
+    $info = new ServiceThirdSection;
+    $info->name  =$request-> name;          
+    $info->description=$request->description;
+    $info->price=$request->price;
+    $info->one=$request->one;
+    $info->two=$request->two;
+    $info->three=$request->three;
+    $info->four=$request->four;
+   $info->save();
+   return redirect::back()->with('message', 'Record Added successfully' ); 
+
+   
+  
+}
+public function displayservice4rthsection(){
+            
+    $info = ServiceThirdSection::where('hidden_id', 'package-monthly')->get();   
+    return view('admin.Services.servicesection4view', compact('info'));
+}
+public function displayserviceyearlysection(){
+            
+    $info = ServiceThirdSection::where('hidden_id', 'package-yearly')->get();   
+    return view('admin.Services.servicesection4view', compact('info'));
+}
+public function editplan(Request $request, $id){
+    $info = ServiceThirdSection::find($id);
+    // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
+    return view('admin.Services.editplan',['info'=>$info]);
+   
+}
+public function updateplan(Request $request){
+    //$info = HomeSecondSection::find($request);
+   // return $request->input();
+    $info = ServiceThirdSection::find($request->id); 
+    
+    $request->validate([
+        
+        'name' => 'required',
+        'description' => 'required',
+        'price' => 'required',
+        'one' => 'required',
+        'two' => 'required',
+        'three' => 'required',
+        'four' => 'required',
+        
+    ]);
+
+    $info->name  =$request-> name;          
+    $info->description=$request->description;
+    $info->price=$request->price;
+    $info->one=$request->one;
+    $info->two=$request->two;
+    $info->three=$request->three;
+    $info->four=$request->four;
+    
+    $info->save();   
+    $info = ServiceThirdSection::all();   
+    return view('admin.Services.servicesection4view', compact('info'));
+    // return view('admin.home.homesection2view',compact('info')); 
+}
+
   
 
     public function viewhome(){
         $second = HomeSecondSection::all();  
         $third = HomeThirdSection::all();  
+        //dd($third);
         // $trial = HomeThirdSection::select(array('name'))->get()->toArray();
         // $trial = HomeThirdSection::where()->get();
         $trial = HomeThirdSection::where('id', 1)->value('name');
@@ -665,7 +736,8 @@ class HomeController extends Controller
         $fifth = HomeFifthSection::all();   
         $sixth = HomeSixthSection::all(); 
         $seven = HomeSevenSection::all();   
-        $eight = HomeEightSection::all();   
+        $eight = HomeEightSection::all(); 
+          
         return View('index')
         ->with('users', Banner::orderBy('id', 'DESC')->first())
         ->with(compact('second'))
@@ -689,13 +761,17 @@ class HomeController extends Controller
     public function viewservices(){
 
         $second = HomeSecondSection::all(); 
+        $monthly = ServiceThirdSection::where('hidden_id', 'package-monthly')->get(); 
+        $yearly = ServiceThirdSection::where('hidden_id', 'package-yearly')->get(); 
+        $fourth = ServiceThirdSection::all(); 
         $eight = HomeEightSection::all(); 
         // dd($second);
         return View('services')
         ->with('banner', ServiceBanner::orderBy('id', 'DESC')->first())
-        ->with('third', ServiceThirdSection::orderBy('id', 'DESC')->first())
-        ->with('fourth', ServiceFourthSection::orderBy('id', 'DESC')->first())
+        ->with(compact('fourth'))
         ->with(compact('second'))
+        ->with(compact('monthly'))
+        ->with(compact('yearly'))
         ->with(compact('eight'));
     }
 

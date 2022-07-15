@@ -191,152 +191,96 @@
                 </div>
                 
                 <div class="filter-list row clearfix">
-					
+				   
+                
+				@foreach($finance as $f)
 					<!-- Project Block -->
 					<div class="project-block mix finance col-lg-4 col-md-6 col-sm-12">
 						<div class="inner-box wow zoomInDown animated" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="image">
-								<img src="images/gallery/7.jpg" alt="" />
+								<img src="{{ asset('images/gallery/'.$f->image) }}" alt="" />
 								<div class="overlay-box">
-									<a href="images/gallery/7.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
+									<a href="{{ asset('images/gallery/'.$f->image) }}" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Content Strategy</a></h5>
-								<div class="designation">DIGITAL marketing</div>
+								<h5><a href="portfolio-single.html">{{$f->title}}</a></h5>
+								<div class="designation">{{$f->description}}</div>
 							</div>
 						</div>
 					</div>
-					
+				 @endforeach
+				 @foreach($consulting as $c)
 					<!-- Project Block -->
-					<div class="project-block mix consulting others business col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow zoomInDown animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="images/gallery/8.jpg" alt="" />
-								<div class="overlay-box">
-									<a href="images/gallery/8.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Social Ranking</a></h5>
-								<div class="designation">PPC|SEO</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Project Block -->
-					<div class="project-block mix business insurance col-lg-4 col-md-6 col-sm-12">
+					<div class="project-block mix consulting col-lg-4 col-md-6 col-sm-12">
 						<div class="inner-box wow zoomInDown animated" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="image">
-								<img src="images/gallery/9.jpg" alt="" />
+								<img src="{{ asset('images/gallery/'.$c->image) }}" alt="" />
 								<div class="overlay-box">
-									<a href="images/gallery/9.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
+									<a href="{{ asset('images/gallery/'.$c->image) }}" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Social Engagement</a></h5>
-								<div class="designation">Sustainability</div>
+								<h5><a href="portfolio-single.html">{{$c->title}}</a></h5>
+								<div class="designation">{{$c->description}}</div>
 							</div>
 						</div>
 					</div>
-					
+				 @endforeach
+				 @foreach($insurance as $i)
 					<!-- Project Block -->
-					<div class="project-block mix finance consulting col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow zoomInDown animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="images/gallery/10.jpg" alt="" />
-								<div class="overlay-box">
-									<a href="images/gallery/10.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Technical SEO</a></h5>
-								<div class="designation">SEO</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Project Block -->
-					<div class="project-block mix finance insurance col-lg-4 col-md-6 col-sm-12">
+					<div class="project-block mix insurance col-lg-4 col-md-6 col-sm-12">
 						<div class="inner-box wow zoomInDown animated" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="image">
-								<img src="images/gallery/11.jpg" alt="" />
+								<img src="{{ asset('images/gallery/'.$i->image) }}" alt="" />
 								<div class="overlay-box">
-									<a href="images/gallery/11.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
+									<a href="{{ asset('images/gallery/'.$i->image) }}" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Plan Management</a></h5>
-								<div class="designation">Planning</div>
+								<h5><a href="portfolio-single.html">{{$i->title}}</a></h5>
+								<div class="designation">{{$i->description}}</div>
 							</div>
 						</div>
 					</div>
-					
+				 @endforeach
+				 @foreach($others as $o)
 					<!-- Project Block -->
-					<div class="project-block mix others insurance business col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow zoomInDown animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="images/gallery/12.jpg" alt="" />
-								<div class="overlay-box">
-									<a href="images/gallery/12.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Digital Analysis</a></h5>
-								<div class="designation">Strategy</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Project Block -->
-					<div class="project-block mix finance consulting col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow zoomInDown animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="images/gallery/13.jpg" alt="" />
-								<div class="overlay-box">
-									<a href="images/gallery/13.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Technical SEO</a></h5>
-								<div class="designation">SEO</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Project Block -->
-					<div class="project-block mix finance insurance col-lg-4 col-md-6 col-sm-12">
+					<div class="project-block mix others col-lg-4 col-md-6 col-sm-12">
 						<div class="inner-box wow zoomInDown animated" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="image">
-								<img src="images/gallery/14.jpg" alt="" />
+								<img src="{{ asset('images/gallery/'.$o->image) }}" alt="" />
 								<div class="overlay-box">
-									<a href="images/gallery/14.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
+									<a href="{{ asset('images/gallery/'.$o->image) }}" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Plan Management</a></h5>
-								<div class="designation">Planning</div>
+								<h5><a href="portfolio-single.html">{{$o->title}}</a></h5>
+								<div class="designation">{{$o->description}}</div>
 							</div>
 						</div>
 					</div>
-					
+				 @endforeach
+				 @foreach($buisness as $b)
 					<!-- Project Block -->
-					<div class="project-block mix others insurance business col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow zoomInDown animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+					<div class="project-block mix business col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow zoomInDown animated" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="image">
-								<img src="images/gallery/15.jpg" alt="" />
+								<img src="{{ asset('images/gallery/'.$b->image) }}" alt="" />
 								<div class="overlay-box">
-									<a href="images/gallery/15.jpg" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
+									<a href="{{ asset('images/gallery/'.$b->image) }}" data-fancybox="gallery-2" data-caption="" class="plus flaticon-plus-symbol"></a>
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Digital Analysis</a></h5>
-								<div class="designation">Strategy</div>
+								<h5><a href="portfolio-single.html">{{$b->title}}</a></h5>
+								<div class="designation">{{$b->description}}</div>
 							</div>
 						</div>
 					</div>
-					
+				 @endforeach
+                 	
 				</div>
+				
 			</div>
 		</div>
 	</section>

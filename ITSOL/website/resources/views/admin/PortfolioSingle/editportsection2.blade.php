@@ -70,7 +70,7 @@
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-success btn-lg" type="submit" name="submit">Update</button>
-                <a href="{{url('view_homesection3')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
+                <a href="{{url('view_portsection2')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
                
                
 

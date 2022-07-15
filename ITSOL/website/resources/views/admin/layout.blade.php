@@ -121,6 +121,12 @@
                       <li><a href="{{('create_aboutsection2')}}">Create Services</a></li>
                     </ul>
                   </li>
+                  <li><a><i></i> About Expertise <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_aboutsection4')}}">View Expertise</a></li>
+                      <li><a href="{{('create_aboutsection4')}}">Add Expertise</a></li>
+                    </ul>
+                  </li>
                
                   <li><a><i></i> Team Members <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -134,17 +140,39 @@
                       <li><a href="{{('create_testimonialsection2')}}">Add Reviews</a></li>
                     </ul>
                   </li>
+                  <li><a><i></i> Services Plans <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_monthlyplan')}}">View Monthly Plan</a></li>
+                      <li><a href="{{('view_yearlyplan')}}">View Yearly Plan</a></li>
+                      <li><a href="{{('create_monthlyplan')}}">Add Plan</a></li>
+                    </ul>
+                  </li>
                   <li><a><i></i> Single Portfolio <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_portsection2')}}">View Portfolio</a></li>
                       <li><a href="{{('create_portsection2')}}">Add Portfolio</a></li>
                     </ul>
                   </li>
+                  <li><a><i></i> Single Portfolio Images<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_portsection3')}}">View Images</a></li>
+                      <li><a href="{{('create_portsection3')}}">Add Images</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i>Blog List<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_blogsection2')}}">View List</a></li>
+                      <li><a href="{{('create_blogsection2')}}">Add List</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i>Our Portfolio Gallery<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_gallery')}}">View Gallery</a></li>
+                      <li><a href="{{('create_gallery')}}">Add Photo</a></li>
+                    </ul>
+                  </li>
                   
-                  <li><a href="{{('add_aboutsection3')}}"><i></i>About Section 3<span class="fa fa-chevron-down"></span></a>
-                  </li> 
-                  <li><a href="{{('add_aboutsection4')}}"><i></i>About Section 4<span class="fa fa-chevron-down"></span></a>
-                  </li> 
+                  
                   <li><a href="{{('add_team_banner')}}"><i></i>Our Team banner section<span class="fa fa-chevron-down"></span></a>
                   </li>
                   <li><a href="{{('add_teamsection2')}}"><i></i>Our Team Section 2<span class="fa fa-chevron-down"></span></a>

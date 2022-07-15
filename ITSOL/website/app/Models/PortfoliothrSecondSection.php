@@ -11,13 +11,14 @@ use Laravel\Sanctum\HasApiTokens;
 class PortfoliothrSecondSection extends Model
 {
     use HasFactory;
-    protected $table = 'portfoliothrsecondsections';
+    protected $table = 'portfoliogallerys';
     protected $fillable =[
-        'message',
-        'heading',
+       
+       
         'image',
         'title',
         'description',
+        'catagory',
         
        
     ];

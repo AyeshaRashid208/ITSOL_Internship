@@ -190,13 +190,12 @@
 	</section>
 	<!-- End Services Page Section -->
 	
-	<!-- Price Section -->
 	<section class="pricing-section alternate">
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<div class="title">{{$third->message}}</div>
-				<h2>{{$third->heading}}</h2>
+				<div class="title">we help you</div>
+				<h2>Most prominent side is <br> our devoted <span>fetures</span></h2>
 			</div>
 			
 			<!--Pricing Info Tabs-->
@@ -206,8 +205,8 @@
 				
 					<!--Tab Btns-->
 					<ul class="tab-btns tab-buttons clearfix">
-						<li data-tab="#package-monthly" class="tab-btn active-btn"><span class="circle"></span> {{$third->tab_one_name}}</li>
-						<li data-tab="#package-yearly" class="tab-btn"><span class="circle"></span>{{$fourth->tab_two_name}}<span class="save">Save 20%</span></li>
+						<li data-tab="#package-monthly" class="tab-btn active-btn"><span class="circle"></span> Monthly</li>
+						<li data-tab="#package-yearly" class="tab-btn"><span class="circle"></span> Yearly <span class="save">Save 20%</span></li>
 					</ul>
 					
 					<!--Tabs Container-->
@@ -217,149 +216,73 @@
 						<div class="tab active-tab" id="package-monthly">
 							<div class="content">
 								<div class="row clearfix">
-									
+								@foreach($monthly as $i)
 									<!-- Price Block -->
 									<div class="price-block col-lg-4 col-md-6 col-sm-12">
 										<div class="inner-box">
 											<!-- Title Box -->
 											<div class="title-box">
-												<h5>{{$third->plan_one_heading}}</h5>
-												<div class="text">{{$third->plan_one_desc}}</div>
+												<h5>{{$i->name}}</h5>
+												<div class="text">{{$i->description}}</div>
 											</div>
-											<div class="price">{{$third->price_one}}</div>
+											<div class="price">{{$i->price}}</div>
 											<div class="lower-box">
 												<ul class="price-list">
-													<li>{{$third->feature_one}}</li>
-													<li>{{$third->feature_two}}</li>
-													<li>{{$third->feature_thr}}</li>
-													<li>{{$third->feature_four}}</li>
+													<li>{{$i->one}}</li>
+													<li>{{$i->two}}</li>
+													<li>{{$i->three}}</li>
+													<li>{{$i->four}}</li>
 												</ul>
 												<a href="#" class="theme-btn btn-style-two">Get a free trial</a>
 											</div>
 										</div>
 									</div>
 									
-									<!-- Price Block -->
-									<div class="price-block col-lg-4 col-md-6 col-sm-12">
-										<div class="inner-box">
-											<div class="recomend">{{$third->recom}}</div>
-											<!-- Title Box -->
-											<div class="title-box">
-												<h5>{{$third->plan_two_heading}}</h5>
-												<div class="text">{{$third->plan_two_desc}}</div>
-											</div>
-											<div class="price">{{$third->price_two}}</div>
-											<div class="lower-box">
-												<ul class="price-list">
-													<li>{{$third->P_feature_one}}</li>
-													<li>{{$third->P_feature_two}}</li>
-													<li>{{$third->P_feature_thr}}</li>
-													<li>{{$third->P_feature_four}}</li>
-												</ul>
-												<a href="#" class="theme-btn btn-style-two">Get a free trial</a>
-											</div>
-										</div>
-									</div>
+									@endforeach	
 									
-									<!-- Price Block -->
-									<div class="price-block col-lg-4 col-md-12 col-sm-12">
-										<div class="inner-box">
-											<!-- Title Box -->
-											<div class="title-box">
-												<h5>{{$third->plan_thr_heading}}</h5>
-												<div class="text">{{$third->plan_thr_desc}}</div>
-											</div>
-											<div class="price">{{$third->price_thr}}</div>
-											<div class="lower-box">
-												<ul class="price-list">
-													<li>{{$third->Pt_feature_one}}</li>
-													<li>{{$third->Pt_feature_two}}</li>
-													<li>{{$third->Pt_feature_thr}}</li>
-													<li>{{$third->Pt_feature_four}}</li>
-												</ul>
-												<a href="#" class="theme-btn btn-style-two">Get a free trial</a>
-											</div>
-										</div>
-									</div>
 									
 								</div>
 							</div>
 						</div>
+						
 						
 						<!-- Tab -->
 						<div class="tab" id="package-yearly">
 							<div class="content">
 								
 								<div class="row clearfix">
-									
+								@foreach($yearly as $i)
 									<!-- Price Block -->
 									<div class="price-block col-lg-4 col-md-6 col-sm-12">
 										<div class="inner-box">
 											<!-- Title Box -->
 											<div class="title-box">
-												<h5>{{$fourth->plan_one_heading}}</h5>
-												<div class="text">{{$fourth->plan_two_heading}}</div>
+												<h5>{{$i->name}}</h5>
+												<div class="text">{{$i->description}}</div>
 											</div>
-											<div class="price">{{$fourth->price_one}}</div>
+											<div class="price">{{$i->price}}</div>
 											<div class="lower-box">
 												<ul class="price-list">
-												    <li>{{$fourth->feature_one}}</li>
-													<li>{{$fourth->feature_two}}</li>
-													<li>{{$fourth->feature_thr}}</li>
-													<li>{{$fourth->feature_four}}</li>
+													<li>{{$i->one}}</li>
+													<li>{{$i->two}}</li>
+													<li>{{$i->three}}</li>
+													<li>{{$i->four}}</li>
 												</ul>
 												<a href="#" class="theme-btn btn-style-two">Get a free trial</a>
 											</div>
 										</div>
 									</div>
 									
-									<!-- Price Block -->
-									<div class="price-block col-lg-4 col-md-6 col-sm-12">
-										<div class="inner-box">
-											<div class="recomend">{{$fourth->recom}}</div>
-											<!-- Title Box -->
-											<div class="title-box">
-												<h5>{{$fourth->plan_two_heading}}</h5>
-												<div class="text">{{$fourth->plan_two_desc}}</div>
-											</div>
-											<div class="price">{{$fourth->price_two}}</div>
-											<div class="lower-box">
-												<ul class="price-list">
-												    <li>{{$fourth->P_feature_one}}</li>
-													<li>{{$fourth->P_feature_two}}</li>
-													<li>{{$fourth->P_feature_thr}}</li>
-													<li>{{$fourth->P_feature_four}}</li>
-												</ul>
-												<a href="#" class="theme-btn btn-style-two">Get a free trial</a>
-											</div>
-										</div>
-									</div>
 									
-									<!-- Price Block -->
-									<div class="price-block col-lg-4 col-md-12 col-sm-12">
-										<div class="inner-box">
-											<!-- Title Box -->
-											<div class="title-box">
-												<h5>{{$fourth->plan_thr_heading}}</h5>
-												<div class="text">{{$fourth->plan_thr_desc}}</div>
-											</div>
-											<div class="price">{{$fourth->price_thr}}</div>
-											<div class="lower-box">
-												<ul class="price-list">
-													<li>{{$fourth->Pt_feature_two}}</li>
-													<li>{{$fourth->Pt_feature_thr}}</li>
-													<li>{{$fourth->Pt_feature_four}}</li>
-												    <li>{{$fourth->Pt_feature_one}}</li>
-												</ul>
-												<a href="#" class="theme-btn btn-style-two">Get a free trial</a>
-											</div>
-										</div>
-									</div>
+									@endforeach		
 									
 								</div>
 								
 							</div>
 						</div>
+						
+						<!-- Tab -->
+						
 						
 					</div>
 				</div>
@@ -367,7 +290,6 @@
 			
 		</div>
 	</section>
-	<!-- End Price Section -->
 	
 	<!--Sponsors Section-->
 	<section class="sponsors-section style-two">

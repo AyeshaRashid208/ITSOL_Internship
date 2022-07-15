@@ -173,78 +173,26 @@
 				<!--Content Side-->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
                 	<div class="blog-list">
-						
+					@foreach($second as $second)
 						<!-- News Block Two -->
 						<div class="news-block-two">
 							<div class="inner-box">
 								<div class="images">
-									<a href="blog-single.html"><img src="images/resource/news-4.jpg" alt="" /></a>
+									<a href="blog-single.html"><img src="{{ asset('images/resource/'.$second->image) }}" alt="" /></a>
 								</div>
 								<div class="lower-content">
 									<ul class="post-meta">
-										<li class="style-two"><span class="icon fa fa-calendar"></span>July 25, 2019</li>
-										<li><span class="icon fa fa-user"></span>Jhonny Rip</li>
+										<li class="style-two"><span class="icon fa fa-calendar"></span>{{$second->date}}</li>
+										<li><span class="icon fa fa-user"></span>{{$second->name}}</li>
 									</ul>
-									<h4><a href="blog-single.html">Thirty-two surrogate mothers charged with human trafficking.</a></h4>
-									<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more relevant ads, facilitate social sharing, and to  violanalyse traffic.Others wondered if the hand of God was at work over New York, heralding perhaps a new Pope, or the moment when Evangelicals say true believers will be swept up, or "raptured", to heaven. </div>
+									<h4><a href="blog-single.html">{{$second->title}}</a></h4>
+									<div class="text">{{$second->description}}</div>
 									<a href="#" class="theme-btn btn-style-one">View more</a>
 								</div>
 							</div>
 						</div>
 						
-						<!-- News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="images">
-									<a href="blog-single.html"><img src="images/resource/news-5.jpg" alt="" /></a>
-								</div>
-								<div class="lower-content">
-									<ul class="post-meta">
-										<li><span class="icon fa fa-calendar"></span>July 25, 2019</li>
-										<li><span class="icon fa fa-user"></span>Jhonny Rip</li>
-									</ul>
-									<h4><a href="blog-single.html">Top aide to possible contender forced to resign over creepy.</a></h4>
-									<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more relevant ads, facilitate social sharing, and to  violanalyse traffic.Others wondered if the hand of God was at work over New York, heralding perhaps a new Pope, or the moment when Evangelicals say true believers will be swept up, or "raptured", to heaven. </div>
-									<a href="#" class="theme-btn btn-style-one">View more</a>
-								</div>
-							</div>
-						</div>
-						
-						<!-- News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="images">
-									<a href="blog-single.html"><img src="images/resource/news-6.jpg" alt="" /></a>
-								</div>
-								<div class="lower-content">
-									<ul class="post-meta">
-										<li><span class="icon fa fa-calendar"></span>July 25, 2019</li>
-										<li><span class="icon fa fa-user"></span>Jhonny Rip</li>
-									</ul>
-									<h4><a href="blog-single.html">Chinese clients have been released after agreeing to keep.</a></h4>
-									<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more relevant ads, facilitate social sharing, and to  violanalyse traffic.Others wondered if the hand of God was at work over New York, heralding perhaps a new Pope, or the moment when Evangelicals say true believers will be swept up, or "raptured", to heaven. </div>
-									<a href="#" class="theme-btn btn-style-one">View more</a>
-								</div>
-							</div>
-						</div>
-						
-						<!-- News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="images">
-									<a href="blog-single.html"><img src="images/resource/news-7.jpg" alt="" /></a>
-								</div>
-								<div class="lower-content">
-									<ul class="post-meta">
-										<li><span class="icon fa fa-calendar"></span>July 25, 2019</li>
-										<li><span class="icon fa fa-user"></span>Jhonny Rip</li>
-									</ul>
-									<h4><a href="blog-single.html">New York awe-struck as sky over Queens turns blue</a></h4>
-									<div class="text">Cookies are set through this site to recognise your repeat visits and preferences, serve more relevant ads, facilitate social sharing, and to  violanalyse traffic.Others wondered if the hand of God was at work over New York, heralding perhaps a new Pope, or the moment when Evangelicals say true believers will be swept up, or "raptured", to heaven. </div>
-									<a href="#" class="theme-btn btn-style-one">View more</a>
-								</div>
-							</div>
-						</div>
+					@endforeach
 						
 						<!--Styled Pagination-->
 						<ul class="styled-pagination">

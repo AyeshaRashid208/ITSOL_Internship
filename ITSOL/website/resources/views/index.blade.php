@@ -213,44 +213,44 @@
 			<div class="devoted-info-tabs">
 				<!-- Devoted Tabs -->
 				<div class="devoted-tabs tabs-box">
-				@foreach($third as $third)
+				<div class="devoted-tabs tabs-box">
+
 					<!--Tab Btns-->
 					<div class="btns-outer">
 						<ul class="tab-btns tab-buttons clearfix">
-						
-						
-							<li data-tab="#{{$third->hidden_id}}" class="tab-btn active-btn">{{$third->name}}</li>
-						
-						
+							
+							@foreach($third as $i)
+							<li data-tab="#{{$i->hidden_id}}" class="tab-btn active-btn">{{$i->name}}</li>
+							@endforeach
 						</ul>
 					</div>
 					
+					
 					<!--Tabs Container-->
 					<div class="tabs-content">
-					
+						
 						<!--Tab / Active Tab-->
-						<div class="tab active-tab" id="{{$third->hidden_id}}">
-                       
+						@foreach($third as $i)
+						<div class="tab @if($i->name=='Fast Turnaround') active-tab @endif" id="{{$i->hidden_id}}">
 							<div class="content">
-							
 								<div class="row clearfix">
-								
+
 									<!-- Content Column -->
 									<div class="content-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
-											<h5>{{$third->description}}</h5>
-											<div class="text">{{$third->detail}}</div>
+											<h5>{{$i->description}}</h5>
+											<div class="text">{{$i->detail}}</div>
 											
 											<!--Accordian Box-->
 											<ul class="accordion-box style-two">
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->title_one}}</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$i->title_one}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>{{$third->desc_one}}</p>
+																<p>{{$i->desc_one}}</p>
 															</div>
 														</div>
 													</div>
@@ -258,11 +258,11 @@
 
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->title_two}}</div>
+													<div class="acc-btn active"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$i->title_two}}</div>
 													<div class="acc-content current">
 														<div class="content">
 															<div class="text">
-																<p>{{$third->desc_two}}</p>
+																<p>{{$i->desc_two}}</p>
 															</div>
 														</div>
 													</div>
@@ -270,11 +270,11 @@
 												
 												<!--Block-->
 												<li class="accordion block">
-													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$third->title_thr}}</div>
+													<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div>{{$i->title_thr}}</div>
 													<div class="acc-content">
 														<div class="content">
 															<div class="text">
-																<p>{{$third->desc_thr}}</p>
+																<p>{{$i->desc_thr}}</p>
 															</div>
 														</div>
 													</div>
@@ -291,23 +291,16 @@
 									<div class="image-column col-lg-6 col-md-12 col-sm-12">
 										<div class="inner-column">
 											<div class="image">
-												<img src="{{ asset('images/resource/'.$third->image) }}" alt="" />
+												<img src="{{ asset('images/resource/'.$i->image) }}" alt="" />
 											</div>
 										</div>
 									</div>
-									
 								</div>
-								
 							</div>
-							
 						</div>
+						@endforeach
 						
-						<!--Tab-->
-						
-						
-					</div>
-					
-					@endforeach
+	                </div>
 				</div>
 				
 			</div>

@@ -203,54 +203,24 @@
 			<!-- Lower Section -->
 			<div class="lower-section">
 				<div class="row clearfix">
-					
+					@foreach($third as $third)
 					<!-- Project Block -->
 					<div class="project-block col-lg-4 col-md-6 col-sm-12">
 						<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="image">
-								<img src="images/gallery/7.jpg" alt="" />
+								<img src="{{ asset('images/gallery/'.$third->image) }}" alt="" />
 								<div class="overlay-box">
-									<a href="images/gallery/7.jpg" data-fancybox="gallery-3" data-caption="" class="plus flaticon-plus-symbol"></a>
+									<a href="{{ asset('images/gallery/'.$third->image) }}" data-fancybox="gallery-3" data-caption="" class="plus flaticon-plus-symbol"></a>
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Business Management</a></h5>
-								<div class="designation">Sustainability</div>
+								<h5><a href="portfolio-single.html">{{$third->title}}</a></h5>
+								<div class="designation">{{$third->description}}</div>
 							</div>
 						</div>
 					</div>
+					@endforeach
 					
-					<!-- Project Block -->
-					<div class="project-block col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="images/gallery/11.jpg" alt="" />
-								<div class="overlay-box">
-									<a href="images/gallery/11.jpg" data-fancybox="gallery-3" data-caption="" class="plus flaticon-plus-symbol"></a>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Digital Analysis</a></h5>
-								<div class="designation">Strategy</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Project Block -->
-					<div class="project-block col-lg-4 col-md-6 col-sm-12">
-						<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-							<div class="image">
-								<img src="images/gallery/14.jpg" alt="" />
-								<div class="overlay-box">
-									<a href="images/gallery/14.jpg" data-fancybox="gallery-3" data-caption="" class="plus flaticon-plus-symbol"></a>
-								</div>
-							</div>
-							<div class="lower-content">
-								<h5><a href="portfolio-single.html">Fund Management</a></h5>
-								<div class="designation">Sustainability</div>
-							</div>
-						</div>
-					</div>
 					
 				</div>
 			</div>

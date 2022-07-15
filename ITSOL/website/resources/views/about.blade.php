@@ -333,11 +333,11 @@
 			<div class="sec-title">
 				<div class="clearfix">
 					<div class="pull-left">
-						<div class="title">{{$fourth->message}}</div>
-						<h2>{{$fourth->title}}</h2>
+						<div class="title">Why choose us</div>
+						<h2>There are many companies <br> but why <span>choose us</span></h2>
 					</div>
 					<div class="pull-right">
-						<div class="text">{{$fourth->description}} </div>
+						<div class="text">Cookies are set through this site to recognise your repeat visits and prefe rences, serve more relevant ads, facilitate social sharing, and to  violanal yse traffic. </div>
 					</div>
 				</div>
 			</div>
@@ -349,9 +349,9 @@
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <!--Tab Btns-->
                         <ul class="tab-btns tab-buttons clearfix">
-                            <li data-tab="#feature-expert" class="tab-btn">{{$fourth->first_heading}}<span>{{$fourth->first_description}}</span></li>
-                            <li data-tab="#feature-brand" class="tab-btn active-btn">{{$fourth->second_heading}} <span>{{$fourth->second_description}}</span></li>
-                            <li data-tab="#feature-ideas" class="tab-btn">{{$fourth->third_heading}}<span>{{$fourth->third_description}}</span></li>
+						@foreach($fourth as $i)
+                            <li data-tab="#{{$i->hidden_id}}" class="tab-btn">{{$i->name}} <span>{{$i->description}}</span></li>
+						@endforeach
                         </ul>
                     </div>
                     <!--Column-->
@@ -359,32 +359,17 @@
                     	<!--Tabs Container-->
                         <div class="tabs-content">
                         
+                        @foreach($fourth as $i)
                             <!-- Tab -->
-                            <div class="tab" id="feature-expert">
+                            <div class="tab @if($i->hidden_id=='feature-brand') active-tab @endif" id="{{$i->hidden_id}}">
                             	<div class="content">
 									<div class="image">
-										<img src="{{ asset('images/resource/'.$fourth->image) }}" alt="">
+										<img src="{{ asset('images/resource/'.$i->image) }}" alt="">
 									</div>
 								</div>
 							</div>
 							
-							<!-- Tab -->
-                            <div class="tab active-tab" id="feature-brand">
-                            	<div class="content">
-									<div class="image">
-										<img src="images/resource/feature-1.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							
-							<!-- Tab -->
-                            <div class="tab" id="feature-ideas">
-                            	<div class="content">
-									<div class="image">
-										<img src="images/resource/feature-2.jpg" alt="">
-									</div>
-								</div>
-							</div>
+						@endforeach	
 
 						</div>
 					</div>

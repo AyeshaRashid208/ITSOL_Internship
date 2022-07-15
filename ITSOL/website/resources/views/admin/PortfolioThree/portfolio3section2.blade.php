@@ -1,13 +1,18 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_portfolio3_section2')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('create_gallery')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
        @foreach($errors->all() as $error)
        <li>{{$error}}</li>
        @endforeach
+    </div>
+    @endif
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+    {{ session()->get('message') }}
     </div>
     @endif
 <div class="x_panel">
@@ -26,14 +31,7 @@
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
                 <div class="form-group">
-                <label for="formGroupExampleInput">Message</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="message">
-                </div>
-                  
-                <div class="form-group">
-                <label for="formGroupExampleInput">Main Heading</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
-                </div>
+                 
                 <div class="form-group">
                <label for="exampleFormControlFile1">Image</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
@@ -46,6 +44,16 @@
                 <label for="exampleFormControlTextarea1">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
                </div>
+                <div class="form-group">
+                <label for="formGroupExampleInput">Catagory</label>
+                <select id="formGroupExampleInput" class="form-control" name="catagory">
+                <option  value="buisness">Business</option>
+                <option  value="consulting">Consulting</option>
+                <option  value="insurance">Insurance</option>
+                <option  value="finance">Finance</option>
+                <option  value="others">Others</option>
+                </select>
+                </div>
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>

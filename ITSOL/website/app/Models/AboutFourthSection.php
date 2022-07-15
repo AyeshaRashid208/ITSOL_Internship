@@ -11,17 +11,11 @@ use Laravel\Sanctum\HasApiTokens;
 class AboutFourthSection extends Model
 {
     use HasFactory;
-    protected $table = 'aboutfourthsections';
+    protected $table = 'aboutexpertisesections';
     protected $fillable =[
-        'message',
-        'title',
+        'name',
         'description',
-        'first_heading',
-        'first_description',
-        'second_heading',
-        'second_description',
-        'third_heading',
-        'third_description',
+        'hidden_id',
         'image',
        
     ];

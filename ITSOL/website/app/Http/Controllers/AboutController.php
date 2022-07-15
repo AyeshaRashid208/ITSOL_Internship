@@ -40,15 +40,30 @@ class AboutController extends Controller
         
         return view('admin.About.aboutsection2');
     }
+    public function createabout4rthsection(){
+        
+        return view('admin.About.aboutsection4');
+    }
     public function displayabout2ndsection(){
             
         $info = AboutSecondSection::all();   
         return view('admin.About.aboutsection2view', compact('info'));
     }
+    public function displayabout4rthsection(){
+            
+        $info = AboutFourthSection::all();   
+        return view('admin.About.aboutsection4view', compact('info'));
+    }
     public function editabout2ndsection(Request $request, $id){
         $info = AboutSecondSection::find($id);
         // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
         return view('admin.About.editaboutsection2',['info'=>$info]);
+       
+    }
+    public function editabout4rthsection(Request $request, $id){
+        $info = AboutFourthSection::find($id);
+        // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
+        return view('admin.About.editaboutsection4',['info'=>$info]);
        
     }
     public function addabout2ndsection(Request $request){
@@ -57,6 +72,23 @@ class AboutController extends Controller
         $info->title=$request->title;
         $info->description=$request->description;
         $info->image=$request->image;
+       $info->save();
+    
+       return redirect::back()->with('message', 'Record Added successfully' ); 
+
+    }
+    public function addabout4rthsection(Request $request){
+        //$info = new banner;
+        $info = new AboutFourthSection;
+        $info->name=$request->name;
+        $info->description=$request->description;
+        if($request->hasfile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename=time().'.'.$extension;
+            $file->move('images/resource',$filename);
+            $info->image = $filename;
+           }
        $info->save();
     
        return redirect::back()->with('message', 'Record Added successfully' ); 
@@ -83,11 +115,43 @@ class AboutController extends Controller
         return view('admin.About.aboutsection2view', compact('info'));
         // return view('admin.home.homesection2view',compact('info')); 
   }
+  public function updateabout4rthsection(Request $request){
+    //$info = HomeSecondSection::find($request);
+   // return $request->input();
+    $users = AboutFourthSection::find($request->id); 
+    $request->validate([
+        'image' => 'required',
+        'name' => 'required',
+        'description' => 'required',
+        
+    ]);
+    $users->name=$request->name;
+    $users->description=$request->description;
+    if($request->hasfile('image')){
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalName();
+        $filename=time().'.'.$extension;
+        $file->move('images/resource',$filename);
+        $users->image = $filename;
+       }
+    $users->save();   
+    $info = AboutFourthSection::all();   
+    return view('admin.About.aboutsection4view', compact('info'));
+    // return view('admin.home.homesection2view',compact('info')); 
+}
   public function destroysection2($id) {
     // DB::statement("ALTER TABLE homesecondsections AUTO_INCREMENT = $id;"); 
     $max = DB::table('aboutsecondsections')->max('id'); 
     DB::delete('delete from  aboutsecondsections where id = ?',[$id]);
     DB::statement("ALTER TABLE aboutsecondsections AUTO_INCREMENT =  $max");
+    return redirect::back();
+    
+ }
+ public function destroysection4($id) {
+    // DB::statement("ALTER TABLE homesecondsections AUTO_INCREMENT = $id;"); 
+    $max = DB::table('aboutexpertisesections')->max('id'); 
+    DB::delete('delete from  aboutexpertisesections where id = ?',[$id]);
+    DB::statement("ALTER TABLE aboutexpertisesections AUTO_INCREMENT =  $max");
     return redirect::back();
     
  }
@@ -111,43 +175,19 @@ class AboutController extends Controller
           echo "Record inserted successfully.<br/>"; 
 
     }
-    public function displayabout4rthsection(){
-            
-        return view('admin.About.aboutsection4');
-    }
-    public function addabout4rthsection(Request $request){
-        //$info = new banner;
-        $info = new AboutFourthSection;
-        $info->message=$request->message;
-        $info->title=$request->title;
-        $info->description=$request->description;
-        $info->first_heading=$request->first_heading;
-        $info->first_description=$request->first_description;
-        $info->second_heading=$request->second_heading;
-        $info->second_description=$request->second_description;
-        $info->third_heading=$request->third_heading;
-        $info->third_description=$request->third_description;
-        if($request->hasfile('image')){
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalName();
-            $filename=time().'.'.$extension;
-            $file->move('images/resource',$filename);
-            $info->image = $filename;
-           }
     
-       $info->save();
-    
-          echo "Record inserted successfully.<br/>"; 
-
-    }
+   
     public function viewabout(){
         $second = AboutSecondSection::all(); 
-        // dd($second); 
+        $fourth = AboutFourthSection::all(); 
+        // dd($fourth); 
         return View('about')
         ->with('banner', AboutBanner::orderBy('id', 'DESC')->first())
         ->with(compact('second'))
-        ->with('third', AboutThirdSection::orderBy('id', 'DESC')->first())
-        ->with('fourth', AboutFourthSection::orderBy('id', 'DESC')->first());
+        ->with(compact('fourth'))
+        ->with('third', AboutThirdSection::orderBy('id', 'DESC')->first());
+
+        
         
         
         }

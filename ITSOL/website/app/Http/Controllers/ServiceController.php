@@ -7,6 +7,9 @@ use App\Models\ServiceBanner;
 use App\Models\ServiceSecondSection;
 use App\Models\ServiceThirdSection;
 use App\Models\ServiceFourthSection;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
+use DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -55,87 +58,37 @@ class ServiceController extends Controller
       
     }
     
-    public function displayservice3rdsection(){
-            
-        return view('admin.Services.servicesection3');
-    }
-    public function addservice3rdsection(Request $request){
-        //$info = new banner;
-        $info = new ServiceThirdSection;
-        $info->message  =$request-> message;          
-        $info->heading=$request->heading;
-        $info->tab_one_name=$request->tab_one_name;
-        $info->plan_one_heading=$request->plan_one_heading;
-        $info->plan_one_desc=$request->plan_one_desc;
-        $info->price_one =$request->price_one;
-        $info->feature_one=$request->feature_one;
-        $info->feature_two=$request->feature_two;
-        $info->feature_thr=$request->feature_thr;
-        $info->feature_four=$request->feature_four;
-        $info->recom=$request->recom;
-        $info->plan_two_heading=$request->plan_two_heading;
-        $info->plan_two_desc=$request->plan_two_desc;
-        $info->price_two=$request->price_two;
-        $info->P_feature_one=$request->P_feature_one;
-        $info->P_feature_two=$request->P_feature_two;
-        $info->P_feature_thr=$request->P_feature_thr;
-        $info->P_feature_four=$request->P_feature_four;
-        $info->plan_thr_heading=$request->plan_thr_heading;
-        $info->plan_thr_desc=$request->plan_thr_desc;
-        $info->price_thr=$request->price_thr;
-        $info->Pt_feature_one=$request->Pt_feature_one;
-        $info->Pt_feature_two=$request->Pt_feature_two;
-        $info->Pt_feature_thr=$request->Pt_feature_thr;
-        $info->Pt_feature_four=$request->Pt_feature_four;
-       $info->save();
-    
-          echo "Record inserted successfully.<br/>";
-       
-      
-    }
-    public function displayservice4rthsection(){
+    public function createservice4rthsection(){
             
         return view('admin.Services.servicesection4');
     }
     public function addservice4rthsection(Request $request){
         //$info = new banner;
-        $info = new ServiceFourthSection;
-        $info->tab_two_name=$request->tab_two_name;
-        $info->plan_one_heading=$request->plan_one_heading;
-        $info->plan_one_desc=$request->plan_one_desc;
-        $info->price_one =$request->price_one;
-        $info->feature_one=$request->feature_one;
-        $info->feature_two=$request->feature_two;
-        $info->feature_thr=$request->feature_thr;
-        $info->feature_four=$request->feature_four;
-        $info->recom=$request->recom;
-        $info->plan_two_heading=$request->plan_two_heading;
-        $info->plan_two_desc=$request->plan_two_desc;
-        $info->price_two=$request->price_two;
-        $info->P_feature_one=$request->P_feature_one;
-        $info->P_feature_two=$request->P_feature_two;
-        $info->P_feature_thr=$request->P_feature_thr;
-        $info->P_feature_four=$request->P_feature_four;
-        $info->plan_thr_heading=$request->plan_thr_heading;
-        $info->plan_thr_desc=$request->plan_thr_desc;
-        $info->price_thr=$request->price_thr;
-        $info->Pt_feature_one=$request->Pt_feature_one;
-        $info->Pt_feature_two=$request->Pt_feature_two;
-        $info->Pt_feature_thr=$request->Pt_feature_thr;
-        $info->Pt_feature_four=$request->Pt_feature_four;
+        $info = new ServiceThirdSection;
+        $info->name  =$request-> name;          
+        $info->description=$request->description;
+        $info->price=$request->price;
+        $info->one=$request->one;
+        $info->two=$request->two;
+        $info->three=$request->three;
+        $info->four=$request->four;
        $info->save();
-    
-          echo "Record inserted successfully.<br/>";
+       return redirect::back()->with('message', 'Record Added successfully' ); 
+
        
       
     }
+    public function displayservice4rthsection(){
+            
+        $info = AboutFourthSection::all();   
+        return view('admin.About.aboutsection4view', compact('info'));
+    }
+    
     public function viewservice(){
        
         return View('services')
         ->with('banner', ServiceBanner::orderBy('id', 'DESC')->first())
-        ->with('second', ServiceSecondSection::orderBy('id', 'DESC')->first())
-        ->with('third', ServiceThirdSection::orderBy('id', 'DESC')->first())
-        ->with('fourth', ServiceFourthSection::orderBy('id', 'DESC')->first());
+        ->with('second', ServiceSecondSection::orderBy('id', 'DESC')->first());
         
         }
    

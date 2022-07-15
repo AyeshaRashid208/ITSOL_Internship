@@ -11,7 +11,7 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortfolioThreeController;
 use App\Http\Controllers\PortfolioController;
-
+use App\Http\Controllers\BlogController;
 
 Route::get("/",[HomeController::class,"viewhome"]);
 Route::get("/home",[HomeController::class,"viewhome"]);
@@ -21,10 +21,9 @@ Route::get("/testimonial",[TestimonialController::class,"viewtest"]);
 Route::get("/services",[HomeController::class,"viewservices"]);
 Route::get("/portfolio-3-column",[PortfolioThreeController::class,"viewport"]);
 Route::get("/portfolio-single",[PortfolioController::class,"viewport"]);
+Route::get("/blog-list",[BlogController::class,"viewblog"]);
 
-Route::get('/blog-list', function () {
-    return view('blog-list');
-});
+
 Route::get('/blog-single', function () {
     return view('blog-single');
 });
@@ -117,11 +116,20 @@ Route::get('/edit_aboutsection2/{id}',[AboutController::class,'editabout2ndsecti
 Route::post('/updateaboutsection2',[AboutController::class,'updateabout2ndsection']);
 Route::get('del_aboutsection2/{id}',[AboutController::class,'destroysection2']);
 
-
+//aboutsection3
 Route::get('/add_aboutsection3',[AboutController::class,'displayabout3rdsection']);
 Route::post('/add_aboutsection3',[AboutController::class,'addabout3rdsection']);
-Route::get('/add_aboutsection4',[AboutController::class,'displayabout4rthsection']);
-Route::post('/add_aboutsection4',[AboutController::class,'addabout4rthsection']);
+
+
+//aboutsection4
+Route::get('/create_aboutsection4',[AboutController::class,'createabout4rthsection']);
+Route::post('/create_aboutsection4',[AboutController::class,'addabout4rthsection']);
+Route::get('/view_aboutsection4',[AboutController::class,'displayabout4rthsection']);
+Route::get('/edit_aboutsection4/{id}',[AboutController::class,'editabout4rthsection']);
+Route::post('/updateaboutsection4',[AboutController::class,'updateabout4rthsection']);
+Route::get('del_aboutsection4/{id}',[AboutController::class,'destroysection4']);
+
+
 Route::get('/add_team_banner',[TeamController::class,'displayteamaboutsection']);
 Route::post('/add_team_banner',[TeamController::class,'addteambannersection']);
 
@@ -151,17 +159,28 @@ Route::post('/updatetestsection2',[TestimonialController::class,'updatetest2ndse
 
 Route::get('/add_services_banner',[ServiceController::class,'displayservicesbannersection']);
 Route::post('/add_services_banner',[ServiceController::class,'addservicebannersection']);
-Route::get('/add_servicesection2',[ServiceController::class,'displayservice2ndsection']);
-Route::post('/add_servicesection2',[ServiceController::class,'addservice2ndsection']);
-Route::get('/add_servicesection3',[ServiceController::class,'displayservice3rdsection']);
-Route::post('/add_servicesection3',[ServiceController::class,'addservice3rdsection']);
-Route::get('/add_servicesection4',[ServiceController::class,'displayservice4rthsection']);
-Route::post('/add_servicesection4',[ServiceController::class,'addservice4rthsection']);
+
+//service Plan
+Route::get('/create_monthlyplan',[HomeController::class,'createservice4rthsection']);
+Route::post('/create_monthlyplan',[HomeController::class,'addservice4rthsection']);
+Route::get('/view_monthlyplan',[HomeController::class,'displayservice4rthsection']);
+Route::get('/view_yearlyplan',[HomeController::class,'displayserviceyearlysection']);
+Route::get('/edit_plan/{id}',[HomeController::class,'editplan']);
+Route::post('/updateplan',[HomeController::class,'updateplan']);
+
+
+
 Route::get('/add_portfolio3_banner',[PortfolioThreeController::class,'displayportfolio3bannersection']);
 Route::post('/add_portfolio3_banner',[PortfolioThreeController::class,'addbannersection']);
-Route::get('/add_portfolio3_section2',[PortfolioThreeController::class,'displayportfolio3secondsection']);
-Route::post('/add_portfolio3_section2',[PortfolioThreeController::class,'addportfoliothrsecondsection']);
-Route::get('/add_portfolio3_section3',[PortfolioThreeController::class,'displayportfolio3thirdsection']);
+
+//portfolio3section2
+Route::get('/create_gallery',[PortfolioThreeController::class,'creategallery']);
+Route::post('/create_gallery',[PortfolioThreeController::class,'addgallery']);
+Route::get('/view_gallery',[PortfolioThreeController::class,'displaygallery']);
+Route::get('/edit_gallery/{id}',[PortfolioThreeController::class,'editgallery']);
+Route::post('/updategallery',[PortfolioThreeController::class,'updategallery']);
+Route::get('del_gallery/{id}',[TestimonialController::class,'delgallery']);
+
 
 Route::get('/add_portfoliosingle_banner',[PortfolioController::class,'displayportfoliobannersection']);
 Route::post('/add_portfoliosingle_banner',[PortfolioController::class,'addbannersection']);
@@ -174,11 +193,36 @@ Route::get('del_portsection2/{id}',[PortfolioController::class,'destroysection2'
 Route::get('/edit_portsection2/{id}',[PortfolioController::class,'editport2ndsection']);
 Route::post('/updateportsection2',[PortfolioController::class,'updateport2ndsection']);
 
+//portfoliosinglesection3
+
+
+Route::get('/create_portsection3',[PortfolioController::class,'createportfoliothirdsection']);
+Route::post('/create_portsection3',[PortfolioController::class,'addportfoliothirdsection']);
+Route::get('/view_portsection3',[PortfolioController::class,'displayportfoliothirdsection']);
+Route::get('/edit_portsection3/{id}',[PortfolioController::class,'editport3rdsection']);
+Route::post('/updateportsection3',[PortfolioController::class,'updateport3rdsection']);
+Route::get('del_portsection3/{id}',[PortfolioController::class,'destroysection3']);
+
+
+//blogsection2
+Route::get('/create_blogsection2',[BlogController::class,'createblogsecondsection']);    
+Route::post('/create_blogsection2',[BlogController::class,'addblogsecondsection']);    
+Route::get('/view_blogsection2',[BlogController::class,'displayblogsecondsection']);    
+Route::get('/edit_blogsection2/{id}',[BlogController::class,'editblog2ndsection']);
+Route::post('/updateblogsection2',[BlogController::class,'updateblog2ndsection']);
+Route::get('del_blogsection2/{id}',[BlogController::class,'destroysection2']);
+
+
+//blogsection3
+Route::get('/create_blogsection3',[BlogController::class,'createblogthirdsection']);    
+Route::post('/create_blogsection3',[BlogController::class,'addblogthirdsection']);    
+Route::get('/view_blogsection3',[BlogController::class,'displayblogthirdsection']);    
+Route::get('/edit_blogsection3/{id}',[BlogController::class,'editblog3rdsection']);
+Route::post('/updateblogsection3',[BlogController::class,'updateblog3rdsection']);
+Route::get('del_blogsection3/{id}',[BlogController::class,'destroysection3']);
 
 
 
-Route::get('/add_portfolio_section3',[PortfolioController::class,'displayportfoliothirdsection']);
-Route::get('/add_portfolio_section4',[PortfolioController::class,'displayportfoliofourthsection']);
 Route::get('/add_bloglistbanner',[Controller::class,'displayblogbannersection']);
 Route::get('/add_bloglist_section2',[Controller::class,'displaybloglistsection2']);
 Route::get('/add_contactbanner',[Controller::class,'displaycontactbanner']);
