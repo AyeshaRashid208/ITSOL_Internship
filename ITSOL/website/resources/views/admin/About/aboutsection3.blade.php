@@ -25,25 +25,13 @@
         
         <div class="x_content">
                 <div class="form-group has-feedback" style="position:relative;">
-                <div class="form-group">
-                <label for="formGroupExampleInput">Message</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="message">
-                </div>
-                <div class="form-group">
-                <label for="formGroupExampleInput">Main Heading</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="heading">
-                </div>
-                <div class="form-group">
-                <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="main_title">
-                </div>
                 
                 <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <input class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="description">
+                <label for="exampleFormControlTextarea1">Skill 1 </label>
+                <input class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="skill_one">
                 </div>
                 <div class="form-group">
-                <label for="exampleFormControlTextarea1">Skill 1 </label>
+                <label for="exampleFormControlTextarea1">Skill 1 Percentage</label>
                 <input class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="skill_one">
                 </div>
                 <div class="form-group">
@@ -52,7 +40,15 @@
                 </div>
                 <div class="form-group">
                 <label for="exampleFormControlTextarea1">Skill 1 </label>
+                <input class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="skill_one">
+                </div>
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1">Skill 1 </label>
                 <input class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="skill_three">
+                </div>
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1">Skill 1 </label>
+                <input class="form-control" id="exampleFormControlTextarea1" rows="5" col ="3"name="skill_one">
                 </div>
                 
                 <br>

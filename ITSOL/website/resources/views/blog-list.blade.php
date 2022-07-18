@@ -154,7 +154,7 @@
     <section class="page-title" style="background-image:url(images/background/7.png)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>blog <span>list</span></h1>
+				<h1> <span>{{$banner->title}}</span></h1>
 				<ul class="page-breadcrumb">
 					<li><a href="index.html">Home</a></li>
 					<li>blog</li>
@@ -178,7 +178,7 @@
 						<div class="news-block-two">
 							<div class="inner-box">
 								<div class="images">
-									<a href="blog-single.html"><img src="{{ asset('images/resource/'.$second->image) }}" alt="" /></a>
+									<a href="blog-single.html"><img src="{{ asset('images/resource/'.$second->fimage) }}" alt="" /></a>
 								</div>
 								<div class="lower-content">
 									<ul class="post-meta">
@@ -186,8 +186,8 @@
 										<li><span class="icon fa fa-user"></span>{{$second->name}}</li>
 									</ul>
 									<h4><a href="blog-single.html">{{$second->title}}</a></h4>
-									<div class="text">{{$second->description}}</div>
-									<a href="#" class="theme-btn btn-style-one">View more</a>
+									<div class="text">{{substr($second->one, 0,  350)}}</div>
+									<a href={{"full_blog/".$second['id']}} class="theme-btn btn-style-one">View more</a>
 								</div>
 							</div>
 						</div>

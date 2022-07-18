@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_bloglistbanner')}}" method="post"">
+<form action="{{url('create_blogbanner')}}" method="post"">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">

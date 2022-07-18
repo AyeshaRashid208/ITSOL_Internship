@@ -90,6 +90,34 @@ class HomeController extends Controller
         return View('admin.home.bannerview');
     }
 
+    //service banner
+    public function createservicebannersection(){
+        
+        return view('admin.Services.services_banner');
+    }
+    public function displayservicebannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.Services.servicebannerview')
+        ->with('info', ServiceBanner::orderBy('id', 'DESC')->first());;
+    }
+    public function addservicebannersection(Request $request){
+        //$info = new banner;
+        $info = new ServiceBanner;
+        $info->title=$request->title;
+        
+       $info->save();
+    
+       return redirect::back()->with('message', 'Record Added successfully' ); 
+
+    }
+    public function editservicebanner(){
+        
+
+       return view('admin.Services.editbanner')
+       ->with('users', ServiceBanner::orderBy('id', 'DESC')->first());
+   }
+
 
     //home section 2
     public function displayhome2ndsection(){

@@ -1,13 +1,18 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_services_banner')}}" method="post"">
+<form action="{{url('create_servicebanner')}}" method="post">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
        @foreach($errors->all() as $error)
        <li>{{$error}}</li>
        @endforeach
+    </div>
+    @endif
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+    {{ session()->get('message') }}
     </div>
     @endif
 <div class="x_panel">

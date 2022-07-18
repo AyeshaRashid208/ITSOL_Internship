@@ -15,12 +15,16 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class PortfolioThreeController extends Controller
 {
-    
-    public function displayportfolio3bannersection(){
-            
+    public function createbannersection(){
+        
         return view('admin.PortfolioThree.portfolio_banner');
     }
-
+    public function displaybannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.PortfolioThree.portfoliobannerview')
+        ->with('info', PortFolioThreeBanner::orderBy('id', 'DESC')->first());;
+    }
     public function addbannersection(Request $request){
         //$info = new banner;
         $info = new PortFolioThreeBanner;
@@ -28,11 +32,18 @@ class PortfolioThreeController extends Controller
         
        $info->save();
     
-          echo "Record inserted successfully.<br/>";
-       
-        //$info->save(); 
+       return redirect::back()->with('message', 'Record Added successfully' ); 
 
     }
+    public function editbanner(){
+        
+
+       return view('admin.PortfolioThree.editportfoliobanner')
+       ->with('users', PortFolioThreeBanner::orderBy('id', 'DESC')->first());
+   }
+
+
+   
     public function displaygallery(){
             
         $info = PortfoliothrSecondSection::all();   

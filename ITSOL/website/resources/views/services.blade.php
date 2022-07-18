@@ -172,6 +172,7 @@
 				<h2>Most prominent side is <br> our devoted services <span>features</span></h2>
 			</div>
 			<div class="row clearfix">
+			
 				@foreach($second as $second)
 				<!-- Services Block Five -->
 				<div class="services-block-five col-lg-3 col-md-6 col-sm-12">
@@ -179,13 +180,14 @@
 						<div class="icon-box">
 							<span class="{{$second->icon}}"></span>
 						</div>
-						<h4><a href="#">{{$second->title}}</a></h4>
+						<h4  style="height:70px">{{$second->title}}</h4>
 						<div class="text">{{$second->description}}</div>
 					</div>
 				</div>
 				@endforeach
 				
 			</div>
+           
 		</div>
 	</section>
 	<!-- End Services Page Section -->

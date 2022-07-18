@@ -15,19 +15,34 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class TestimonialController extends Controller
 {
-    public function displaytestimonialbannersection(){
-            
+    public function createbannersection(){
+        
         return view('admin.Testimonial.testimonial_banner');
     }
-    public function addbanner(Request $request){
+    public function displaybannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.Testimonial.testimonialbannerview')
+        ->with('info', TestimonialBanner::orderBy('id', 'DESC')->first());;
+    }
+    public function addbannersection(Request $request){
+        //$info = new banner;
         $info = new TestimonialBanner;
         $info->title=$request->title;
-       
-        $info->save();
-        echo "Record inserted successfully.<br/>";
-       
+        
+       $info->save();
+    
+       return redirect::back()->with('message', 'Record Added successfully' ); 
 
     }
+    public function editbanner(){
+        
+
+       return view('admin.Testimonial.edittestimonialbanner')
+       ->with('users', TestimonialBanner::orderBy('id', 'DESC')->first());
+   }
+
+
     public function createtestsecondsection(){
             
         return view('admin.Testimonial.testimonialsection2');

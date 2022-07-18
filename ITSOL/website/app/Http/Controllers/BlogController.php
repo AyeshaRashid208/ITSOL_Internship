@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PortfolioBanner;
 use App\Models\BlogSecondSection;
-
+use App\Models\BlogListBanner;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use DB;
@@ -15,6 +15,36 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class BlogController extends Controller
 {
+    public function createbannersection(){
+        
+        return view('admin.BlogList.bloglist_banner');
+    }
+    public function displaybannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.BlogList.blog_listbannerview')
+        ->with('info', BlogListBanner::orderBy('id', 'DESC')->first());;
+    }
+    public function addbannersection(Request $request){
+        //$info = new banner;
+        $info = new BlogListBanner;
+        $info->title=$request->title;
+        
+       $info->save();
+    
+       return redirect::back()->with('message', 'Record Added successfully' ); 
+
+    }
+    public function editbanner(){
+        
+
+       return view('admin.BlogList.editbloglistbanner')
+       ->with('users', BlogListBanner::orderBy('id', 'DESC')->first());
+   }
+
+   
+
+
     public function createblogsecondsection(){
             
         return view('admin.BlogList.bloglistsection2');
@@ -162,13 +192,13 @@ public function updateblog3rdsection(Request $request){
     return view('admin.BlogList.bloglistsection3view', compact('info'));
 }
 
-    public function viewblog(){
+    public function viewblog()
+    {
     $second = BlogSecondSection::all(); 
-    // $third = PortfolioThirdSection::all(); 
+   
     return View('blog-list')
-    ->with(compact('second'));
-    // ->with(compact('third'))
-    // ->with('banner', PortFolioBanner::orderBy('id', 'DESC')->first());
+    ->with(compact('second'))
+    ->with('banner', BlogListBanner::orderBy('id', 'DESC')->first());
     
     }
 

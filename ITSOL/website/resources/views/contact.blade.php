@@ -154,7 +154,7 @@
     <section class="page-title" style="background-image:url(images/background/7.png)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>contact <span>Us</span></h1>
+				<h1> <span>{{$banner->title}}</span></h1>
 				<ul class="page-breadcrumb">
 					<li><a href="index.html">Home</a></li>
 					<li>contact us</li>
@@ -176,9 +176,9 @@
 						<div class="inner-column">
 							<div class="text">Please contact us using the information below. For additional information on our management consulting services, please visit the appropriate page on our site.</div>
 							<ul class="list-style-two">
-								<li><span class="icon fa fa-building"></span> 131 dummy Street <br> dummy, dummy 02116 <br> United States</li>
-								<li><span class="icon fa fa-fax"></span> +92 617 572 2000</li>
-								<li><span class="icon fa fa-envelope-o"></span>support@its.com</li>
+								<li><span class="icon fa fa-building"></span>{{$second[0]->street}} <br> {{$second[0]->state}}</li>
+								<li><span class="icon fa fa-fax"></span> {{$second[0]->phone}}</li>
+								<li><span class="icon fa fa-envelope-o"></span>{{$second[0]->email}}</li>
 							</ul>
 						</div>
 					</div>

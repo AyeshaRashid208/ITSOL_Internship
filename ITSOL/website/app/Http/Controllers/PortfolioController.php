@@ -18,9 +18,15 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class PortfolioController extends Controller
 {
-    public function displayportfoliobannersection(){
-            
+    public function createbannersection(){
+        
         return view('admin.PortfolioSingle.portfolioBanner');
+    }
+    public function displaybannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.PortfolioSingle.portfoliobannerview')
+        ->with('info', PortFolioBanner::orderBy('id', 'DESC')->first());;
     }
     public function addbannersection(Request $request){
         //$info = new banner;
@@ -29,11 +35,17 @@ class PortfolioController extends Controller
         
        $info->save();
     
-          echo "Record inserted successfully.<br/>";
-       
-        //$info->save(); 
+       return redirect::back()->with('message', 'Record Added successfully' ); 
 
     }
+    public function editbanner(){
+        
+
+       return view('admin.PortfolioSingle.editportfoliobanner')
+       ->with('users', PortFolioBanner::orderBy('id', 'DESC')->first());
+   }
+
+    
     public function editport2ndsection(Request $request, $id){
         $info = PortfolioSecondSection::find($id);
         // $info = DB::select('select * from homesecondsections where id = ?',[$id]);

@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\AboutBanner;
+use App\Models\ContactBanner;
+use App\Models\ContactDetails;
 use App\Models\AboutSecondSection;
 use App\Models\AboutThirdSection;
 use App\Models\AboutFourthSection;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\File;
 use DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -39,7 +43,88 @@ class Controller extends BaseController
         
         
     }
+    public function createbannersection(){
+        
+        return view('admin.Contact.contact_banner');
+    }
+    public function displaybannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.Contact.contactbannerview')
+        ->with('info', ContactBanner::orderBy('id', 'DESC')->first());;
+    }
+    public function addbannersection(Request $request){
+        //$info = new banner;
+        $info = new ContactBanner;
+        $info->title=$request->title;
+        
+       $info->save();
+    
+       return redirect::back()->with('message', 'Record Added successfully' ); 
+
+    }
+    public function editbanner(){
+        
+
+       return view('admin.Contact.editcontactbanner')
+       ->with('users', ContactBanner::orderBy('id', 'DESC')->first());
+   }
+   public function createdetailsection(){
+        
+    return view('admin.Contact.contactdetails');
+}
+public function displaydetailsection(){
+            
+    $info = ContactDetails::all();   
+    return view('admin.Contact.contactdetailsview', compact('info'));
+}
+public function editdetailsection(Request $request, $id){
+    $info = ContactDetails::find($id);
+    // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
+    return view('admin.Contact.editcontactdetails',['info'=>$info]);
    
+}
+public function destroydetail($id) {
+    // DB::statement("ALTER TABLE homesecondsections AUTO_INCREMENT = $id;"); 
+    $max = DB::table('contactdetails')->max('id'); 
+    DB::delete('delete from  contactdetails where id = ?',[$id]);
+    DB::statement("ALTER TABLE contactdetails AUTO_INCREMENT =  $max");
+    return redirect::back();
+    
+ }
+public function adddetailsection(Request $request){
+    //$info = new banner;
+    $info = new ContactDetails;
+    $info->street=$request->street;
+    $info->state=$request->state;
+    $info->phone=$request->phone;
+    $info->email=$request->email;
+   $info->save();
+
+   return redirect::back()->with('message', 'Record Added successfully' ); 
+
+}
+public function updatedetailsection(Request $request){
+    //$info = HomeSecondSection::find($request);
+   // return $request->input();
+    $users = ContactDetails::find($request->id); 
+    // dd($info);
+    $request->validate([
+        'street' => 'required',
+        'state' => 'required',
+        'phone' => 'required',
+        'email' => 'required',
+        
+    ]);
+    $users->street=$request->street;
+    $users->state=$request->state;
+    $users->phone=$request->phone;
+    $users->email=$request->email;
+    $users->save();   
+    $info = ContactDetails::all();   
+    return view('admin.Contact.contactdetailsview', compact('info'));
+    // return view('admin.home.homesection2view',compact('info')); 
+}
 
   
  
@@ -51,14 +136,20 @@ class Controller extends BaseController
             
         return view('admin.BlogList.bloglistsection2');
     }
-    public function displaycontactbanner(){
-            
-        return view('admin.Contact.contact_banner');
-    }
+    
     public function displaycontactsection2(){
             
         return view('admin.Contact.contactsection2');
     }
+    public function viewcontact(){
+        $second = ContactDetails::all(); 
+        //  dd($second);
+        return View('contact')
+        ->with(compact('second'))
+        ->with('banner', ContactBanner::orderBy('id', 'DESC')->first());
+        
+        }
+   
 
 
 

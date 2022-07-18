@@ -58,7 +58,7 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                <li><a> Banner <span class="fa fa-chevron-down"></span></a>
+                  <li><a> Banner <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_banner')}}">View Banner</a></li>
                       <li><a href="{{('create_banner')}}">Create Banner</a></li>
@@ -78,8 +78,6 @@
                     </ul>
                   </li>
                   
-                
-
                   <li><a><i></i> Consultation <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_homesection4')}}">View Consultation</a></li>
@@ -106,19 +104,30 @@
                       <li><a href="{{('create_homesection8')}}">Create Sponsers</a></li>
                     </ul>
                   </li>
-                  <li><a><i></i> Blogs <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i></i> Home Blogs View <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_homesection7')}}">View blogs</a></li>
                       <li><a href="{{('create_homesection7')}}">Create blogs</a></li>
                     </ul>
                   </li>
                  
-                  <li><a href="{{('add_about_banner')}}"><i></i> About Banner <span class="fa fa-chevron-down"></span></a>
-                  </li> 
+                  <li><a> About Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_aboutbanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_aboutbanner')}}">Create Banner</a></li>
+                    </ul>
+                  </li>
+
                   <li><a><i></i> About services Section <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_aboutsection2')}}">View Services</a></li>
                       <li><a href="{{('create_aboutsection2')}}">Create Services</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i> About Skills <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_aboutsection3')}}">View Skills</a></li>
+                      <li><a href="{{('create_aboutsection3')}}">Add Skills</a></li>
                     </ul>
                   </li>
                   <li><a><i></i> About Expertise <span class="fa fa-chevron-down"></span></a>
@@ -127,11 +136,22 @@
                       <li><a href="{{('create_aboutsection4')}}">Add Expertise</a></li>
                     </ul>
                   </li>
-               
+                  <li><a> Team Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_teambanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_teambanner')}}">Create Banner</a></li>
+                    </ul>
+                  </li>
                   <li><a><i></i> Team Members <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_teamsection2')}}">View Team</a></li>
                       <li><a href="{{('create_teamsection2')}}">Create Team Member</a></li>
+                    </ul>
+                  </li>
+                  <li><a> Testimonial Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_testimonialbanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_testimonialbanner')}}">Create Banner</a></li>
                     </ul>
                   </li>
                   <li><a><i></i> Clients Reviews <span class="fa fa-chevron-down"></span></a>
@@ -140,11 +160,36 @@
                       <li><a href="{{('create_testimonialsection2')}}">Add Reviews</a></li>
                     </ul>
                   </li>
+                  
+                  <li><a> Services Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_servicebanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_servicebanner')}}">Create Banner</a></li>
+                    </ul>
+                  </li>
                   <li><a><i></i> Services Plans <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_monthlyplan')}}">View Monthly Plan</a></li>
                       <li><a href="{{('view_yearlyplan')}}">View Yearly Plan</a></li>
                       <li><a href="{{('create_monthlyplan')}}">Add Plan</a></li>
+                    </ul>
+                  </li>
+                  <li><a> Portfolio Three Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_portfoliobanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_portfoliobanner')}}">Create Banner</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i></i>Our Portfolio Gallery<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_gallery')}}">View Gallery</a></li>
+                      <li><a href="{{('create_gallery')}}">Add Photo</a></li>
+                    </ul>
+                  </li>
+                  <li><a> Single Portfolio Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_portbanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_portbanner')}}">Create Banner</a></li>
                     </ul>
                   </li>
                   <li><a><i></i> Single Portfolio <span class="fa fa-chevron-down"></span></a>
@@ -159,19 +204,48 @@
                       <li><a href="{{('create_portsection3')}}">Add Images</a></li>
                     </ul>
                   </li>
+                  <li><a> Blog List Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_bloglistbanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_bloglistbanner')}}">Create Banner</a></li>
+                    </ul>
+                  </li>
                   <li><a><i></i>Blog List<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_blogsection2')}}">View List</a></li>
                       <li><a href="{{('create_blogsection2')}}">Add List</a></li>
                     </ul>
                   </li>
-                  <li><a><i></i>Our Portfolio Gallery<span class="fa fa-chevron-down"></span></a>
+                  <li><a> Blog Single Banner <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{('view_gallery')}}">View Gallery</a></li>
-                      <li><a href="{{('create_gallery')}}">Add Photo</a></li>
+                      <li><a href="{{('view_blogbanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_blogbanner')}}">Create Banner</a></li>
                     </ul>
                   </li>
-                  
+                  <li><a> Add Blog <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_blog')}}">View Blogs</a></li>
+                      <li><a href="{{('create_blog')}}">Create Blog</a></li>
+                    </ul>
+                  </li>
+                  <li><a> Contact Banner <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_contactbanner')}}">View Banner</a></li>
+                      <li><a href="{{('create_contactbanner')}}">Create Banner</a></li>
+                    </ul>
+                  </li>
+                  <li><a> Contact Detail <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_contactdetails')}}">View Details</a></li>
+                      <li><a href="{{('create_contactdetails')}}">Create Details</a></li>
+                    </ul>
+                  </li>
+                  <li><a> Catagory <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{('view_catagory')}}">View Catagories</a></li>
+                      <li><a href="{{('create_catagory')}}">Create Catagory</a></li>
+                    </ul>
+                  </li>
                   
                   <li><a href="{{('add_team_banner')}}"><i></i>Our Team banner section<span class="fa fa-chevron-down"></span></a>
                   </li>

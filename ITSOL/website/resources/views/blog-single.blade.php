@@ -12,7 +12,14 @@
 
 <link rel="shortcut icon" href="images/fivi.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -171,47 +178,50 @@
 				
 				<!--Content Side-->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
+				  
                 	<div class="blog-single">
 						<div class="inner-box">
+							<div>
+							@foreach($second as $i)
 							<ul class="post-meta">
-								<li class="style-two"><span class="icon fa fa-calendar"></span>July 25, 2019</li>
-								<li><span class="icon fa fa-user"></span>Jhonny Rip</li>
+								<li class="style-two"><span class="icon fa fa-calendar"></span>{{$i->date}}</li>
+								<li><span class="icon fa fa-user"></span>{{$i->name}}</li>
 							</ul>
-							<h4>Thirty-two surrogate mothers charged with human trafficking towards fonting.</h4>
+							<h4>{{$i->title}}</h4>
 							<div class="image">
-								<img src="images/resource/news-8.jpg" alt="" />
+								<img src="{{ asset('images/resource/'.$i->fimage) }}" alt="" />
 							</div>
 							<div class="lower-content">
 								<div class="text">
-									<p>cookies are set through this site to recognise your repeat visits and preferences, serve more vant ads, facilitate social sharing, and to  violanalyse traffic.Others wondered if the hand of od was at work over New York, heralding perhaps a new Pope, or the moment when Evangeli cals say true believers will be swept up, or "raptured", to heaven. When these electrons recombine with the excited atoms, returning them to their starting energy state, light is emitted.</p>
-									<p>When these electrons recombine with the <a href="#">excited atoms,</a> returning them to their starting energy state, light is emitted. The colour of the light emitted depends on the type of atoms involved.</p>
+									<p>{{$i->one}}</p>
+									<p>{{$i->two}}</p>
 									<!-- News Gallery -->
 									<div class="news-gallery">
 										<div class="row clearfix">
 											<div class="column col-lg-6 col-md-6 col-sm-12">
 												<div class="image">
-													<img src="images/resource/news-9.jpg" alt="" />
+													<img src="{{ asset('images/resource/'.$i->image_one) }}" alt="" />
 												</div>
 											</div>
 											<div class="column col-lg-6 col-md-6 col-sm-12">
 												<div class="image">
-													<img src="images/resource/news-10.jpg" alt="" />
+													<img src="{{ asset('images/resource/'.$i->image_two) }}" alt="" />
 												</div>
 											</div>
 										</div>
 									</div>
-									<h5>A Kentucky woman who was accused last year.</h5>
-									<p>A blue colour is associated with oxygen atoms; pink/purple colours are associated with nitrogen atoms. Oxygen and nitrogen are the gases that dominate the air we breathe. licals say true believers will be swept up, or "raptured", to heaven. When these electrons recombine with the excited atoms, re turning them to their starting energy state, light is emitted.</p>
+									<h5>{{$i->heading}}</h5>
+									<p>{{$i->three}}</p>
 									<blockquote>
 										<div class="quote-icon flaticon-left-quote"></div>
-										<div class="quote-text">What sort of men would think it is acceptable to subject a young girl to this level of brutality and violence? an attack like this in ourcommunities and we must all work together.</div>
+										<div class="quote-text">{{$i->quote}}</div>
 									</blockquote>
 								</div>
 							</div>
 							<!--post-share-options-->
 							<div class="post-share-options">
 								<div class="post-share-inner clearfix">
-									<div class="pull-left post-tags"><span>Tags: </span><a href="#">Business</a> <a href="#">Life</a> <a href="#">Applin</a> <a href="#">Techniq</a></div>
+									<div class="pull-left post-tags"><span>Tags: </span> <a>{{$i->tag_one}}</a> <a>{{$i->tag_two}}</a> <a>{{$i->tag_three}}</a> <a>{{$i->tag_four}}</a></div>
 									<ul class="pull-right social-links clearfix">
 										<li class="facebook"><a href="#" class="fa fa-facebook"></a></li>
 										<li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
@@ -220,14 +230,10 @@
 									</ul>
 								</div>
 							</div>
-							
-							<!-- New Posts -->
-							<div class="new-posts">
-								<div class="clearfix">
-									<a class="prev-post pull-left" href="#"><span class="fa fa-angle-double-left"></span> Previous Post</a>
-									<a class="next-post pull-right" href="#">Next Post <span class="fa fa-angle-double-right"></span></a>
-								</div>
+							@endforeach
+				            {{$second->links('pagination::bootstrap-4')}}	
 							</div>
+							
 							
 							<!--Comments Area-->
 							<div class="comments-area">
@@ -299,8 +305,10 @@
 							
 						</div>
 					</div>
+				 
 				</div>
-					
+				
+				
 				<!--Sidebar Side-->
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
                 	<aside class="sidebar">
@@ -317,14 +325,16 @@
 						
 						<!--Blog Category Widget-->
                         <div class="sidebar-widget sidebar-blog-category">
+							
                             <div class="sidebar-title">
                                 <h4>Categories</h4>
                             </div>
+							@foreach($third as $t)
                             <ul class="blog-cat">
-                                <li><a href="#">Consulting <span>(3)</span></a></li>
-                                <li><a href="#">Technology <span>(4)</span></a></li>
-                                <li><a href="#">Life style <span>(8)</span></a></li>
+                                <li><a href="#">{{$t->catagory}} <span>(3)</span></a></li>
+                                
                             </ul>
+							@endforeach
                         </div>
 						
 						<!-- Popular Post Widget-->

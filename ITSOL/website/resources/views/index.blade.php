@@ -158,7 +158,7 @@
 			
 				<div class="content">
 					<h1>{{ $users->title}}</h1>
-					<div class="text">{{ $users->description}}</div>
+					<div class="text">{{substr($users->description, 0,  58)}}<br>{{substr($users->description, 58,  100)}}</div>
 					<a href="#" class="theme-btn btn-style-three">Hire us today <span class="fa fa-arrow-right"></span></a>
 				</div>
 			

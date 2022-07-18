@@ -16,22 +16,34 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class TeamController extends Controller
 {
-    public function displayteamaboutsection(){
-            
+    public function createbannersection(){
+        
         return view('admin.Team.teambanner');
     }
-    public function addteambannersection(Request $request){
+    public function displaybannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.Team.teambannerview')
+        ->with('info', TeamBanner::orderBy('id', 'DESC')->first());;
+    }
+    public function addbannersection(Request $request){
         //$info = new banner;
         $info = new TeamBanner;
         $info->title=$request->title;
         
        $info->save();
     
-          echo "Record inserted successfully.<br/>";
-       
-        //$info->save(); 
+       return redirect::back()->with('message', 'Record Added successfully' ); 
 
     }
+    public function editbanner(){
+        
+
+       return view('admin.Team.editbanner')
+       ->with('users', TeamBanner::orderBy('id', 'DESC')->first());
+   }
+
+
 
     public function displayteam2ndsection(){
         

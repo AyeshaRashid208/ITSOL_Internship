@@ -19,10 +19,15 @@ use Illuminate\Routing\Controller as BaseController;
 class AboutController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    
+    public function createaboutbannersection(){
+        
+        return view('admin.About.about_banner');
+    }
     public function displayaboutbannersection(){
             
-        return view('admin.About.about_banner');
+        // $info = AboutBanner::all();   
+        return view('admin.About.about_bannerview')
+        ->with('info', AboutBanner::orderBy('id', 'DESC')->first());;
     }
     public function addaboutbannersection(Request $request){
         //$info = new banner;
@@ -31,11 +36,16 @@ class AboutController extends Controller
         
        $info->save();
     
-          echo "Record inserted successfully.<br/>";
-       
-        //$info->save(); 
+       return redirect::back()->with('message', 'Record Added successfully' ); 
 
     }
+    public function editaboutbanner(){
+        
+
+       return view('admin.About.editaboutbanner')
+       ->with('users', AboutBanner::orderBy('id', 'DESC')->first());
+   }
+   
     public function createabout2ndsection(){
         
         return view('admin.About.aboutsection2');
