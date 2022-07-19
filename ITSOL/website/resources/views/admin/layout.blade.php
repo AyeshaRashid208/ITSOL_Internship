@@ -294,11 +294,11 @@
     </div>
 
     <!-- jQuery -->
-    <script src="admin_theme/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/admin_theme/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="admin_theme/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/admin_theme/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="admin_theme/build/js/custom.min.js"></script>
+    <script src="/admin_theme/build/js/custom.min.js"></script>
 	@stack('footer_scripts')
   </body>
 </html>
