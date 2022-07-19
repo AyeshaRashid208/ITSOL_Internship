@@ -6,9 +6,9 @@
 <meta charset="utf-8">
 <title>Interact Tech Solution | Blog Single</title>
 <!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet"> 
-<link href="css/main.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
+<link href="/css/bootstrap.css" rel="stylesheet"> 
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/responsive.css" rel="stylesheet">
 
 
 
@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
 
 <div class="page-wrapper">
  	
@@ -154,9 +155,9 @@
     <section class="page-title" style="background-image:url(images/background/7.png)">
     	<div class="auto-container">
 			<div class="content">
-				<h1>blog <span>single</span></h1>
+				<h1><span>{{$banner->title}}</span></h1>
 				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="{{url('home')}}">Home</a></li>
 					<li>blog</li>
 					<li>blog single</li>
 				</ul>
@@ -225,38 +226,30 @@
 								</div>
 							</div>
 							
-				            
+				            	
 							</div>
 							
 							
 							<!--Comments Area-->
 							<div class="comments-area">
 								<div class="group-title">
-									<h6>Comment (2)</h6>
+									<h6>Comment</h6>
 								</div>
 								<!--Comment Box-->
+								@foreach($comment as $c)
 								<div class="comment-box">
 									<div class="comment">
-										<div class="author-thumb"><img src="images/resource/author-10.jpg" alt=""></div>
+										<div class="author-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""></div>
 										<div class="comment-inner clearfix">
-											<div class="comment-info clearfix"><strong>Riva Collins</strong><div class="comment-time"> November 19, 2019 at 11:00 am </div></div>
-											<div class="text">It’s no secret that the digital industry is booming. From exciting startups to need ghor global and brands, companies are reaching out.</div>
-											<a class="comment-reply" href="#">Reply <span class="fa fa-angle-right"></span></a>
+											<div class="comment-info clearfix"><strong>{{$c->username}}</strong></div>
+											<div class="text">{{$c->message}}</div>
 										</div>
 									</div>
 								</div>
+								@endforeach
 
 								<!--Comment Box-->
-								<div class="comment-box">
-									<div class="comment">
-										<div class="author-thumb"><img src="images/resource/author-11.jpg" alt=""></div>
-										<div class="comment-inner clearfix">
-											<div class="comment-info clearfix"><strong>Obila Doe</strong><div class="comment-time"> November 22, 2019 at 10:00 pm </div></div>
-											<div class="text">It’s no secret that the digital industry is booming. From exciting startups to need ghor hmiu global and brands, companies are reaching out.</div>
-											<a class="comment-reply" href="#">Reply <span class="fa fa-angle-right"></span></a>
-										</div>
-									</div>
-								</div>
+							
 
 							</div>
 							<!--End Comments Area-->
@@ -268,7 +261,20 @@
 									<div class="group-text">Your email address will not be published *</div>
 								</div>
 								<!--Comment Form-->
-								<form method="post" action="https://html.themexriver.com/pixer/blog.html">
+								<form method="post" action="/comment">
+								@csrf
+								@if($errors->any())
+                                <div class = "alert alert-danger">
+                                   @foreach($errors->all() as $error)
+                                   <li>{{$error}}</li>
+                                   @endforeach
+                                </div>
+                                @endif
+                                @if(session()->has('message'))
+                                <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                                </div>
+                                @endif
 									<div class="row clearfix">
 										
 										<div class="col-lg-12 col-md-12 col-sm-12 form-group">
@@ -284,7 +290,7 @@
 										</div>
 										
 										<div class="col-lg-4 col-md-4 col-sm-4 form-group">
-											<input type="text" name="text" placeholder="website*" required>
+											<input type="text" name="website" placeholder="website*" required>
 										</div>
 										
 										<div class="col-lg-4 col-md-4 col-sm-12 form-group">
@@ -319,14 +325,16 @@
 						
 						<!--Blog Category Widget-->
                         <div class="sidebar-widget sidebar-blog-category">
+							
                             <div class="sidebar-title">
                                 <h4>Categories</h4>
                             </div>
+							@foreach($third as $t)
                             <ul class="blog-cat">
-                                <li><a href="#">Consulting <span>(3)</span></a></li>
-                                <li><a href="#">Technology <span>(4)</span></a></li>
-                                <li><a href="#">Life style <span>(8)</span></a></li>
+                                <li><a href="#">{{$t->catagory}} <span>@if($t->catagory=='Consulting') ({{$con}}) @endif @if($t->catagory=='Technology') ({{$tech}}) @endif @if($t->catagory=='LifeStyle') ({{$life}}) @endif</span></a></li>
+                                
                             </ul>
+							@endforeach
                         </div>
 						
 						<!-- Popular Post Widget-->
@@ -334,24 +342,14 @@
                             <div class="sidebar-title">
                                 <h4>Recent News</h4>
                             </div>
-							
+							@foreach($news as $n)
 							<article class="post">
 								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href="blog-single.html">Business structured nontp frank team</a></div>
-								<div class="post-info">July 25, 2019</div>
+								<div class="text"><a href={{"full_blog/".$n['id']}}>{{$n->title}}</a></div>
+								<div class="post-info">{{$n->date}}</div>
 							</article>
 							
-							<article class="post">
-								<figure class="post-thumb"><img src="images/resource/post-thumb-2.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href="blog-single.html">Meetups and parties at night for every...</a></div>
-								<div class="post-info">July 26, 2019</div>
-							</article>
-							
-							<article class="post">
-								<figure class="post-thumb"><img src="images/resource/post-thumb-3.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href="blog-single.html">Always found him speakingas many...</a></div>
-								<div class="post-info">July 25, 2019</div>
-							</article>
+							@endforeach
 							
 						</div>
 						
@@ -374,23 +372,12 @@
                             </div>
 							<div class="images-outer clearfix">
                                 <!--Image Box-->
+								@foreach($gallery as $g)
                                 <figure class="image-box"><a href="images/gallery/1.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-1.jpg" alt=""></figure>
+                                <img src="{{ asset('images/resource/'.$g->fimage) }}" alt=""></figure>
+								@endforeach
                                 <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/2.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-2.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/3.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-3.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/4.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-4.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/1.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-5.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/2.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-6.jpg" alt=""></figure>
+                                
                             </div>
 						</div>
 						
@@ -399,11 +386,9 @@
                             <div class="sidebar-title">
                                 <h4>Tags</h4>
                             </div>
-							<a href="#">Apps</a>
-							<a href="#">Cloud</a>
-							<a href="#">Life style</a>
-							<a href="#">Hosting</a>
-							<a href="#">Business</a>
+							@foreach($tags as $t)
+							<a>{{$t->tag}}</a>
+							@endforeach
 						</div>
 						
 					</aside>
@@ -538,16 +523,16 @@
 <!--End pagewrapper-->
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
-<script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/script.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/owl.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/script.js"></script>
 
 </body>
 

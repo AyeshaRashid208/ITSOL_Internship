@@ -12,6 +12,14 @@
 
 <link rel="shortcut icon" href="images/fivi.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -156,7 +164,7 @@
 			<div class="content">
 				<h1> <span>{{$banner->title}}</span></h1>
 				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="{{url('home')}}">Home</a></li>
 					<li>blog</li>
 					<li>blog list</li>
 				</ul>
@@ -173,7 +181,7 @@
 				<!--Content Side-->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
                 	<div class="blog-list">
-					@foreach($second as $second)
+					@foreach($sec as $second)
 						<!-- News Block Two -->
 						<div class="news-block-two">
 							<div class="inner-box">
@@ -185,9 +193,9 @@
 										<li class="style-two"><span class="icon fa fa-calendar"></span>{{$second->date}}</li>
 										<li><span class="icon fa fa-user"></span>{{$second->name}}</li>
 									</ul>
-									<h4><a href="blog-single.html">{{$second->title}}</a></h4>
+									<h4><a >{{$second->title}}</a></h4>
 									<div class="text">{{substr($second->one, 0,  350)}}</div>
-									<a href={{"full_blog/".$second['id']}} class="theme-btn btn-style-one">View more</a>
+									<a href="{{url('full_blog/'.$second['id'])}}" class="theme-btn btn-style-one">View more</a>
 								</div>
 							</div>
 						</div>
@@ -195,13 +203,9 @@
 					@endforeach
 						
 						<!--Styled Pagination-->
-						<ul class="styled-pagination">
-							<li><a href="#" class="active">01</a></li>
-							<li><a href="#">02</a></li>
-							<li><a href="#">05</a></li>
-							<li><a href="#"><span class="fa fa-angle-double-right"></span></a></li>
-						</ul>
+					    {{$sec->links('pagination::bootstrap-4')}}
 						<!--End Styled Pagination-->
+						
 						
 					</div>
 				</div>
@@ -222,14 +226,15 @@
 						
 						<!--Blog Category Widget-->
                         <div class="sidebar-widget sidebar-blog-category">
-                            <div class="sidebar-title">
+						<div class="sidebar-title">
                                 <h4>Categories</h4>
                             </div>
+							@foreach($third as $t)
                             <ul class="blog-cat">
-                                <li><a href="#">Consulting <span>(3)</span></a></li>
-                                <li><a href="#">Technology <span>(4)</span></a></li>
-                                <li><a href="#">Life style <span>(8)</span></a></li>
+                                <li><a href="#">{{$t->catagory}} <span>@if($t->catagory=='Consulting') ({{$con}}) @endif @if($t->catagory=='Technology') ({{$tech}}) @endif @if($t->catagory=='LifeStyle') ({{$life}}) @endif</span></a></li>
+                                
                             </ul>
+							@endforeach
                         </div>
 						
 						<!-- Popular Post Widget-->
@@ -237,24 +242,16 @@
                             <div class="sidebar-title">
                                 <h4>Recent News</h4>
                             </div>
-							
+							@foreach($news as $n)
 							<article class="post">
 								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href="blog-single.html">Business structured nontp frank team</a></div>
-								<div class="post-info">July 25, 2019</div>
+								<div class="text"><a href={{"full_blog/".$n['id']}}>{{$n->title}}</a></div>
+								<div class="post-info">{{$n->date}}</div>
 							</article>
 							
-							<article class="post">
-								<figure class="post-thumb"><img src="images/resource/post-thumb-2.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href="blog-single.html">Meetups and parties at night for every...</a></div>
-								<div class="post-info">July 26, 2019</div>
-							</article>
+							@endforeach
 							
-							<article class="post">
-								<figure class="post-thumb"><img src="images/resource/post-thumb-3.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href="blog-single.html">Always found him speakingas many...</a></div>
-								<div class="post-info">July 25, 2019</div>
-							</article>
+							
 							
 						</div>
 						
@@ -277,23 +274,11 @@
                             </div>
 							<div class="images-outer clearfix">
                                 <!--Image Box-->
+								
+                                @foreach($gallery as $g)
                                 <figure class="image-box"><a href="images/gallery/1.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-1.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/2.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-2.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/3.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-3.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/4.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-4.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/1.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-5.jpg" alt=""></figure>
-                                <!--Image Box-->
-                                <figure class="image-box"><a href="images/gallery/2.jpg" class="lightbox-image" data-caption="" data-fancybox="images" title="Image Title Here" data-fancybox-group="footer-gallery"><span class="overlay-box flaticon-plus-symbol"></span></a>
-                                <img src="images/gallery/instagram-6.jpg" alt=""></figure>
+                                <img src="{{ asset('images/resource/'.$g->fimage) }}" alt=""></figure>
+								@endforeach
                             </div>
 						</div>
 						
@@ -302,11 +287,9 @@
                             <div class="sidebar-title">
                                 <h4>Tags</h4>
                             </div>
-							<a href="#">Apps</a>
-							<a href="#">Cloud</a>
-							<a href="#">Life style</a>
-							<a href="#">Hosting</a>
-							<a href="#">Business</a>
+							@foreach($tags as $t)
+							<a>{{$t->tag}}</a>
+							@endforeach
 						</div>
 						
 					</aside>

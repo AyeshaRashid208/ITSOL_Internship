@@ -243,10 +243,10 @@ Route::post('/updateblogsection3',[BlogController::class,'updateblog3rdsection']
 Route::get('del_blogsection3/{id}',[BlogController::class,'destroysection3']);
 
 //Blog Single banner
-Route::get('/create_blogbanner',[BlogController::class,'createbannersection']);
-Route::post('/create_blogbanner',[BlogController::class,'addbannersection']);
-Route::get('/view_blogbanner',[BlogController::class,'displaybannersection']);
-Route::get('/edit_blogbanner',[BlogController::class,'editbanner']);
+Route::get('/create_blogbanner',[SingleBlogController::class,'createbannersection']);
+Route::post('/create_blogbanner',[SingleBlogController::class,'addbannersection']);
+Route::get('/view_blogbanner',[SingleBlogController::class,'displaybannersection']);
+Route::get('/edit_blogbanner',[SingleBlogController::class,'editbanner']);
 
 //Single blog create
 Route::get('/create_blog',[SingleBlogController::class,'createblog']);
@@ -265,11 +265,21 @@ Route::get('/edit_catagory/{id}',[SingleBlogController::class,'editcatagory']);
 Route::post('/updatecatagory',[SingleBlogController::class,'updatecatagory']);
 Route::get('del_catagory/{id}',[SingleBlogController::class,'destroycatagory']);
 
+//tags
+Route::get('/create_tags',[SingleBlogController::class,'createtags']);
+Route::POST('/create_tags',[SingleBlogController::class,'addtags']);
+Route::get('/view_tags',[SingleBlogController::class,'displaytags']);
+Route::get('/edit_tags/{id}',[SingleBlogController::class,'edittags']);
+Route::post('/updatetags',[SingleBlogController::class,'updatetags']);
+Route::get('del_tags/{id}',[SingleBlogController::class,'destroytags']);
 //Contact banner
 Route::get('/create_contactbanner',[Controller::class,'createbannersection']);
 Route::post('/create_contactbanner',[Controller::class,'addbannersection']);
 Route::get('/view_contactbanner',[Controller::class,'displaybannersection']);
 Route::get('/edit_contactbanner',[Controller::class,'editbanner']);
+
+//comment
+Route::post('/comment',[SingleBlogController::class,'addcomment']);
 
 
 Route::get('/add_contactsection2',[Controller::class,'displaycontactsection2']);

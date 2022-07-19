@@ -155,7 +155,7 @@
 			<div class="content">
 				<h1>{{$banner->title}}</h1>
 				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="{{url('home')}}">Home</a></li>
 					<li>About us</li>
 				</ul>
 			</div>

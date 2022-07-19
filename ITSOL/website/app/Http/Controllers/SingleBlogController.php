@@ -10,6 +10,11 @@ use App\Models\BlogSingle;
 use App\Models\BlogSecondSection;
 use App\Models\BlogListBanner;
 use App\Models\BlogCatagory;
+use App\Models\BlogTags;
+use App\Models\Comment;
+use App\Models\BlogBanner;
+
+
 use DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -17,14 +22,45 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class SingleBlogController extends Controller
 {
+    public function createbannersection(){
+        
+        return view('admin.BlogList.blog_banner');
+    }
+    public function displaybannersection(){
+            
+        // $info = AboutBanner::all();   
+        return view('admin.BlogList.blog_bannerview')
+        ->with('info', BlogBanner::orderBy('id', 'DESC')->first());;
+    }
+    public function addbannersection(Request $request){
+        //$info = new banner;
+        $info = new BlogBanner;
+        $info->title=$request->title;
+        
+       $info->save();
+    
+       return redirect::back()->with('message', 'Record Added successfully' ); 
+
+    }
+    public function editbanner(){
+        
+
+       return view('admin.BlogList.editblogbanner')
+       ->with('users', BlogBanner::orderBy('id', 'DESC')->first());
+   }
     public function createblog(){
         
         return view('admin.BlogSingle.blog');
+    }
+    public function createtags(){
+        
+        return view('admin.BlogSingle.tags');
     } 
     public function createcatagory(){
         
         return view('admin.BlogSingle.catagory');
     } 
+    
     public function addcatagory(Request $request){
         //$info = new banner;
         $info = new BlogCatagory;
@@ -33,6 +69,31 @@ class SingleBlogController extends Controller
        $info->save();
     
        return redirect::back()->with('message', 'Record Added successfully' ); 
+
+    }
+    public function addtags(Request $request){
+        //$info = new banner;
+        $info = new BlogTags;
+        $info->tag=$request->tag;
+        
+       $info->save();
+    
+       return redirect::back()->with('message', 'Record Added successfully' ); 
+
+    }
+    public function addcomment(Request $request){
+        //$info = new banner;
+        $info = new Comment;
+        $info->message=$request->message;
+        $info->website=$request->website;
+        $info->username=$request->username;
+        $info->email=$request->email;
+       
+       $info->save();
+    
+       return redirect::back()->with('message', 'Comment Added successfully' ); 
+       
+        //$info->save(); 
 
     }
     public function addblog(Request $request){
@@ -94,6 +155,12 @@ class SingleBlogController extends Controller
         
         return view('admin.BlogSingle.catagoryview', compact('info'));
     }
+    public function displaytags(){
+            
+        $info = BlogTags::all();   
+        
+        return view('admin.BlogSingle.tagsview', compact('info'));
+    }
     public function editblog(Request $request, $id){
         $info = BlogSingle::find($id);
         // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
@@ -104,6 +171,12 @@ class SingleBlogController extends Controller
         $info = BlogCatagory::find($id);
         // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
         return view('admin.BlogSingle.editcatagory',['info'=>$info]);
+       
+    }
+    public function edittags(Request $request, $id){
+        $info = BlogTags::find($id);
+        // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
+        return view('admin.BlogSingle.edittags',['info'=>$info]);
        
     }
     public function updateblog(Request $request){
@@ -191,6 +264,20 @@ class SingleBlogController extends Controller
     $info = BlogCatagory::all();   
     return view('admin.BlogSingle.catagoryview', compact('info'));
 }
+public function updatetags(Request $request){
+  
+    $users = BlogTags::find($request->id); 
+    $request->validate([
+        'tag' => 'required',
+      
+        
+    ]);
+    $users->tag=$request->tag;
+    
+    $users->save();   
+    $info = BlogTags::all();   
+    return view('admin.BlogSingle.tagsview', compact('info'));
+}
 public function destroyblog($id) {
     // DB::statement("ALTER TABLE homesecondsections AUTO_INCREMENT = $id;"); 
     $max = DB::table('blogs')->max('id'); 
@@ -207,30 +294,98 @@ public function destroyblog($id) {
     return redirect::back();
     
  }
+ public function destroytags($id) {
+    // DB::statement("ALTER TABLE homesecondsections AUTO_INCREMENT = $id;"); 
+    $max = DB::table('tags')->max('id'); 
+    DB::delete('delete from  tags where id = ?',[$id]);
+    DB::statement("ALTER TABLE tags AUTO_INCREMENT =  $max");
+    return redirect::back();
+    
+ }
     public function viewblog(){
     $second = BlogSingle::Paginate(1); 
-
+    $news = BlogSingle::orderBy('date','desc')->limit(3)->get();
+    $gallery = BlogSingle::orderBy('fimage','desc')->limit(6)->get();
+    $tags = BlogTags::all();
+    $comment = Comment::all();
+    $banner = BlogBanner::all();
+    
+    // dd($banner);
     $third=BlogCatagory::all();   
-    // dd($third);
+    $tech_words = BlogSingle::where('catagory', 'Technology')->get();
+    $tech = $tech_words->count();
+    $con_words = BlogSingle::where('catagory', 'Consulting')->get();
+    $con= $con_words->count();
+    $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
+    $life = $life_words->count();
+    // dd($tech);
     return View('blog-single')
     ->with(compact('second'))
-    ->with(compact('third'));
-    
+    ->with(compact('comment'))
+    ->with(compact('tags'))
+    ->with(compact('gallery'))
+    ->with(compact('news'))
+    ->with(compact('third'))
+    ->with(compact('tech'))
+    ->with(compact('con'))
+    ->with(compact('life'))
+    ->with('banner', BlogBanner::orderBy('id', 'DESC')->first());
+
     }
     public function showblog(Request $request, $id){
-        //  $second = BlogSingle::all(); 
-        // $second = BlogSingle::find($id);        
-        // return View('blog-single')->with(compact('second'));
+    $news = BlogSingle::orderBy('date','desc')->limit(3)->get();
+    $gallery = BlogSingle::orderBy('fimage','desc')->limit(6)->get();
+    $tags = BlogTags::all();
+    $comment = Comment::all();
+    $banner = BlogBanner::all();
+    
+    // dd($banner);
+    $third=BlogCatagory::all();   
+    $tech_words = BlogSingle::where('catagory', 'Technology')->get();
+    $tech = $tech_words->count();
+    $con_words = BlogSingle::where('catagory', 'Consulting')->get();
+    $con= $con_words->count();
+    $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
+    $life = $life_words->count();
         $i = BlogSingle::find($id);
-        // $info = DB::select('select * from homesecondsections where id = ?',[$id]);
-        return view('blog_single',['i'=>$i]);
         
-        }
+        return view('blog_single',['i'=>$i])
+        ->with(compact('comment'))
+    ->with(compact('tags'))
+    ->with(compact('gallery'))
+    ->with(compact('news'))
+    ->with(compact('third'))
+    ->with(compact('tech'))
+    ->with(compact('con'))
+    ->with(compact('life'))
+    ->with('banner', BlogBanner::orderBy('id', 'DESC')->first());
+        
+    }
     public function viewbloglist(){
-        $second = BlogSingle::all(); 
+    $sec = BlogSingle::Paginate(2);
+    $third=BlogCatagory::all();  
+    $tags = BlogTags::all();
+
+    $gallery = BlogSingle::orderBy('fimage','desc')->limit(6)->get();
+
+    $news = BlogSingle::orderBy('date','desc')->limit(3)->get(); 
+    $tech_words = BlogSingle::where('catagory', 'Technology')->get();
+    $tech = $tech_words->count();
+    $con_words = BlogSingle::where('catagory', 'Consulting')->get();
+    $con= $con_words->count();
+    $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
+    $life = $life_words->count();
+  
         // dd($second[0]->id);
         return View('blog-list')
-        ->with(compact('second'))
+        ->with(compact('sec'))
+        ->with(compact('gallery'))
+        ->with(compact('tags'))
+        ->with(compact('news'))
+        ->with(compact('third'))
+        ->with(compact('tech'))
+        ->with(compact('con'))
+        ->with(compact('life'))
         ->with('banner', BlogListBanner::orderBy('id', 'DESC')->first());
         
     }
