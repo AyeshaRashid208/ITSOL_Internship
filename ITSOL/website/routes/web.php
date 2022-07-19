@@ -29,12 +29,12 @@ Route::get("/blog-single",[SingleBlogController::class,"viewblog"]);
 
 
 Route::post("/upload_details",[Controller::class,"upload"])->name('message.store');
-Route::get('/admin',[AdminController::class,'index']);
-Route::post("/admin",[AdminController::class,"makelogin"]);
+Route::get('/admin',[AdminController::class,'index'])->name('login');
+Route::post('/admin',[AdminController::class,"makelogin"]);
 
-//Route::get(['middleware' => 'auth:admin'],function(){
+Route::group(['middleware' => 'auth:admin'],function(){
 Route::get("/dashboard",[AdminController::class,"dashboard"]);
-//});
+
 
 //home banner
 Route::get('/view_banner',[HomeController::class,'displaybanner']);
@@ -290,3 +290,4 @@ Route::get('/view_contactdetails',[Controller::class,'displaydetailsection']);
 Route::get('/edit_contactdetails/{id}',[Controller::class,'editdetailsection']);
 Route::post('/updatecontactdetails',[Controller::class,'updatedetailsection']);
 Route::get('del_contactdetails/{id}',[Controller::class,'destroydetail']);
+});
