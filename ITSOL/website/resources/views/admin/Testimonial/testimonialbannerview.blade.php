@@ -46,7 +46,7 @@
                             <td>{{$info->id}}</td>
                             <td>{{$info->title}}</td>
                             
-                            <td> <a href="{{url('edit_testimonialbanner')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <td> <a href="{{url('/edit_testimonialbanner')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
                            </td>
                            
 

@@ -65,20 +65,10 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li  class=" current dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 								</div>
@@ -123,20 +113,10 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 						</div>
@@ -204,7 +184,7 @@
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">{{$f->title}}</a></h5>
+								<h5><a>{{$f->title}}</a></h5>
 								<div class="designation">{{$f->description}}</div>
 							</div>
 						</div>
@@ -221,7 +201,7 @@
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">{{$c->title}}</a></h5>
+								<h5><a>{{$c->title}}</a></h5>
 								<div class="designation">{{$c->description}}</div>
 							</div>
 						</div>
@@ -238,7 +218,7 @@
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">{{$i->title}}</a></h5>
+								<h5><a>{{$i->title}}</a></h5>
 								<div class="designation">{{$i->description}}</div>
 							</div>
 						</div>
@@ -255,7 +235,7 @@
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">{{$o->title}}</a></h5>
+								<h5><a>{{$o->title}}</a></h5>
 								<div class="designation">{{$o->description}}</div>
 							</div>
 						</div>
@@ -272,7 +252,7 @@
 								</div>
 							</div>
 							<div class="lower-content">
-								<h5><a href="portfolio-single.html">{{$b->title}}</a></h5>
+								<h5><a>{{$b->title}}</a></h5>
 								<div class="designation">{{$b->description}}</div>
 							</div>
 						</div>

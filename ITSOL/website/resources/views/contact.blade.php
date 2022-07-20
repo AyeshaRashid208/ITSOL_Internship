@@ -65,20 +65,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 								</div>
@@ -123,20 +114,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 						</div>
@@ -166,6 +148,18 @@
 	
 	<!-- Contact Page Section -->
 	<section class="contact-page-section">
+	                    @if(session()->has('message'))
+                         <div class="alert alert-success">
+                             {{ session()->get('message') }}
+                         </div>
+                         @endif
+						 @if($errors->any())
+                        <div class = "alert alert-danger">
+                           @foreach($errors->all() as $error)
+                           <li>{{$error}}</li>
+                           @endforeach
+                        </div>
+                        @endif
 		<div class="auto-container">
 			<div class="inner-container">
 				<h2>Contact our support guys or make appointment <br> with <span>our consultan</span></h2>
@@ -182,15 +176,11 @@
 							</ul>
 						</div>
 					</div>
-					@if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-    @endif
+					
 					<!-- Form Column -->
 					<div class="form-column col-lg-6 col-md-12 col-sm-12">
 						<div class="inner-column">
-							
+						
 							<!--Contact Form-->
 							<div class="contact-form">
 								<form method="post" action="{{url('upload_details')}}" id="contact-form">

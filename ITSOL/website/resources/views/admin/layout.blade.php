@@ -93,12 +93,7 @@
                     </ul>
                   </li>
 
-                  <li><a><i></i>Home Testimonial <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{('view_homesection6')}}">View testimonial</a></li>
-                      <li><a href="{{('create_homesection6')}}">Create testimonial</a></li>
-                    </ul>
-                  </li>
+                  
                   <li><a><i></i> Sponsers <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_homesection8')}}">View Sponsers</a></li>
@@ -182,24 +177,7 @@
                       <li><a href="{{('create_gallery')}}">Add Photo</a></li>
                     </ul>
                   </li>
-                  <li><a> Single Portfolio Banner <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{('view_portbanner')}}">View Banner</a></li>
-                      <li><a href="{{('create_portbanner')}}">Create Banner</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i></i> Single Portfolio <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{('view_portsection2')}}">View Portfolio</a></li>
-                      <li><a href="{{('create_portsection2')}}">Add Portfolio</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i></i> Single Portfolio Images<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{('view_portsection3')}}">View Images</a></li>
-                      <li><a href="{{('create_portsection3')}}">Add Images</a></li>
-                    </ul>
-                  </li>
+                  
                   <li><a> Blog List Banner <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_bloglistbanner')}}">View Banner</a></li>
@@ -212,12 +190,7 @@
                       <li><a href="{{('create_blogsection2')}}">Add List</a></li>
                     </ul>
                   </li>
-                  <li><a> Blog Single Banner <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="{{('view_blogbanner')}}">View Banner</a></li>
-                      <li><a href="{{('create_blogbanner')}}">Create Banner</a></li>
-                    </ul>
-                  </li>
+
                   <li><a> Add Blog <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{('view_blog')}}">View Blogs</a></li>

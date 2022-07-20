@@ -6,9 +6,9 @@
 <meta charset="utf-8">
 <title>Interact Tech Solution | Blog Single</title>
 <!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
+<link href="/css/bootstrap.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/responsive.css" rel="stylesheet">
 
 <link rel="shortcut icon" href="images/fivi.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -72,20 +72,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="current dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 								</div>
@@ -130,20 +121,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+								
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 						</div>
@@ -173,16 +155,28 @@
 	
 	<!-- Sidebar Page Container -->
     <div class="sidebar-page-container">
+	
     	<div class="auto-container">
         	<div class="row clearfix">
 				
 				<!--Content Side-->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
-				  
+				    @if($errors->any())
+                    <div class = "alert alert-danger">
+                       @foreach($errors->all() as $error)
+                       <li>{{$error}}</li>
+                       @endforeach
+                    </div>
+                    @endif
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                    </div>
+                    @endif
                 	<div class="blog-single">
 						<div class="inner-box">
 							<div>
-							@foreach($second as $i)
+							
 							<ul class="post-meta">
 								<li class="style-two"><span class="icon fa fa-calendar"></span>{{$i->date}}</li>
 								<li><span class="icon fa fa-user"></span>{{$i->name}}</li>
@@ -230,8 +224,8 @@
 									</ul>
 								</div>
 							</div>
-							@endforeach
-				            {{$second->links('pagination::bootstrap-4')}}	
+							
+				            
 							</div>
 							
 							
@@ -268,18 +262,7 @@
 								<!--Comment Form-->
 								<form method="post" action="/comment">
 								@csrf
-								@if($errors->any())
-                                <div class = "alert alert-danger">
-                                   @foreach($errors->all() as $error)
-                                   <li>{{$error}}</li>
-                                   @endforeach
-                                </div>
-                                @endif
-                                @if(session()->has('message'))
-                                <div class="alert alert-success">
-                                {{ session()->get('message') }}
-                                </div>
-                                @endif
+								
 									<div class="row clearfix">
 										
 										<div class="col-lg-12 col-md-12 col-sm-12 form-group">
@@ -349,8 +332,8 @@
                             </div>
 							@foreach($news as $n)
 							<article class="post">
-								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href={{"full_blog/".$n['id']}}>{{$n->title}}</a></div>
+								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><span class="icon fa fa-link"></span></a></figure>
+								<div class="text"><a href={{"/blog/".$n['id']}}>{{$n->title}}</a></div>
 								<div class="post-info">{{$n->date}}</div>
 							</article>
 							
@@ -363,11 +346,12 @@
                             <div class="sidebar-title">
                                 <h4>Archives</h4>
                             </div>
+							@foreach($items as $i)
                             <ul class="blog-cat">
-                                <li><a href="#">January 2019 <span>(3)</span></a></li>
-                                <li><a href="#">February 2019 <span>(2)</span></a></li>
-                                <li><a href="#">May 2019 <span>(6)</span></a></li>
+                                <li><a href="#">{{$n->date}} <span>(3)</span></a></li>
+                                
                             </ul>
+							@endforeach
                         </div>
 						
 						<!--Gallery Widget-->
@@ -528,16 +512,16 @@
 <!--End pagewrapper-->
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
-<script src="js/jquery.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/script.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/owl.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/script.js"></script>
 
 </body>
 

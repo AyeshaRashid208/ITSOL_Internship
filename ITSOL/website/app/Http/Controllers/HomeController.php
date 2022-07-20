@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Banner;
-
+use App\Models\TestimonialSecondSection;
 use Illuminate\Support\Facades\DB;
 use App\Models\HomeSecondSection;
 use App\Models\ServiceBanner;
@@ -751,7 +751,9 @@ class HomeController extends Controller
 
         $fourth = HomeFourthSection::all();
         $fifth = HomeFifthSection::all();
-        $sixth = HomeSixthSection::all();
+        // $sixth = HomeSixthSection::all();
+        $sixth = TestimonialSecondSection::Paginate(3);
+        // dd($sixth);
         $seven = HomeSevenSection::all();
         $eight = HomeEightSection::all();
 

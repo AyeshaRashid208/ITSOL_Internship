@@ -65,14 +65,8 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
 										<li class="dropdown"><a href="#">Blog</a>
 											<ul>
 												<li><a href="{{url('blog-list')}}">Blog List</a></li>
@@ -123,20 +117,10 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 						</div>

@@ -73,12 +73,8 @@
 												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
 											</ul>
 										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 								</div>
@@ -131,12 +127,8 @@
 												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
 											</ul>
 										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 						</div>

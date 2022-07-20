@@ -53,7 +53,7 @@
                             <td>
                                 <img src="{{ asset('images/resource/'.$info->image) }}" width="100px" width="50px" alt="Image">
                             </td>
-                            <td> <a href={{"edit_testsection2/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <td> <a href={{"/edit_testsection2/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
                             <a href="del_testsection2/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
                            <!-- <a href="{{url('view_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a> -->
                            </td>

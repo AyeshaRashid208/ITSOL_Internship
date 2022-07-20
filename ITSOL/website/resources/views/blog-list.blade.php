@@ -73,20 +73,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="current dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 								</div>
@@ -131,20 +122,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 						</div>
@@ -195,7 +177,7 @@
 									</ul>
 									<h4><a >{{$second->title}}</a></h4>
 									<div class="text">{{substr($second->one, 0,  350)}}</div>
-									<a href="{{url('full_blog/'.$second['id'])}}" class="theme-btn btn-style-one">View more</a>
+									<a href="{{url('blog/'.$second['id'])}}" class="theme-btn btn-style-one">View more</a>
 								</div>
 							</div>
 						</div>

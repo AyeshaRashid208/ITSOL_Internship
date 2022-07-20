@@ -65,20 +65,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
+										
 										<li><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 								</div>
@@ -123,20 +114,11 @@
 											</ul>
 										</li>
 										<li><a href="{{url('services')}}">Services</a></li>
-										<li class="dropdown"><a href="#">Portfolio</a>
-											<ul>
-												<!-- <li><a href="portfolio-2-column.html">Portfolio Two Column</a></li> -->
-												<li><a href="{{url('portfolio-3-column')}}">Portfolio Three Column</a></li>
-												<!-- <li><a href="portfolio-4-column.html">Portfolio Four Column</a></li> -->
-												<li><a href="{{url('portfolio-single')}}">Portfolio Single</a></li>
-											</ul>
-										</li>
-										<li class="dropdown"><a href="#">Blog</a>
-											<ul>
-												<li><a href="{{url('blog-list')}}">Blog List</a></li>
-												<li><a href="{{url('blog-single')}}">Blog Single</a></li>
-											</ul>
-										</li>
+										<li><a href="{{url('portfolio')}}">Portfolio </a></li>
+
+										
+										<li><a href="{{url('blog-list')}}">Blog</a></li>
+
 										<li class="current "><a href="{{url('contact')}}">Contact us</a></li>
 									</ul>
 						</div>
@@ -220,7 +202,7 @@
 						<ul class="tab-btns tab-buttons clearfix">
 							
 							@foreach($third as $i)
-							<li data-tab="#{{$i->hidden_id}}" class="tab-btn active-btn">{{$i->name}}</li>
+							<li data-tab="#{{$i->hidden_id}}" class="tab-btn @if($i->hidden_id=='prod-turnaround') active-btn @endif">{{$i->name}}</li>
 							@endforeach
 						</ul>
 					</div>
@@ -231,7 +213,7 @@
 						
 						<!--Tab / Active Tab-->
 						@foreach($third as $i)
-						<div class="tab @if($i->name=='Fast Turnaround') active-tab @endif" id="{{$i->hidden_id}}">
+						<div class="tab @if($i->hidden_id=='prod-turnaround') active-tab @endif" id="{{$i->hidden_id}}">
 							<div class="content">
 								<div class="row clearfix">
 

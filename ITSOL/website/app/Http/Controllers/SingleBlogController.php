@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+// use App\Http\Controllers\Carbon;
 use Illuminate\Support\Facades\File;
+use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Redirect;
 use App\Models\BlogSingle;
 use App\Models\BlogSecondSection;
@@ -361,9 +363,27 @@ class SingleBlogController extends Controller
         $news = BlogSingle::orderBy('date', 'desc')->limit(3)->get();
         $gallery = BlogSingle::orderBy('fimage', 'desc')->limit(6)->get();
         $tags = BlogTags::all();
-        $comment = Comment::all();
+        // $comment = Comment::all();
+        // $last_three_month = Carbon::now()->startOfMonth()->subMonth(3);
+        
+        // $this_month = Carbon::now()->startOfMonth(); 
+        // dd($this_month);
+        // $data = BlogSingle::whereBetween('date',[$last_three_month,$this_month])
+        //                 ->get();
+        // $items = BlogSingle::select('*')
+        //                         ->whereBetween('created_at', 
+        //                             [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->subMonth()->endOfMonth()]
+        //                         )
+        //                         ->get()
+        //                         ;
+        $items = BlogSingle::select('*')
+        ->whereBetween('created_at', 
+            [Carbon::now()->subMonth(3), Carbon::now()]
+        )
+        ->get();
+        // dd($items);
         $banner = BlogBanner::all();
-
+        $comment = Comment::orderBy('id', 'desc')->limit(3)->get();
         $third = BlogCatagory::all();
         $tech_words = BlogSingle::where('catagory', 'Technology')->get();
         $tech = $tech_words->count();
@@ -373,9 +393,10 @@ class SingleBlogController extends Controller
         $life = $life_words->count();
         $i = BlogSingle::find($id);
 
-        return view('blog_single', ['i' => $i])
+        return view('blog-single', ['i' => $i])
             ->with(compact('comment'))
             ->with(compact('tags'))
+            ->with(compact('items'))
             ->with(compact('gallery'))
             ->with(compact('news'))
             ->with(compact('third'))

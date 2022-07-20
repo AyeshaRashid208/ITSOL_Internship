@@ -9,6 +9,8 @@ use App\Models\ContactDetails;
 use App\Models\AboutSecondSection;
 use App\Models\AboutThirdSection;
 use App\Models\AboutFourthSection;
+use Exception;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
@@ -22,8 +24,8 @@ use Illuminate\Http\Request;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function upload(Request $request)
-    {
+    public function upload(Request $request){
+    // try{
         $info = new user;
         $info->firstname = $request->firstname;
         $info->subject = $request->subject;
@@ -44,8 +46,18 @@ class Controller extends BaseController
                 $message->to('rashidayesha208@gmail.com');
             }
         );
-        return redirect()->back()->with('success', 'Thanks for contacting us');
+        return redirect::back()->with('message', 'Message Sent successfully');
+
     }
+    // catch(Exception $e){
+
+        // return $e->getMessage();
+
+    // }
+// }
+    
+        
+    
     public function createbannersection()
     {
 

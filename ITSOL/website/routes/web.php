@@ -19,7 +19,7 @@ Route::get("/about",[AboutController::class,"viewabout"]);
 Route::get("/team",[TeamController::class,"viewteam"]);
 Route::get("/testimonial",[TestimonialController::class,"viewtest"]);
 Route::get("/services",[HomeController::class,"viewservices"]);
-Route::get("/portfolio-3-column",[PortfolioThreeController::class,"viewport"]);
+Route::get("/portfolio",[PortfolioThreeController::class,"viewport"]);
 Route::get("/portfolio-single",[PortfolioController::class,"viewport"]);
 Route::get("/blog-list",[SingleBlogController::class,"viewbloglist"]);
 Route::get("/contact",[Controller::class,"viewcontact"]);
@@ -29,11 +29,13 @@ Route::get("/blog-single",[SingleBlogController::class,"viewblog"]);
 
 
 Route::post("/upload_details",[Controller::class,"upload"])->name('message.store');
-Route::get('/admin',[AdminController::class,'index'])->name('login');
-Route::post('/admin',[AdminController::class,"makelogin"]);
+Route::get('/login',[AdminController::class,'index'])->name('login');
+Route::post('/login',[AdminController::class,"makelogin"]);
 
 Route::group(['middleware' => 'auth:admin'],function(){
 Route::get("/dashboard",[AdminController::class,"dashboard"]);
+// Route::get('/login',[AdminController::class,'index'])->name('login');
+// Route::post('/login',[AdminController::class,"makelogin"]);
 
 
 //home banner
@@ -163,7 +165,7 @@ Route::get('/create_testimonialsection2',[TestimonialController::class,'createte
 Route::post('/add_testimonialsection2',[TestimonialController::class,'addtest2ndsection']);
 Route::get('/view_testsection2',[TestimonialController::class,'displaytestsecondsection']);
 Route::get('del_testsection2/{id}',[TestimonialController::class,'destroysection2']);
-Route::get('/edit_testsection2/{id}',[TestimonialController::class,'edittest2ndsection']);
+Route::get('edit_testsection2/{id}',[TestimonialController::class,'edittest2ndsection']);
 Route::post('/updatetestsection2',[TestimonialController::class,'updatetest2ndsection']);
 
 
@@ -255,7 +257,7 @@ Route::get('/view_blog',[SingleBlogController::class,'displayblog']);
 Route::get('/edit_blog/{id}',[SingleBlogController::class,'editblog']);
 Route::post('/updateblog',[SingleBlogController::class,'updateblog']);
 Route::get('del_blog/{id}',[SingleBlogController::class,'destroyblog']);
-Route::get('/full_blog/{id}',[SingleBlogController::class,'showblog']);
+Route::get('/blog/{id}',[SingleBlogController::class,'showblog']);
 
 //catagory
 Route::get('/create_catagory',[SingleBlogController::class,'createcatagory']);
