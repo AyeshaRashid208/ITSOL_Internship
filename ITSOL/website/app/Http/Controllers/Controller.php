@@ -60,6 +60,10 @@ class Controller extends BaseController
     public function addbannersection(Request $request)
     {
         $info = new ContactBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -99,6 +103,13 @@ class Controller extends BaseController
     public function adddetailsection(Request $request)
     {
         $info = new ContactDetails;
+        $request->validate([
+            'street' => 'required',
+            'state' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+
+        ]);
         $info->street = $request->street;
         $info->state = $request->state;
         $info->phone = $request->phone;

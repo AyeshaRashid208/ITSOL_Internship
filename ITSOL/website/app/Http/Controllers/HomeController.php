@@ -108,6 +108,10 @@ class HomeController extends Controller
     public function addservicebannersection(Request $request)
     {
         $info = new ServiceBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -465,7 +469,13 @@ class HomeController extends Controller
     public function addhome6thsection(Request $request)
     {
         $info = new HomeSixthSection;
+        $request->validate([
+            'image' => 'required',
+            'name' => 'required',
+            'designation' => 'required',
+            'reviews' => 'required',
 
+        ]);
         $info->reviews = $request->reviews;
         $info->name = $request->name;
         $info->designation = $request->designation;
@@ -659,6 +669,17 @@ class HomeController extends Controller
     public function addservice4rthsection(Request $request)
     {
         $info = new ServiceThirdSection;
+        $request->validate([
+
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'one' => 'required',
+            'two' => 'required',
+            'three' => 'required',
+            'four' => 'required',
+
+        ]);
         $info->name  = $request->name;
         $info->description = $request->description;
         $info->price = $request->price;

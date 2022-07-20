@@ -30,6 +30,10 @@ class BlogController extends Controller
     public function addbannersection(Request $request)
     {
         $info = new BlogListBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -56,7 +60,14 @@ class BlogController extends Controller
     {
 
         $info = new BlogSecondSection;
+        $request->validate([
+            'title'    => 'required',
+            'description' => 'required',
+            'name' => 'required',
+            'date' => 'required',
+            'image' => 'required',
 
+        ]);
         $info->title = $request->title;
         $info->description = $request->description;
         $info->name = $request->name;
@@ -139,7 +150,11 @@ class BlogController extends Controller
     {
 
         $info = new BlogThirdSection;
+        $request->validate([
 
+            'image' => 'required',
+
+        ]);
 
         if ($request->hasfile('image')) {
             $destination = 'images/gallery' . $info->image;

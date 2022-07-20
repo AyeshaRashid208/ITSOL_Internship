@@ -32,6 +32,10 @@ class PortfolioController extends Controller
     public function addbannersection(Request $request)
     {
         $info = new PortFolioBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -66,7 +70,16 @@ class PortfolioController extends Controller
     {
 
         $info = new PortfolioSecondSection;
+        $request->validate([
+            'title'    => 'required',
+            'description' => 'required',
+            'catagory' => 'required',
+            'client' => 'required',
+            'date' => 'required',
+            'website' => 'required',
+            'image' => 'required',
 
+        ]);
         $info->title = $request->title;
         $info->description = $request->description;
         $info->catagory = $request->catagory;
@@ -154,6 +167,12 @@ class PortfolioController extends Controller
     {
 
         $info = new PortfolioThirdSection;
+        $request->validate([
+            'title'    => 'required',
+            'description' => 'required',
+            'image' => 'required',
+
+        ]);
         $info->title = $request->title;
         $info->description = $request->description;
         if ($request->hasfile('image')) {

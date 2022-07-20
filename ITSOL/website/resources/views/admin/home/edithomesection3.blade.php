@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput">Feature 3 description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_thr">value="{{$info['desc_thr']}}"</textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="desc_thr">{{$info['desc_thr']}}</textarea>
                 </div>
                 <div class="form-group">
                <label for="exampleFormControlFile1">Image</label>

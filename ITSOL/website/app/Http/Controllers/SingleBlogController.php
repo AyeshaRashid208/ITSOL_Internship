@@ -34,6 +34,10 @@ class SingleBlogController extends Controller
     public function addbannersection(Request $request)
     {
         $info = new BlogBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -66,6 +70,10 @@ class SingleBlogController extends Controller
     public function addcatagory(Request $request)
     {
         $info = new BlogCatagory;
+        $request->validate([
+            'catagory' => 'required',
+          
+        ]);
         $info->catagory = $request->catagory;
 
         $info->save();
@@ -75,6 +83,10 @@ class SingleBlogController extends Controller
     public function addtags(Request $request)
     {
         $info = new BlogTags;
+        $request->validate([
+            'tag' => 'required',
+          
+        ]);
         $info->tag = $request->tag;
 
         $info->save();
@@ -84,6 +96,13 @@ class SingleBlogController extends Controller
     public function addcomment(Request $request)
     {
         $info = new Comment;
+        $request->validate([
+            'message' => 'required',
+            'website' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+          
+        ]);
         $info->message = $request->message;
         $info->website = $request->website;
         $info->username = $request->username;
@@ -96,6 +115,19 @@ class SingleBlogController extends Controller
     public function addblog(Request $request)
     {
         $info = new BlogSingle;
+        $request->validate([
+            'date'    => 'required',
+            'name'    => 'required',
+            'title'    => 'required',
+            'one'    => 'required',
+            'fimage' => 'required',
+            'image_one' => 'required',
+            'image_two' => 'required',
+            'catagory' => 'required',
+            'tag_one' => 'required',
+
+
+        ]);
 
         $info->date = $request->date;
         $info->name = $request->name;
@@ -105,7 +137,7 @@ class SingleBlogController extends Controller
         $info->heading = $request->heading;
         $info->three = $request->three;
         $info->quote = $request->quote;
-        $info->catagory = implode(',', $request->catagory);
+        $info->catagory = $request->catagory;
 
         $info->tag_one = $request->tag_one;
         $info->tag_two = $request->tag_two;
@@ -180,7 +212,10 @@ class SingleBlogController extends Controller
             'date'    => 'required',
             'name'    => 'required',
             'title'    => 'required',
+            'one'    => 'required',
             'fimage' => 'required',
+            'image_one' => 'required',
+            'image_two' => 'required',
             'catagory' => 'required',
             'tag_one' => 'required',
 

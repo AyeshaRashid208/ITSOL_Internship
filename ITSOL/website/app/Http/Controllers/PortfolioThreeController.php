@@ -30,6 +30,10 @@ class PortfolioThreeController extends Controller
     public function addbannersection(Request $request)
     {
         $info = new PortFolioThreeBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -61,7 +65,13 @@ class PortfolioThreeController extends Controller
     public function addgallery(Request $request)
     {
         $info = new PortfoliothrSecondSection;
+        $request->validate([
+            'image' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'catagory' => 'required',
 
+        ]);
         $info->title = $request->title;
         $info->description = $request->description;
         $info->catagory = $request->catagory;

@@ -30,6 +30,10 @@ class TeamController extends Controller
     public function addbannersection(Request $request)
     {
         $info = new TeamBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -60,7 +64,13 @@ class TeamController extends Controller
     public function addteam2ndsection(Request $request)
     {
         $info = new TeamSecondSection;
+        $request->validate([
+            'image' => 'required',
+            'name' => 'required',
+            'designation' => 'required',
 
+
+        ]);
 
         $info->name = $request->name;
         $info->designation = $request->designation;

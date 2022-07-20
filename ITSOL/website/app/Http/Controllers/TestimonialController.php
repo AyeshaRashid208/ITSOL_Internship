@@ -29,6 +29,10 @@ class TestimonialController extends Controller
     public function addbannersection(Request $request)
     {
         $info = new TestimonialBanner;
+        $request->validate([
+            'title' => 'required',
+          
+        ]);
         $info->title = $request->title;
 
         $info->save();
@@ -70,7 +74,13 @@ class TestimonialController extends Controller
     public function addtest2ndsection(Request $request)
     {
         $info = new TestimonialSecondSection;
+        $request->validate([
+            'image' => 'required',
+            'name' => 'required',
+            'designation' => 'required',
+            'reviews' => 'required',
 
+        ]);
         $info->reviews = $request->reviews;
         $info->name = $request->name;
         $info->designation = $request->designation;
