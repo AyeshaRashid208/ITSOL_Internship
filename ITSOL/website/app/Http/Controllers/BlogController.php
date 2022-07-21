@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Exception;
 
 class BlogController extends Controller
 {
@@ -32,7 +33,7 @@ class BlogController extends Controller
         $info = new BlogListBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -213,10 +214,15 @@ class BlogController extends Controller
 
     public function viewblog()
     {
-        $second = BlogSecondSection::all();
+        try {
+            $second = BlogSecondSection::all();
 
-        return View('blog-list')
-            ->with(compact('second'))
-            ->with('banner', BlogListBanner::orderBy('id', 'DESC')->first());
+            return View('blog-list')
+                ->with(compact('second'))
+                ->with('banner', BlogListBanner::orderBy('id', 'DESC')->first());
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
 }

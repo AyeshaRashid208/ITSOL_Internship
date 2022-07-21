@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Exception;
 
 class TeamController extends Controller
 {
@@ -32,7 +33,7 @@ class TeamController extends Controller
         $info = new TeamBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -154,13 +155,18 @@ class TeamController extends Controller
 
     public function viewteam()
     {
-        $second = TeamSecondSection::all();
-        $third = HomeEightSection::all();
-        return View('team')
+        try {
+            $second = TeamSecondSection::all();
+            $third = HomeEightSection::all();
+            return View('team')
 
-            ->with('banner', TeamBanner::orderBy('id', 'DESC')->first())
-            ->with(compact('second'))
+                ->with('banner', TeamBanner::orderBy('id', 'DESC')->first())
+                ->with(compact('second'))
 
-            ->with(compact('third'));
+                ->with(compact('third'));
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
 }

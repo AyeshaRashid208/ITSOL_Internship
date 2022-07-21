@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('create_aboutsection4')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('create_aboutexpertise')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">

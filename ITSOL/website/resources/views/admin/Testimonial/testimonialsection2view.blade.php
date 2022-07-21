@@ -25,7 +25,7 @@
         
         <div class="x_content">
                 <ul>
-                <a href="{{ url('create_testimonialsection2') }}" class="btn btn-primary float-end">Add New</a>
+                <a href="{{ url('create_reviews') }}" class="btn btn-primary float-end">Add New</a>
                 <a href="{{ url('/dashboard') }}" class="btn btn-primary float-end">Back</a>
 
                 </ul>
@@ -53,8 +53,8 @@
                             <td>
                                 <img src="{{ asset('images/resource/'.$info->image) }}" width="100px" width="50px" alt="Image">
                             </td>
-                            <td> <a href={{"/edit_testsection2/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                            <a href="del_testsection2/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
+                            <td> <a href={{"/edit_reviews/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <a href="del_reviews/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
                            <!-- <a href="{{url('view_banner')}}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a> -->
                            </td>
 

@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+use Exception;
+
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class PortfolioController extends Controller
@@ -34,7 +36,7 @@ class PortfolioController extends Controller
         $info = new PortFolioBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -231,11 +233,16 @@ class PortfolioController extends Controller
 
     public function viewport()
     {
-        $second = PortfolioSecondSection::all();
-        $third = PortfolioThirdSection::all();
-        return View('portfolio-single')
-            ->with(compact('second'))
-            ->with(compact('third'))
-            ->with('banner', PortFolioBanner::orderBy('id', 'DESC')->first());
+        try {
+            $second = PortfolioSecondSection::all();
+            $third = PortfolioThirdSection::all();
+            return View('portfolio-single')
+                ->with(compact('second'))
+                ->with(compact('third'))
+                ->with('banner', PortFolioBanner::orderBy('id', 'DESC')->first());
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
 }

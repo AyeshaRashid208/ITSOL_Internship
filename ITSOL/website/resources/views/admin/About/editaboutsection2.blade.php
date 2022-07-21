@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="/updateaboutsection2" method="post" enctype="multipart/form-data">
+<form action="/updateaboutservices" method="post" enctype="multipart/form-data">
 @csrf
 <input type="hidden"  value="{{$info['id']}}" name="id">
 
@@ -47,7 +47,7 @@
                 <br>
                 <!-- <button type="button" class="btn btn-block btn-success btn-sm"><i class="fa fa-save"></i><span> &nbsp; SAVE</span></button> -->
                 <button class="btn btn-success btn-lg" type="submit" name="submit">Update</button>
-                <a href="{{url('view_aboutsection2')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
+                <a href="{{url('view_aboutservices')}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Back</a>
                
                
 

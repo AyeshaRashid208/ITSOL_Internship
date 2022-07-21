@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Exception;
 
 class SingleBlogController extends Controller
 {
@@ -38,7 +39,7 @@ class SingleBlogController extends Controller
         $info = new BlogBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -74,7 +75,7 @@ class SingleBlogController extends Controller
         $info = new BlogCatagory;
         $request->validate([
             'catagory' => 'required',
-          
+
         ]);
         $info->catagory = $request->catagory;
 
@@ -87,7 +88,7 @@ class SingleBlogController extends Controller
         $info = new BlogTags;
         $request->validate([
             'tag' => 'required',
-          
+
         ]);
         $info->tag = $request->tag;
 
@@ -103,7 +104,7 @@ class SingleBlogController extends Controller
             'website' => 'required',
             'username' => 'required',
             'email' => 'required',
-          
+
         ]);
         $info->message = $request->message;
         $info->website = $request->website;
@@ -330,106 +331,86 @@ class SingleBlogController extends Controller
         DB::statement("ALTER TABLE tags AUTO_INCREMENT =  $max");
         return redirect::back();
     }
-    public function viewblog()
-    {
-        $second = BlogSingle::Paginate(1);
-        $news = BlogSingle::orderBy('date', 'desc')->limit(3)->get();
-        $gallery = BlogSingle::orderBy('fimage', 'desc')->limit(6)->get();
-        $tags = BlogTags::all();
-        $comment = Comment::all();
-        $banner = BlogBanner::all();
 
-        $third = BlogCatagory::all();
-        $tech_words = BlogSingle::where('catagory', 'Technology')->get();
-        $tech = $tech_words->count();
-        $con_words = BlogSingle::where('catagory', 'Consulting')->get();
-        $con = $con_words->count();
-        $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
-        $life = $life_words->count();
-        return View('blog-single')
-            ->with(compact('second'))
-            ->with(compact('comment'))
-            ->with(compact('tags'))
-            ->with(compact('gallery'))
-            ->with(compact('news'))
-            ->with(compact('third'))
-            ->with(compact('tech'))
-            ->with(compact('con'))
-            ->with(compact('life'))
-            ->with('banner', BlogBanner::orderBy('id', 'DESC')->first());
-    }
     public function showblog(Request $request, $id)
     {
-        $news = BlogSingle::orderBy('date', 'desc')->limit(3)->get();
-        $gallery = BlogSingle::orderBy('fimage', 'desc')->limit(6)->get();
-        $tags = BlogTags::all();
-        // $comment = Comment::all();
-        // $last_three_month = Carbon::now()->startOfMonth()->subMonth(3);
-        
-        // $this_month = Carbon::now()->startOfMonth(); 
-        // dd($this_month);
-        // $data = BlogSingle::whereBetween('date',[$last_three_month,$this_month])
-        //                 ->get();
-        // $items = BlogSingle::select('*')
-        //                         ->whereBetween('created_at', 
-        //                             [Carbon::now()->subMonth()->startOfMonth(), Carbon::now()->subMonth()->endOfMonth()]
-        //                         )
-        //                         ->get()
-        //                         ;
-        $items = BlogSingle::select('*')
-        ->whereBetween('created_at', 
-            [Carbon::now()->subMonth(3), Carbon::now()]
-        )
-        ->get();
-        // dd($items);
-        $banner = BlogBanner::all();
-        $comment = Comment::orderBy('id', 'desc')->limit(3)->get();
-        $third = BlogCatagory::all();
-        $tech_words = BlogSingle::where('catagory', 'Technology')->get();
-        $tech = $tech_words->count();
-        $con_words = BlogSingle::where('catagory', 'Consulting')->get();
-        $con = $con_words->count();
-        $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
-        $life = $life_words->count();
-        $i = BlogSingle::find($id);
+        try {
+            $news = BlogSingle::orderBy('date', 'desc')->limit(3)->get();
+            $gallery = BlogSingle::orderBy('fimage', 'desc')->limit(6)->get();
+            $tags = BlogTags::all();;
+            $items = BlogSingle::whereBetween(
+                'created_at',
+                [Carbon::now()->subMonth(3), Carbon::now()]
+            )->limit(3)
+                ->get();
+            $items_count = $items->count();
+            // dd($items_count);
+            $banner = BlogBanner::all();
+            $comment = Comment::orderBy('id', 'desc')->limit(3)->get();
+            $third = BlogCatagory::all();
+            $tech_words = BlogSingle::where('catagory', 'Technology')->get();
+            $tech = $tech_words->count();
+            $con_words = BlogSingle::where('catagory', 'Consulting')->get();
+            $con = $con_words->count();
+            $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
+            $life = $life_words->count();
+            $i = BlogSingle::find($id);
 
-        return view('blog-single', ['i' => $i])
-            ->with(compact('comment'))
-            ->with(compact('tags'))
-            ->with(compact('items'))
-            ->with(compact('gallery'))
-            ->with(compact('news'))
-            ->with(compact('third'))
-            ->with(compact('tech'))
-            ->with(compact('con'))
-            ->with(compact('life'))
-            ->with('banner', BlogBanner::orderBy('id', 'DESC')->first());
+            return view('blog-single', ['i' => $i])
+                ->with(compact('comment'))
+                ->with(compact('tags'))
+                ->with(compact('items'))
+                ->with(compact('items_count'))
+                ->with(compact('gallery'))
+                ->with(compact('news'))
+                ->with(compact('third'))
+                ->with(compact('tech'))
+                ->with(compact('con'))
+                ->with(compact('life'))
+                ->with('banner', BlogBanner::orderBy('id', 'DESC')->first());
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
     public function viewbloglist()
     {
-        $sec = BlogSingle::Paginate(2);
-        $third = BlogCatagory::all();
-        $tags = BlogTags::all();
+        try {
 
-        $gallery = BlogSingle::orderBy('fimage', 'desc')->limit(6)->get();
+            $sec = BlogSingle::Paginate(3);
+            $third = BlogCatagory::all();
+            $tags = BlogTags::all();
 
-        $news = BlogSingle::orderBy('date', 'desc')->limit(3)->get();
-        $tech_words = BlogSingle::where('catagory', 'Technology')->get();
-        $tech = $tech_words->count();
-        $con_words = BlogSingle::where('catagory', 'Consulting')->get();
-        $con = $con_words->count();
-        $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
-        $life = $life_words->count();
+            $gallery = BlogSingle::orderBy('fimage', 'desc')->limit(6)->get();
+            $items = BlogSingle::whereBetween(
+                'created_at',
+                [Carbon::now()->subMonth(3), Carbon::now()]
+            )->limit(3)
+                ->get();
+            $items_count = $items->count();
+            $news = BlogSingle::orderBy('date', 'desc')->limit(3)->get();
+            $tech_words = BlogSingle::where('catagory', 'Technology')->get();
+            $tech = $tech_words->count();
+            $con_words = BlogSingle::where('catagory', 'Consulting')->get();
+            $con = $con_words->count();
+            $life_words = BlogSingle::where('catagory', 'LifeStyle')->get();
+            $life = $life_words->count();
+            // dd($life);
+            return View('blog-list')
+                ->with(compact('sec'))
+                ->with(compact('gallery'))
+                ->with(compact('tags'))
+                ->with(compact('news'))
+                ->with(compact('items'))
+                ->with(compact('items_count'))
+                ->with(compact('third'))
+                ->with(compact('tech'))
+                ->with(compact('con'))
+                ->with(compact('life'))
+                ->with('banner', BlogListBanner::orderBy('id', 'DESC')->first());
+        } catch (Exception $e) {
 
-        return View('blog-list')
-            ->with(compact('sec'))
-            ->with(compact('gallery'))
-            ->with(compact('tags'))
-            ->with(compact('news'))
-            ->with(compact('third'))
-            ->with(compact('tech'))
-            ->with(compact('con'))
-            ->with(compact('life'))
-            ->with('banner', BlogListBanner::orderBy('id', 'DESC')->first());
+            return $e->getMessage();
+        }
     }
 }

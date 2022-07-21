@@ -185,7 +185,7 @@
 			
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<<!-- div class="big-title">About us</div> -->
+				<!-- div class="big-title">About us</div> -->
 				
 				<div class="title">We Help You</div>
 				<h2>Most prominent side is <br> our devoted services <span>features</span></h2>
@@ -459,15 +459,14 @@
 				<!-- News Block -->
 				<div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="{{url('blog-single')}}"><img src="{{ asset('images/resource/'.$seven->image) }}" alt="" /></a>
+						<div class="image" >
+							<a href="{{url('blog/'.$seven['id'])}}"><img src="{{ asset('images/resource/'.$seven->fimage) }}" alt="" /></a>
 						</div>
 						<div class="lower-content">
-							<h6><a href="{{url('blog-single')}}">{{$seven->title}}</a></h6>
+							<h6 style="height:80px"><a href="{{url('blog/'.$seven['id'])}}">{{$seven->title}}</a></h6>
 							<div class="clearfix">
 								<div class="pull-left">
-									<div class="author">
-										<div class="image"><img src="{{ asset('images/resource/'.$seven->author_image) }}" alt="" /></div>
+									<div class="author" >
 										{{$seven->name}}
 									</div>
 								</div>

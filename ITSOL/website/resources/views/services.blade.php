@@ -202,6 +202,7 @@
 									<!-- Price Block -->
 									<div class="price-block col-lg-4 col-md-6 col-sm-12">
 										<div class="inner-box">
+										@if($i->name=='Standard Plan')<div class="recomend">Recommended</div> @endif
 											<!-- Title Box -->
 											<div class="title-box">
 												<h5>{{$i->name}}</h5>
@@ -237,6 +238,8 @@
 									<!-- Price Block -->
 									<div class="price-block col-lg-4 col-md-6 col-sm-12">
 										<div class="inner-box">
+										@if($i->name=='Standard Plan')<div class="recomend">Recommended</div> @endif
+
 											<!-- Title Box -->
 											<div class="title-box">
 												<h5>{{$i->name}}</h5>

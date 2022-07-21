@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Exception;
 
 class TestimonialController extends Controller
 {
@@ -31,7 +32,7 @@ class TestimonialController extends Controller
         $info = new TestimonialBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -129,9 +130,14 @@ class TestimonialController extends Controller
     }
     public function viewtest()
     {
-        $second = TestimonialSecondSection::all();
-        return View('testimonial')
-            ->with('banner', TestimonialBanner::orderBy('id', 'DESC')->first())
-            ->with(compact('second'));
+        try {
+            $second = TestimonialSecondSection::all();
+            return View('testimonial')
+                ->with('banner', TestimonialBanner::orderBy('id', 'DESC')->first())
+                ->with(compact('second'));
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
 }

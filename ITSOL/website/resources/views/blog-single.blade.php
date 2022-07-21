@@ -319,7 +319,7 @@
                             </div>
 							@foreach($third as $t)
                             <ul class="blog-cat">
-                                <li><a href="#">{{$t->catagory}} <span>@if($t->catagory=='Consulting') ({{$con}}) @endif @if($t->catagory=='Technology') ({{$tech}}) @endif @if($t->catagory=='LifeStyle') ({{$life}}) @endif</span></a></li>
+                                <li><a>{{$t->catagory}} <span>@if($t->catagory=='Consulting') ({{$con}}) @endif @if($t->catagory=='Technology') ({{$tech}}) @endif @if($t->catagory=='LifeStyle') ({{$life}}) @endif</span></a></li>
                                 
                             </ul>
 							@endforeach
@@ -332,7 +332,7 @@
                             </div>
 							@foreach($news as $n)
 							<article class="post">
-								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><span class="icon fa fa-link"></span></a></figure>
+								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><a href="{{"/blog/".$n['id']}}" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
 								<div class="text"><a href={{"/blog/".$n['id']}}>{{$n->title}}</a></div>
 								<div class="post-info">{{$n->date}}</div>
 							</article>
@@ -348,7 +348,7 @@
                             </div>
 							@foreach($items as $i)
                             <ul class="blog-cat">
-                                <li><a href="#">{{$n->date}} <span>(3)</span></a></li>
+                                <li><a>{{$i->created_at->format('F')}} {{$i->created_at->format('Y')}} <span>({{$items_count}})</span></a></li>
                                 
                             </ul>
 							@endforeach

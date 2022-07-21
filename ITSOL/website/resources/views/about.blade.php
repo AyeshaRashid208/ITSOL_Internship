@@ -184,18 +184,18 @@
 				<div class="content-column col-lg-6 col-md-12 col-sm-12">
 					<div class="inner-column">
 						<div class="sec-title">
-							<div class="title">{{$third->message}} </div>
-							<h2>{{$third->heading}}</h2>
+							<div class="title">we are pixer </div>
+							<h2>we are happy to assist <br> you all time <span>moment</span></h2>
 						</div>
-						<div class="bold-text">{{$third->main_title}}</div>
-						<div class="text">{{$third->description}}</div>
+						<div class="bold-text">The purpose of lorem ipsum is to create</div>
+						<div class="text">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed.</div>
 						<!--Skills-->
 						<div class="skills">
 							
 							<!--Skill Item-->
 							<div class="skill-item">
 								<div class="skill-header clearfix">
-									<div class="skill-title">{{$third->skill_one}}</div>
+									<div class="skill-title">HTML</div>
 									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="50">0</span>%</div></div>
 								</div>
 								<div class="skill-bar">
@@ -206,7 +206,7 @@
 							<!--Skill Item-->
 							<div class="skill-item">
 								<div class="skill-header clearfix">
-									<div class="skill-title">{{$third->skill_two}}</div>
+									<div class="skill-title">php</div>
 									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="80">0</span>%</div></div>
 								</div>
 								<div class="skill-bar">
@@ -217,7 +217,7 @@
 							<!--Skill Item-->
 							<div class="skill-item">
 								<div class="skill-header clearfix">
-									<div class="skill-title">{{$third->skill_three}}</div>
+									<div class="skill-title">Css</div>
 									<div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="70">0</span>%</div></div>
 								</div>
 								<div class="skill-bar">
@@ -244,6 +244,7 @@
 		</div>
 	</section>
 	<!-- End About Section -->
+	
 	
 	<!--Fun Facts Section-->
     <div class="fact-counter-section">
@@ -332,7 +333,7 @@
                         <!--Tab Btns-->
                         <ul class="tab-btns tab-buttons clearfix">
 						@foreach($fourth as $i)
-                            <li data-tab="#{{$i->hidden_id}}" class="tab-btn">{{$i->name}} <span>{{$i->description}}</span></li>
+                            <li data-tab="#{{$i->hidden_id}}" class="tab-btn @if($i->hidden_id=='feature-brand') active-btn @endif">{{$i->name}} <span>{{$i->description}}</span></li>
 						@endforeach
                         </ul>
                     </div>

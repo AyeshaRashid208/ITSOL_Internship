@@ -16,6 +16,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Exception;
 
 class AboutController extends Controller
 {
@@ -38,7 +39,7 @@ class AboutController extends Controller
         $info = new AboutBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -200,12 +201,17 @@ class AboutController extends Controller
 
     public function viewabout()
     {
-        $second = AboutSecondSection::all();
-        $fourth = AboutFourthSection::all();
-        return View('about')
-            ->with('banner', AboutBanner::orderBy('id', 'DESC')->first())
-            ->with(compact('second'))
-            ->with(compact('fourth'))
-            ->with('third', AboutThirdSection::orderBy('id', 'DESC')->first());
+        try {
+            $second = AboutSecondSection::all();
+            $fourth = AboutFourthSection::all();
+            return View('about')
+                ->with('banner', AboutBanner::orderBy('id', 'DESC')->first())
+                ->with(compact('second'))
+                ->with(compact('fourth'))
+                ->with('third', AboutThirdSection::orderBy('id', 'DESC')->first());
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
 }

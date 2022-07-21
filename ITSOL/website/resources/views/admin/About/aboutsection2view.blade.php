@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('display_banner')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('display_services')}}" method="post" enctype="multipart/form-data">
 @csrf
     @if($errors->any())
     <div class = "alert alert-danger">
@@ -26,7 +26,7 @@
     </div>
         
         <div class="x_content">
-        <a href="{{ url('create_aboutsection2') }}" class="btn btn-primary float-end">Add New</a>
+        <a href="{{ url('create_aboutservices') }}" class="btn btn-primary float-end">Add New</a>
                  
 
                 <div class="table-bordered">
@@ -49,8 +49,8 @@
                             <td>{{$info->image}}</td>
                             <td>{{$info->title}}</td>
                             <td>{{$info->description}}</td>
-                            <td> <a href={{"edit_aboutsection2/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                            <a href="del_aboutsection2/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
+                            <td> <a href={{"edit_aboutservices/".$info['id']}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                            <a href="del_aboutservices/{{ $info->id }}" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Delete</a>
                            </td>
                            
 

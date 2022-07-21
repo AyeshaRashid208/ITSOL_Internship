@@ -10,6 +10,7 @@ use App\Models\AboutSecondSection;
 use App\Models\AboutThirdSection;
 use App\Models\AboutFourthSection;
 use Exception;
+
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
@@ -24,40 +25,39 @@ use Illuminate\Http\Request;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function upload(Request $request){
-    // try{
-        $info = new user;
-        $info->firstname = $request->firstname;
-        $info->subject = $request->subject;
-        $info->message = $request->message;
-        $info->email = $request->email;
-        $info->save();
-        Mail::send(
-            'message',
-            array(
+    public function upload(Request $request)
+    {
+        try {
+            $info = new User;
+            $info->firstname = $request->firstname;
+            $info->subject = $request->subject;
+            $info->message = $request->message;
+            $info->email = $request->email;
+            $info->save();
+            
+            $data = [
                 'Name' => $request->get('firstname'),
                 'Email' => $request->get('email'),
                 'Subject' => $request->get('subject'),
                 'Message' => $request->get('message'),
+            ];
 
-            ),
-            function ($message) use ($request) {
-                $message->from($request->email);
-                $message->to('rashidayesha208@gmail.com');
-            }
-        );
-        return redirect::back()->with('message', 'Message Sent successfully');
+            Mail::to('rashidayesha208@gmail.com')->send(new \App\Mail\MailSend($data));
+            // Mail::send('message', $data, function ($message) use ($request){
+            //     $message->from($request->email);
+             
+            //     $message->to('rashidayesha208@gmail.com');
+            // });
 
+            return redirect::back()->with('message', 'Message Sent successfully');
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
-    // catch(Exception $e){
 
-        // return $e->getMessage();
 
-    // }
-// }
-    
-        
-    
+
     public function createbannersection()
     {
 
@@ -74,7 +74,7 @@ class Controller extends BaseController
         $info = new ContactBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -169,9 +169,14 @@ class Controller extends BaseController
     }
     public function viewcontact()
     {
-        $second = ContactDetails::all();
-        return View('contact')
-            ->with(compact('second'))
-            ->with('banner', ContactBanner::orderBy('id', 'DESC')->first());
+        try {
+            $second = ContactDetails::all();
+            return View('contact')
+                ->with(compact('second'))
+                ->with('banner', ContactBanner::orderBy('id', 'DESC')->first());
+        } catch (Exception $e) {
+
+            return $e->getMessage();
+        }
     }
 }

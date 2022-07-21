@@ -168,7 +168,7 @@
 						<div class="news-block-two">
 							<div class="inner-box">
 								<div class="images">
-									<a href="blog-single.html"><img src="{{ asset('images/resource/'.$second->fimage) }}" alt="" /></a>
+									<a href="{{url('blog/'.$second['id'])}}"><img src="{{ asset('images/resource/'.$second->fimage) }}" alt="" /></a>
 								</div>
 								<div class="lower-content">
 									<ul class="post-meta">
@@ -226,8 +226,8 @@
                             </div>
 							@foreach($news as $n)
 							<article class="post">
-								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-								<div class="text"><a href={{"full_blog/".$n['id']}}>{{$n->title}}</a></div>
+								<figure class="post-thumb"><img src="images/resource/post-thumb-1.jpg" alt=""><a href="{{"/blog/".$n['id']}}" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
+								<div class="text"><a href={{"blog/".$n['id']}}>{{$n->title}}</a></div>
 								<div class="post-info">{{$n->date}}</div>
 							</article>
 							
@@ -242,11 +242,12 @@
                             <div class="sidebar-title">
                                 <h4>Archives</h4>
                             </div>
+                            @foreach($items as $i)
                             <ul class="blog-cat">
-                                <li><a href="#">January 2019 <span>(3)</span></a></li>
-                                <li><a href="#">February 2019 <span>(2)</span></a></li>
-                                <li><a href="#">May 2019 <span>(6)</span></a></li>
+                                <li><a href="#">{{$i->created_at->format('F')}} {{$i->created_at->format('Y')}} <span>({{$items_count}})</span></a></li>
+                                
                             </ul>
+							@endforeach
                         </div>
 						
 						<!--Gallery Widget-->

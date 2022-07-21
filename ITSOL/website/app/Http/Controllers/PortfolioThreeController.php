@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Exception;
 
 class PortfolioThreeController extends Controller
 {
@@ -32,7 +33,7 @@ class PortfolioThreeController extends Controller
         $info = new PortFolioThreeBanner;
         $request->validate([
             'title' => 'required',
-          
+
         ]);
         $info->title = $request->title;
 
@@ -130,21 +131,25 @@ class PortfolioThreeController extends Controller
     }
     public function viewport()
     {
-        $second = PortfoliothrSecondSection::all();
-        $buisness = PortfoliothrSecondSection::where('catagory', 'buisness')->get();
+        try {
+            $second = PortfoliothrSecondSection::all();
+            $buisness = PortfoliothrSecondSection::where('catagory', 'buisness')->get();
+            $finance = PortfoliothrSecondSection::where('catagory', 'finance')->get();
+            $consulting = PortfoliothrSecondSection::where('catagory', 'consulting')->get();
+            $insurance = PortfoliothrSecondSection::where('catagory', 'insurance')->get();
+            $others = PortfoliothrSecondSection::where('catagory', 'others')->get();
 
-        $finance = PortfoliothrSecondSection::where('catagory', 'finance')->get();
-        $consulting = PortfoliothrSecondSection::where('catagory', 'consulting')->get();
-        $insurance = PortfoliothrSecondSection::where('catagory', 'insurance')->get();
-        $others = PortfoliothrSecondSection::where('catagory', 'others')->get();
+            return View('portfolio-3-column')
+                ->with(compact('second'))
+                ->with(compact('buisness'))
+                ->with(compact('finance'))
+                ->with(compact('consulting'))
+                ->with(compact('insurance'))
+                ->with(compact('others'))
+                ->with('banner', PortFolioThreeBanner::orderBy('id', 'DESC')->first());
+        } catch (Exception $e) {
 
-        return View('portfolio-3-column')
-            ->with(compact('second'))
-            ->with(compact('buisness'))
-            ->with(compact('finance'))
-            ->with(compact('consulting'))
-            ->with(compact('insurance'))
-            ->with(compact('others'))
-            ->with('banner', PortFolioThreeBanner::orderBy('id', 'DESC')->first());
+            return $e->getMessage();
+        }
     }
 }

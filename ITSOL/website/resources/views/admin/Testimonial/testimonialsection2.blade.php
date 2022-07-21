@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('add_testimonialsection2')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('add_reviews')}}" method="post" enctype="multipart/form-data">
 @csrf
 
     @if($errors->any())

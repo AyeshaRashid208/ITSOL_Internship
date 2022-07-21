@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 <div class="row">
-<form action="{{url('create_teamsection2')}}" method="post" enctype="multipart/form-data">
+<form action="{{url('create_team')}}" method="post" enctype="multipart/form-data">
 @csrf
 <!-- {{ csrf_field() }} -->
     @if($errors->any())

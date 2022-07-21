@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Banner;
+use App\Models\BlogSingle;
+use Exception;
 use App\Models\TestimonialSecondSection;
 use Illuminate\Support\Facades\DB;
 use App\Models\HomeSecondSection;
@@ -739,8 +741,9 @@ class HomeController extends Controller
 
 
     public function viewhome()
-    {
-        $second = HomeSecondSection::all();
+    {   
+        try{
+            $second = HomeSecondSection::all();
         $third = HomeThirdSection::all();
         $trial = HomeThirdSection::where('id', 1)->value('name');
         $tri = HomeThirdSection::where('id', 2)->value('name');
@@ -748,14 +751,12 @@ class HomeController extends Controller
         $value = HomeThirdSection::where('id', 1)->value('hidden_id');
         $val = HomeThirdSection::where('id', 2)->value('hidden_id');
         $valu = HomeThirdSection::where('id', 3)->value('hidden_id');
-
         $fourth = HomeFourthSection::all();
         $fifth = HomeFifthSection::all();
-        // $sixth = HomeSixthSection::all();
         $sixth = TestimonialSecondSection::Paginate(3);
-        // dd($sixth);
-        $seven = HomeSevenSection::all();
+        // $seven = HomeSevenSection::all();
         $eight = HomeEightSection::all();
+        $seven = BlogSingle::Paginate(3);
 
         return View('index')
             ->with('users', Banner::orderBy('id', 'DESC')->first())
@@ -773,11 +774,19 @@ class HomeController extends Controller
             ->with(compact('seven'))
             ->with(compact('eight'));
     }
+    catch(Exception $e){
+    
+       return $e->getMessage();
+    
+    }
+        
+    }
 
 
     public function viewservices()
     {
 
+        try{
         $second = HomeSecondSection::all();
         $monthly = ServiceThirdSection::where('hidden_id', 'package-monthly')->get();
         $yearly = ServiceThirdSection::where('hidden_id', 'package-yearly')->get();
@@ -790,5 +799,11 @@ class HomeController extends Controller
             ->with(compact('monthly'))
             ->with(compact('yearly'))
             ->with(compact('eight'));
+        }
+        catch(Exception $e){
+
+            return $e->getMessage();
+         
+        }
     }
 }
