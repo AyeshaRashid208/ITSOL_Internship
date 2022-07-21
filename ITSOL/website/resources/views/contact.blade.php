@@ -37,7 +37,7 @@
 					<div class="clearfix">
 
 						<div class="pull-left logo-box">
-							<div class="logo"><a href="index.html"><img src="images/logo.png" alt="" title=""></a></div>
+							<div class="logo"><a href="{{url('/')}}"><img src="images/logo.png" alt="" title=""></a></div>
 						</div>
 
 						<div class="nav-outer clearfix">
@@ -88,7 +88,7 @@
 				<div class="auto-container clearfix">
 					<!--Logo-->
 					<div class="logo pull-left">
-						<a href="index.html" class="img-responsive"><img src="images/logo.png" alt="" title=""></a>
+						<a href="{{url('/')}}" class="img-responsive"><img src="images/logo.png" alt="" title=""></a>
 					</div>
 
 					<!--Right Col-->
