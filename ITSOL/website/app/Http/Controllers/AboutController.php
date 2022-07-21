@@ -207,8 +207,8 @@ class AboutController extends Controller
             return View('about')
                 ->with('banner', AboutBanner::orderBy('id', 'DESC')->first())
                 ->with(compact('second'))
-                ->with(compact('fourth'))
-                ->with('third', AboutThirdSection::orderBy('id', 'DESC')->first());
+                ->with(compact('fourth'));
+                
         } catch (Exception $e) {
 
             return $e->getMessage();
